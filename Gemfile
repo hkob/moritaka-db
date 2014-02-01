@@ -109,6 +109,9 @@ group :development, :test do
 
   # Turnip
   gem 'turnip'
+
+  #Capybara
+  gem 'capybara-webkit'
 end
 
 group :production, :staging do
