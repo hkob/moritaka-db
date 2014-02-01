@@ -72,6 +72,7 @@ end
 group :development, :test do
   # Rails application preloader
   gem 'spring'
+  gem 'spring-commands-rspec'
 
   # Railsコンソールの多機能版
   gem 'pry-rails'
@@ -105,6 +106,9 @@ group :development, :test do
   # Guard
   gem 'guard-rspec'
   gem 'guard-spring'
+
+  # Turnip
+  gem 'turnip'
 end
 
 group :production, :staging do
