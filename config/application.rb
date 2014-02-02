@@ -29,7 +29,10 @@ module MoritakaDb
     config.time_zone = 'Tokyo'
     config.active_record.default_timezone = :local
 
+    # i18n
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+    I18n.enforce_available_locales = true
+    config.i18n.default_locale = :ja
 
     # generatorの設定
     config.generators do |g|
