@@ -1,0 +1,8 @@
+%table
+  %tr
+    %td=link_to lh(t 'link.home'), root_path
+    %td
+      -if @is_ja
+        =link_to lh(:English), recursive_path(locale: :en)
+      -else
+        =link_to lh(:Japanese), recursive_path(locale: :ja)

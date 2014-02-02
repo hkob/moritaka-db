@@ -2,3 +2,5 @@ ja:
   top:
     index: 
       title: "森高千里データベース"
+  link:
+    home: 'ホーム'
