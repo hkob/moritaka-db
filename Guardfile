@@ -1,5 +1,7 @@
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
+#
+require 'active_support/inflector'
 
 guard :rspec, cmd: 'spring rspec -f doc' do
   watch(%r{^spec/.+_spec\.rb$})
@@ -20,6 +22,9 @@ guard :rspec, cmd: 'spring rspec -f doc' do
   # Turnip features and steps
   watch(%r{^spec/acceptance/(.+)\.feature$})
   watch(%r{^spec/acceptance/steps/(.+)_steps\.rb$})   { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'spec/acceptance' }
+
+  # FactoryGirl
+  watch(%r{^spec/factories/(.+)\.rb$}) { |m| [ "spec/models/#{m[1].singularize}_spec.rb", "spec/controllers/#{m[1]}_controller_spec.rb" ] }
 end
 
 
