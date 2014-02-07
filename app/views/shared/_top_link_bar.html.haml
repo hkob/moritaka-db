@@ -1,6 +1,7 @@
 %table
   %tr
     %td=link_to lh(t 'link.home'), root_path
+    %td=link_to lh(t 'link.titles'), titles_path
     %td
       -if @is_ja
         =link_to lh(:English), recursive_path(locale: :en)

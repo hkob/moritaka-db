@@ -2,5 +2,9 @@ ja:
   top:
     index: 
       title: "森高千里データベース"
+  titles:
+    index:
+      title: "タイトル一覧"
   link:
     home: 'ホーム'
+    titles: 'タイトル'

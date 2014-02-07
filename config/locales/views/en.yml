@@ -2,6 +2,10 @@ en:
   top:
     index: 
       title: "Chisato Moritaka Database"
+  titles:
+    index:
+      title: "List of titles"
   link:
     home: 'Home'
+    titles: 'Titles'
 
