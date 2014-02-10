@@ -1,0 +1,10 @@
+=form_for @title do |f|
+  =display_error(@title)
+  %table
+    -[ :japanese, :english, :yomi ].each do |key|
+      %tr
+        %th=f.label key
+        %td=f.text_field key
+    %tr
+      %td{colspan:2}=f.submit t('helpers.submit.create')
+        

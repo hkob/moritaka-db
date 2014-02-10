@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    models:
+      title: Title
+    attributes:
+      title:
+        japanese: Japanese
+        english: English
+        yomi: Yomi
+

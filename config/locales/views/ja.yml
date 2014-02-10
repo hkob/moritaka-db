@@ -5,6 +5,11 @@ ja:
   titles:
     index:
       title: "タイトル一覧"
+    new:
+      title: "タイトル追加"
   link:
     home: 'ホーム'
     titles: 'タイトル'
+  head:
+    control: '制御'
+    first_letter: '頭文字'

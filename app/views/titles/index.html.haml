@@ -1,1 +1,24 @@
 %h1=t '.title'
+
+%table.bordered
+  %caption=t 'head.first_letter'
+  -@heads.in_groups_of((@heads.count+1)/2.0).each do |array|
+    %tr
+      -array.each do |fl|
+        %td
+          =link_to lh(fl), titles_path(head:@lhead_hash[fl]) if fl
+%hr
+
+%table
+  %tr
+    -%w(link.titles).each do |k|
+      %th=t k
+  -@titles.each do |title|
+    %tr
+      %td=title.name(@is_ja)
+
+-if @is_dev
+  %h2=t 'titles.new.title'
+  %table
+    %tr
+      %td=link_to lh(t 'titles.new.title'), new_title_path

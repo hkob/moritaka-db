@@ -5,7 +5,12 @@ en:
   titles:
     index:
       title: "List of titles"
+    new:
+      title: "Add a title"
   link:
     home: 'Home'
     titles: 'Titles'
+  head:
+    control: 'Control'
+    first_letter: 'First letter'
 

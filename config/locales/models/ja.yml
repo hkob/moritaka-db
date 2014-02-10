@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    models:
+      title: タイトル
+    attributes:
+      title:
+        japanese: 日本語
+        english: 英語
+        yomi: 読み

@@ -29,4 +29,14 @@ describe Title do
     expect(title.errors[:yomi]).to be_present
   end
 
+  it "head にて yomi_suuji の先頭二文字が取得できること" do
+    title.valid?
+    expect(title.head).to eq('41')
+  end
+
+  it "name(flag) にて対応する言語の文字列が得られること" do
+    expect(title.name(true)).to eq('日本語　英語')
+    expect(title.name(false)).to eq('English Japanese')
+  end
+
 end
