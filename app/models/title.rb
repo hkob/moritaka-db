@@ -15,4 +15,8 @@ class Title < ActiveRecord::Base
   def name(flag)
     flag ? japanese : english
   end
+
+  def can_delete?
+    true
+  end
 end

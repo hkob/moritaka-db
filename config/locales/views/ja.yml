@@ -7,9 +7,15 @@ ja:
       title: "タイトル一覧"
     new:
       title: "タイトル追加"
+    edit:
+      title: "タイトル編集"
   link:
     home: 'ホーム'
     titles: 'タイトル'
+    edit: '編集'
+    destroy: '削除'
   head:
     control: '制御'
     first_letter: '頭文字'
+  confirm:
+    destroy: '本当に削除してもよろしいですか?'

@@ -25,4 +25,19 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
   end
+
+  def get_objects_and_ids(array, first_id = true)
+    ans = []
+    ids = {}
+    array.each_with_index do |model, i|
+      id = i == 0 && first_id ? 'id' : "#{model.to_s.underscore}_id"
+      if pid = params[id]
+        ans << model.find(pid)
+        ids[id] = pid
+      else
+        ans << nil
+      end
+    end
+    ans << ids
+  end
 end

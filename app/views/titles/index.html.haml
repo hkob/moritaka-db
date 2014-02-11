@@ -13,9 +13,16 @@
   %tr
     -%w(link.titles).each do |k|
       %th=t k
+    -if @is_dev
+      %th=t 'head.control'
   -@titles.each do |title|
-    %tr
-      %td=title.name(@is_ja)
+    -name = title.name(@is_ja)
+    %tr{id:name}
+      %td=name
+      -if @is_dev
+        %th
+          =link_to lh(t 'link.edit'), edit_title_path(title)
+          =link_to lh(t 'link.destroy'), title_path(title), method: :delete, data:{ confirm:t('confirm.destroy') } if title.can_delete?
 
 -if @is_dev
   %h2=t 'titles.new.title'

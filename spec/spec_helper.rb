@@ -46,4 +46,7 @@ RSpec.configure do |config|
   config.before(:all) do
     FactoryGirl.reload
   end
+
+  Capybara.javascript_driver = :webkit
+
 end

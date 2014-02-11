@@ -1,3 +1,4 @@
+%p=request.symbolized_path_parameters.merge(@ids || {})
 %table
   %tr
     %td=link_to lh(t 'link.home'), root_path

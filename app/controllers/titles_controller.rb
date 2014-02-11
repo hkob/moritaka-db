@@ -1,5 +1,6 @@
 class TitlesController < ApplicationController
   before_action :reject_production, except:[ :index, :show ]
+  before_action :get_title, only:[ :edit, :update, :destroy, :show ]
 
   def index
     @head = params[:head]
@@ -21,6 +22,28 @@ class TitlesController < ApplicationController
       render action: :new
     end
   end
+
+  def edit
+  end
+
+  def update
+    if @title.update(title_params)
+      redirect_to titles_path(head:@title.head)
+    else
+      render action: :edit
+    end
+  end
+
+  def destroy
+    head = @title.head
+    @title.destroy
+    redirect_to titles_path(head:head)
+  end
+
+  def get_title
+    @title, @ids = get_objects_and_ids [ Title ]
+  end
+  private :get_title
 
   def title_params
     params.require(:title).permit(:japanese, :english, :yomi)

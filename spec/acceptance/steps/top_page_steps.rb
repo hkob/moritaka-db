@@ -29,3 +29,9 @@ step "運用環境である" do
   Rails.stub_chain(:env, :development?).and_return(false)
 end
 
+step 'id が :name である行の :link をクリックする' do |name, link|
+  within("//tr[@id='#{name}']") do
+    click_link link
+  end
+end
+

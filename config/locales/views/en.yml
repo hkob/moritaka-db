@@ -7,10 +7,16 @@ en:
       title: "List of titles"
     new:
       title: "Add a title"
+    edit:
+      title: "Edit the title"
   link:
     home: 'Home'
     titles: 'Titles'
+    edit: 'Edit'
+    destroy: 'Delete'
   head:
     control: 'Control'
     first_letter: 'First letter'
+  confirm:
+    destroy: 'Are you sure to delete it?'
 
