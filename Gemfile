@@ -110,8 +110,12 @@ group :development, :test do
   # Turnip
   gem 'turnip'
 
-  #Capybara
+  # Capybara
   gem 'capybara-webkit'
+
+  # SimpleCov
+  gem 'simplecov'
+  gem 'simplecov-rcov'
 end
 
 group :production, :staging do
