@@ -1,10 +1,8 @@
-%p=request.symbolized_path_parameters.merge(@ids || {})
-%table
-  %tr
-    %td=link_to lh(t 'link.home'), root_path
-    %td=link_to lh(t 'link.titles'), titles_path
-    %td
-      -if @is_ja
-        =link_to lh(:English), recursive_path(locale: :en)
-      -else
-        =link_to lh(:Japanese), recursive_path(locale: :ja)
+%ul.nav.nav-tabs
+  %li{active_from_class(TopController)}=link_to t('link.home'), root_path
+  %li{active_from_class(TitlesController)}=link_to t('link.titles'), titles_path
+  %li
+    -if @is_ja
+      =link_to :English, recursive_path(locale: :en)
+    -else
+      =link_to :Japanese, recursive_path(locale: :ja)

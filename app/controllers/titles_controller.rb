@@ -7,7 +7,8 @@ class TitlesController < ApplicationController
     @head = "00" unless /^\d\d$/ =~ @head
     @titles = Title.head_value_is(@head).order_yomi
     @heads = @is_ja ? JHeads : EHeads
-    @lhead_hash = @heads.zip(JHeads.map { |fl| convert_yomi_suuji(fl).slice(0..1) }).to_h
+    @lhead_hash = @heads.flatten.zip(JHeads.flatten.map { |fl| convert_yomi_suuji(fl).slice(0..1) }).to_h
+    @head_str = @lhead_hash.invert[@head]
     @ids = { head:@head }
   end
 

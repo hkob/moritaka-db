@@ -2,6 +2,8 @@ en:
   top:
     index: 
       title: "Chisato Moritaka Database"
+      message: "You can obtain information from above menus."
+      summary: "Summary"
   titles:
     index:
       title: "List of titles"

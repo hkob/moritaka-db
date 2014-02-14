@@ -1,1 +1,9 @@
-%h1=t '.title'
+.jumbotron
+  %h1=t '.title'
+  %p=t '.message'
+
+%h2=t '.summary'
+%ul.list-group
+  %li.list-group-item
+    %span.badge=Title.count
+    =t 'link.titles'

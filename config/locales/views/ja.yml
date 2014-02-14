@@ -2,6 +2,8 @@ ja:
   top:
     index: 
       title: "森高千里データベース"
+      message: "各種情報はメニューバーから取得できます"
+      summary: "概要"
   titles:
     index:
       title: "タイトル一覧"

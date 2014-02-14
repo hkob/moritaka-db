@@ -1,31 +1,36 @@
-%h1=t '.title'
+%h1 #{t '.title'} (#{@head_str})
 
-%table.bordered
-  %caption=t 'head.first_letter'
-  -@heads.in_groups_of((@heads.count+1)/2.0).each do |array|
-    %tr
-      -array.each do |fl|
-        %td
-          =link_to lh(fl), titles_path(head:@lhead_hash[fl]) if fl
+.btn-group
+  -@heads.each do |array|
+    -first = array.first
+    -last = array.last
+    .btn-group
+      =button_tag class:"btn btn-default dropdown-toggle", "data-toggle" => "dropdown" do
+        ="#{first} - #{last}"
+      %ul.dropdown-menu
+        -array.each do |fl|
+          %li=link_to fl, titles_path(head:@lhead_hash[fl]) if fl
 %hr
 
-%table
-  %tr
-    -%w(link.titles).each do |k|
-      %th=t k
-    -if @is_dev
-      %th=t 'head.control'
-  -@titles.each do |title|
-    -name = title.name(@is_ja)
-    %tr{id:name}
-      %td=name
+%table.table-bordered.table-striped.table-hover
+  %thead
+    %tr
+      -%w(link.titles).each do |k|
+        %th=t k
       -if @is_dev
-        %th
-          =link_to lh(t 'link.edit'), edit_title_path(title)
-          =link_to lh(t 'link.destroy'), title_path(title), method: :delete, data:{ confirm:t('confirm.destroy') } if title.can_delete?
+        %th=t 'head.control'
+  %tbody  
+    -@titles.each do |title|
+      -name = title.name(@is_ja)
+      %tr{id:name}
+        %td=name
+        -if @is_dev
+          %th
+            .btn-group.btn-group-xs
+              =link_to t('link.edit'), edit_title_path(title), class:"btn btn-default"
+              =link_to t('link.destroy'), title_path(title), class:"btn btn-default", method: :delete, data:{ confirm:t('confirm.destroy') } if title.can_delete?
 
 -if @is_dev
-  %h2=t 'titles.new.title'
-  %table
-    %tr
-      %td=link_to lh(t 'titles.new.title'), new_title_path
+  %hr
+  .btn-group.btn-group-justified
+    =link_to t('titles.new.title'), new_title_path, class:"btn btn-default"

@@ -5,8 +5,8 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   AVAILABLE_LOCALES = %w(en ja)
   include YomiSuuji
-  JHeads = %w(あ い う え お か き く け こ さ し す せ そ た ち つ て と な に ぬ ね の は ひ ふ へ ほ ま み む め も や ゆ よ ら り る れ ろ わ を)
-  EHeads = %w(A I U E O KA KI KU KE KO SA SHI SU SE SO TA CHI TSU TE TO NA NI NU NE NO HA HI FU HE HO MA MI MU ME MO YA YU YO RA RI RU RE RO WA WO)
+  JHeads = [ %w(あ い う え お), %w(か き く け こ), %w(さ し す せ そ), %w(た ち つ て と), %w(な に ぬ ね の), %w(は ひ ふ へ ほ), %w(ま み む め も), %w(や ゆ よ), %w(ら り る れ ろ), %w(わ を) ]
+  EHeads = [ %w(A I U E O), %w(KA KI KU KE KO), %w(SA SHI SU SE SO), %w(TA CHI TSU TE TO), %w(NA NI NU NE NO), %w(HA HI FU HE HO), %w(MA MI MU ME MO), %w(YA YU YO), %w(RA RI RU RE RO), %w(WA WO) ]
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
