@@ -35,3 +35,15 @@ step 'id が :name である行の :link をクリックする' do |name, link|
   end
 end
 
+step 'id が :name である行に :string と表示されていること' do |name, string|
+  within("//tr[@id='#{name}']") do
+    expect(page).to have_content(string)
+  end
+end
+
+step 'id が :name である行に :string と表示されていないこと' do |name, string|
+  within("//tr[@id='#{name}']") do
+    expect(page).not_to have_content(string)
+  end
+end
+

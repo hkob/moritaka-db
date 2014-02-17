@@ -5,8 +5,13 @@ class Title < ActiveRecord::Base
   before_validation do
     self.yomi_suuji = self.yomi.split('　').map { |str| convert_yomi_suuji(str) }.join('-')
   end
+  before_destroy do
+    self.instrumental == nil
+  end
+  has_one :instrumental
   scope :head_value_is, -> v { where self.arel_table[:yomi_suuji].matches("#{v}%") }
   scope :order_yomi, -> { order self.arel_table[:yomi_suuji] }
+  scope :english_value_is, -> v { where self.arel_table[:english].eq(v) }
 
   def head
     yomi_suuji[0..1]
@@ -17,6 +22,6 @@ class Title < ActiveRecord::Base
   end
 
   def can_delete?
-    true
+    instrumental ? false : true
   end
 end

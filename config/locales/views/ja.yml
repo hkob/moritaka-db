@@ -11,9 +11,19 @@ ja:
       title: "タイトル追加"
     edit:
       title: "タイトル編集"
+  instrumentals:
+    index:
+      title: "楽器一覧"
+      sort_order: "並び順"
+    new:
+      title: "楽器追加"
+    edit:
+      title: "楽器編集"
   link:
     home: 'ホーム'
     titles: 'タイトル'
+    instrumentals: '楽器'
+    show: '表示'
     edit: '編集'
     destroy: '削除'
   head:

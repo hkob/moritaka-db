@@ -56,4 +56,5 @@ MoritakaDb::Application.routes.draw do
 
   root 'top#index'
   resources :titles
+  resources :instrumentals
 end

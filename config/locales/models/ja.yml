@@ -2,8 +2,11 @@ ja:
   activerecord:
     models:
       title: タイトル
+      instrumental: 楽器
     attributes:
       title:
         japanese: 日本語
         english: 英語
         yomi: 読み
+      instrumental:
+        sort_order: 並び順

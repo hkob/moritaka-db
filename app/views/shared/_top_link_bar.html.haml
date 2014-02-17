@@ -1,6 +1,7 @@
 %ul.nav.nav-tabs
   %li{active_from_class(TopController)}=link_to t('link.home'), root_path
   %li{active_from_class(TitlesController)}=link_to t('link.titles'), titles_path
+  %li{active_from_class(InstrumentalsController)}=link_to t('link.instrumentals'), instrumentals_path
   %li
     -if @is_ja
       =link_to :English, recursive_path(locale: :en)

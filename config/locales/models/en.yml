@@ -2,9 +2,12 @@ ja:
   activerecord:
     models:
       title: Title
+      instrumental: Instrumental
     attributes:
       title:
         japanese: Japanese
         english: English
         yomi: Yomi
+      instrumental:
+        sort_order: Sort order
 

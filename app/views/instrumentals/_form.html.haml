@@ -1,0 +1,13 @@
+=form_for @instrumental do |f|
+  =display_error(@instrumental)
+  %table.table-bordered.table-striped
+    -[ :sort_order ].each do |key|
+      %tr
+        %th=f.label key
+        %td=f.text_field key
+    %tr
+      %td.text-center{colspan:2}
+        =f.hidden_field :title_id
+        =f.submit nil, class:"btn btn-default"
+        
+

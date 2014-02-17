@@ -11,9 +11,18 @@ en:
       title: "Add a title"
     edit:
       title: "Edit the title"
+  instrumentals:
+    index:
+      title: "List of instrumentals"
+    new:
+      title: "Add an instrumental"
+    edit:
+      title: "Edit the instrumental"
   link:
     home: 'Home'
     titles: 'Titles'
+    instrumentals: 'Instrumentals'
+    show: 'Show'
     edit: 'Edit'
     destroy: 'Delete'
   head:
