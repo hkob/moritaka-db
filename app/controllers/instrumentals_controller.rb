@@ -5,19 +5,11 @@ class InstrumentalsController < ApplicationController
     @instrumentals = Instrumental.order_sort_order
   end
 
-  def new
-    @title, @ids = get_objects_and_ids [ Title ], false
-    @instrumental = @title.build_instrumental
-  end
-
   def create
     @instrumental = Instrumental.new(instrumental_params)
     @title = @instrumental.title
-    if @instrumental.save
-      redirect_to instrumentals_path
-    else
-      render action: :new
-    end
+    @instrumental.save
+    redirect_to instrumentals_path
   end
 
   def edit
