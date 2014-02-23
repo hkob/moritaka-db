@@ -4,6 +4,7 @@
 
 %h2=t '.summary'
 %ul.list-group
-  %li.list-group-item
-    %span.badge=Title.count
-    =t 'link.titles'
+  -[ [ Title, 'link.titles' ], [ Instrumental, 'link.instrumentals' ] ].each do |(model, title)|
+    %li.list-group-item
+      %span.badge=model.count
+      =t title
