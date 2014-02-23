@@ -3,8 +3,14 @@
   %p=t '.message'
 
 %h2=t '.summary'
+-total = 0
 %ul.list-group
   -[ [ Title, 'link.titles' ], [ Instrumental, 'link.instrumentals' ] ].each do |(model, title)|
     %li.list-group-item
-      %span.badge=model.count
+      -c = model.count
+      -total += c
+      %span.badge=c
       =t title
+  %li.list-group-item
+    %span.badge=total
+    =t '.total'

@@ -10,4 +10,6 @@ ja:
         yomi: Yomi
       instrumental:
         sort_order: Sort order
+      year:
+        year: Year
 

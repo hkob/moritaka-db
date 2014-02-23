@@ -1,0 +1,19 @@
+%h1=t '.title'
+
+%table.table-bordered.table-striped.table-hover
+  %thead
+    %tr
+      -%w(link.years head.control).each do |k|
+        %th=t k
+  %tbody
+    -@years.each do |year|
+      %tr{id:year.year}
+        %td=year.name(@is_ja)
+        %td
+          .btn-group.btn-group-xs
+            =link_to t('link.destroy'), year_path(year), class:"btn btn-default", method: :delete, data:{ confirm:t('confirm.destroy') } if year.can_delete?
+
+-if @is_dev
+  %hr
+  .btn-group.btn-group-justified
+    =link_to t('years.new.title'), new_year_path, class:"btn btn-default"

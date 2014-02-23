@@ -15,6 +15,9 @@ describe Year do
     end
   end
 
-
+  it "name(flag) にて西暦の日本語・英語表示が行えること" do
+    expect(year.name(true)).to eq('1987 年')
+    expect(year.name(false)).to eq('in 1987')
+  end
 
 end

@@ -4,6 +4,7 @@ ja:
       title: "森高千里データベース"
       message: "各種情報はメニューバーから取得できます"
       summary: "概要"
+      total: "合計"
   titles:
     index:
       title: "タイトル一覧"
@@ -19,10 +20,16 @@ ja:
       title: "楽器追加"
     edit:
       title: "楽器編集"
+  years:
+    index:
+      title: "西暦一覧"
+    new:
+      title: "西暦追加"
   link:
     home: 'ホーム'
     titles: 'タイトル'
     instrumentals: '楽器'
+    years: '西暦'
     show: '表示'
     edit: '編集'
     destroy: '削除'

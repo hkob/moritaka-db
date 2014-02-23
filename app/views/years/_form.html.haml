@@ -1,0 +1,11 @@
+=form_for @year do |f|
+  =display_error(@year)
+  %table.table-bordered.table-striped
+    -[ :year ].each do |key|
+      %tr
+        %th=f.label key
+        %td=f.text_field key
+    %tr
+      %td.text-center{colspan:2}=f.submit nil, class:"btn btn-default"
+        
+

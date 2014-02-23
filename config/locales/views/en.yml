@@ -4,6 +4,7 @@ en:
       title: "Chisato Moritaka Database"
       message: "You can obtain information from above menus."
       summary: "Summary"
+      total: "Total"
   titles:
     index:
       title: "List of titles"
@@ -18,10 +19,16 @@ en:
       title: "Add an instrumental"
     edit:
       title: "Edit the instrumental"
+  years:
+    index:
+      title: "List of years"
+    new:
+      title: "Add a year"
   link:
     home: 'Home'
     titles: 'Titles'
     instrumentals: 'Instrumentals'
+    years: 'Years'
     show: 'Show'
     edit: 'Edit'
     destroy: 'Delete'

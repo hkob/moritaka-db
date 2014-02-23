@@ -2,6 +2,6 @@
 
 FactoryGirl.define do
   factory :year do
-    year 1
+    year 1987
   end
 end

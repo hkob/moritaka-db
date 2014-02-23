@@ -10,3 +10,5 @@ ja:
         yomi: 読み
       instrumental:
         sort_order: 並び順
+      year:
+        year: 西暦
