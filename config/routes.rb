@@ -58,4 +58,5 @@ MoritakaDb::Application.routes.draw do
   resources :titles
   resources :instrumentals
   resources :years
+  resources :people
 end

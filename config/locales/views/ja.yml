@@ -12,6 +12,13 @@ ja:
       title: "タイトル追加"
     edit:
       title: "タイトル編集"
+  people:
+    index:
+      title: "人一覧"
+    new:
+      title: "人追加"
+    edit:
+      title: "主データの追加"
   instrumentals:
     index:
       title: "楽器一覧"
@@ -27,14 +34,19 @@ ja:
       title: "西暦追加"
   link:
     home: 'ホーム'
+    people: '人'
     titles: 'タイトル'
     instrumentals: '楽器'
     years: '西暦'
     show: '表示'
     edit: '編集'
     destroy: '削除'
+    add_main: '主データ追加'
+    set_to_main: '主データに設定'
+    delete_link: 'リンク解除'
   head:
     control: '制御'
     first_letter: '頭文字'
+    another_name: '別名'
   confirm:
     destroy: '本当に削除してもよろしいですか?'

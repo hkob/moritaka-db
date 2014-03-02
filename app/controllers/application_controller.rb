@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   JHeads = [ %w(あ い う え お), %w(か き く け こ), %w(さ し す せ そ), %w(た ち つ て と), %w(な に ぬ ね の), %w(は ひ ふ へ ほ), %w(ま み む め も), %w(や ゆ よ), %w(ら り る れ ろ), %w(わ を) ]
   EHeads = [ %w(A I U E O), %w(KA KI KU KE KO), %w(SA SHI SU SE SO), %w(TA CHI TSU TE TO), %w(NA NI NU NE NO), %w(HA HI FU HE HO), %w(MA MI MU ME MO), %w(YA YU YO), %w(RA RI RU RE RO), %w(WA WO) ]
   LHeads = %w(00 01 02 03 04 10 11 12 13 14 20 21 22 23 24 30 31 32 33 34 40 41 42 43 44 50 51 52 53 54 60 61 62 63 64 70 72 74 80 81 82 83 84 90 94)
+  LHeads2 = %w(00 10 20 30 40 50 60 70 80 90)
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale

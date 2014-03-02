@@ -12,6 +12,13 @@ en:
       title: "Add a title"
     edit:
       title: "Edit the title"
+  people:
+    index:
+      title: "List of people"
+    new:
+      title: "Add a person"
+    edit:
+      title: "Add a main data"
   instrumentals:
     index:
       title: "List of instrumentals"
@@ -26,15 +33,20 @@ en:
       title: "Add a year"
   link:
     home: 'Home'
+    people: 'People'
     titles: 'Titles'
     instrumentals: 'Instrumentals'
     years: 'Years'
     show: 'Show'
     edit: 'Edit'
     destroy: 'Delete'
+    add_main: 'Add main data'
+    set_to_main: 'Set to main data'
+    delete_link: 'Delete link'
   head:
     control: 'Control'
     first_letter: 'First letter'
+    another_name: 'Another name'
   confirm:
     destroy: 'Are you sure to delete it?'
 

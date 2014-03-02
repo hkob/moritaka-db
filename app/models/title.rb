@@ -12,6 +12,7 @@ class Title < ActiveRecord::Base
   has_one :person
   scope :head_value_is, -> v { where self.arel_table[:yomi_suuji].matches("#{v}%") }
   scope :order_yomi, -> { order self.arel_table[:yomi_suuji] }
+  scope :japanese_value_is, -> v { where self.arel_table[:japanese].eq(v) }
   scope :english_value_is, -> v { where self.arel_table[:english].eq(v) }
 
   def head
@@ -23,6 +24,6 @@ class Title < ActiveRecord::Base
   end
 
   def can_delete?
-    instrumental ? false : true
+    instrumental || person ? false : true
   end
 end

@@ -1,0 +1,25 @@
+%h1 #{t '.title'} (#{@person.name(@is_ja)})
+
+%ul.nav.nav-tabs
+  -@heads.each do |array|
+    -first = array.first
+    -last = array.last
+    -head=@lhead_hash[first]
+    %li{class:(head == @head) ? "active disable" : nil}=link_to "#{first} - #{last}", edit_person_path(@person, head:head)
+%table.table-bordered.table-striped.table-hover
+  %thead
+    %tr
+      -%w(link.people).each do |k|
+        %th=t k
+      -if @is_dev
+        %th=t 'head.control'
+  %tbody
+    -@people.each do |person|
+      -next if person.parent || person == @person
+      -name = person.name(@is_ja)
+      %tr{id:name}
+        %td=name
+        -if @is_dev
+          %td.btn-group.btn-group-xs
+            =link_to t('link.add_main'), person_path(@person, person:{ parent_id:person.id }), method: :put, class:"btn btn-default"
+

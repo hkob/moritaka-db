@@ -13,7 +13,14 @@ step 'タイトルにダミーデータを登録する' do
 end
 
 step 'タイトルにテスト用データを登録する' do
-  [ %w(ボーカル Vocal ぼーかる), %w(編曲 Arrangement へんきょく) ].each do |(japanese, english, yomi)|
+  data = [
+    %w(ボーカル Vocal ぼーかる),
+    %w(編曲 Arrangement へんきょく),
+    [ "森高千里", "Chisato Moritaka", "もりたか　ちさと" ],
+    [ "伊秩弘将", "Hiromasa Ijichi", "いぢち　ひろまさ" ],
+    [ "HIRO", "HIRO", "ひろ" ],
+  ]
+  data.each do |(japanese, english, yomi)|
     Title.create(japanese:japanese, english:english, yomi:yomi)
   end
 end
