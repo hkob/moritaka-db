@@ -6,10 +6,11 @@ class Title < ActiveRecord::Base
     self.yomi_suuji = self.yomi.split('　').map { |str| convert_yomi_suuji(str) }.join('-')
   end
   before_destroy do
-    self.instrumental == nil && self.person == nil
+    self.instrumental == nil && self.person == nil && self.song == nil
   end
   has_one :instrumental
   has_one :person
+  has_one :song
   scope :head_value_is, -> v { where self.arel_table[:yomi_suuji].matches("#{v}%") }
   scope :order_yomi, -> { order self.arel_table[:yomi_suuji] }
   scope :japanese_value_is, -> v { where self.arel_table[:japanese].eq(v) }
@@ -24,6 +25,6 @@ class Title < ActiveRecord::Base
   end
 
   def can_delete?
-    instrumental || person ? false : true
+    instrumental || person || song ? false : true
   end
 end

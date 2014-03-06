@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140223212800) do
+ActiveRecord::Schema.define(version: 20140306205844) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,12 +23,25 @@ ActiveRecord::Schema.define(version: 20140223212800) do
     t.datetime "updated_at"
   end
 
+  add_index "instrumentals", ["sort_order"], name: "index_instrumentals_on_sort_order", using: :btree
+
   create_table "people", force: true do |t|
     t.integer  "title_id",   null: false
     t.integer  "parent_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "songs", force: true do |t|
+    t.integer  "title_id",   null: false
+    t.integer  "parent_id"
+    t.integer  "year_id",    null: false
+    t.date     "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "songs", ["year_id", "date"], name: "index_songs_on_year_id_and_date", using: :btree
 
   create_table "titles", force: true do |t|
     t.string   "japanese",   null: false
@@ -39,10 +52,15 @@ ActiveRecord::Schema.define(version: 20140223212800) do
     t.datetime "updated_at"
   end
 
+  add_index "titles", ["japanese"], name: "index_titles_on_japanese", unique: true, using: :btree
+  add_index "titles", ["yomi_suuji"], name: "index_titles_on_yomi_suuji", using: :btree
+
   create_table "years", force: true do |t|
     t.integer  "year",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "years", ["year"], name: "index_years_on_year", using: :btree
 
 end
