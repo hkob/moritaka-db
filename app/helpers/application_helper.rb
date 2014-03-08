@@ -25,5 +25,4 @@ HAML
   def active_from_class(selected_class)
     controller.class == selected_class ? { class: :active } : {}
   end
-
 end
