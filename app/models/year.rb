@@ -1,5 +1,6 @@
 class Year < ActiveRecord::Base
   validates :year, presence:true
+  scope :year_value_is, -> v { where self.arel_table[:year].eq(v) }
   scope :order_year, -> { order self.arel_table[:year] }
   has_many :songs
   before_destroy do
@@ -12,5 +13,9 @@ class Year < ActiveRecord::Base
 
   def can_delete?
     true
+  end
+
+  def self.get_or_create(y)
+    Year.year_value_is(y).first_or_create
   end
 end

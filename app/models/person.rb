@@ -7,10 +7,6 @@ class Person < ActiveRecord::Base
   scope :order_yomi, -> { joins(:title).merge(Title.order_yomi) }
   scope :head_value_is, -> v { joins(:title).merge(Title.head_value_is(v)) }
 
-  def head1
-    title.head[0]
-  end
-
   def can_delete?
     true
   end

@@ -1,8 +1,9 @@
-ja:
+en:
   activerecord:
     models:
       title: Title
       instrumental: Instrumental
+      song: Song
     attributes:
       title:
         japanese: Japanese
@@ -12,4 +13,6 @@ ja:
         sort_order: Sort order
       year:
         year: Year
+      song:
+        date: Release date
 

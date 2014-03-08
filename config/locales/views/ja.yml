@@ -12,6 +12,13 @@ ja:
       title: "タイトル追加"
     edit:
       title: "タイトル編集"
+  songs:
+    index:
+      title: "曲一覧"
+    new:
+      title: "曲追加"
+    edit:
+      title: "曲編集"
   people:
     index:
       title: "人一覧"
@@ -34,6 +41,7 @@ ja:
       title: "西暦追加"
   link:
     home: 'ホーム'
+    songs: '曲'
     people: '人'
     titles: 'タイトル'
     instrumentals: '楽器'

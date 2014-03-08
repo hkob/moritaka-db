@@ -15,7 +15,7 @@
 %table.table-bordered.table-striped.table-hover
   %thead
     %tr
-      -%w(link.titles link.people link.instrumentals).each do |k|
+      -%w(link.titles link.songs link.people link.instrumentals).each do |k|
         %th=t k
       -if @is_dev
         %th=t 'head.control'
@@ -25,11 +25,18 @@
       %tr{id:name}
         %td=name
         %td
+          -if song = title.song
+            .btn-group.btn-group-xs
+              =link_to t('link.show'), song, class:'btn btn-default'
+          -elsif @is_dev
+            .btn-group.btn-group-xs
+              =link_to t('songs.new.title'), new_song_path(title_id:title.id), class:'btn btn-default'
+        %td
           -if person = title.person
             .btn-group.btn-group-xs
               =link_to t('link.show'), person, class:'btn btn-default'
           -elsif @is_dev
-            .btn-gropu.btn-group-xs
+            .btn-group.btn-group-xs
               =link_to t('people.new.title'), people_path(person:{title_id:title.id}), method: :post, class:'btn btn-default'
         %td
           -if instrumental = title.instrumental

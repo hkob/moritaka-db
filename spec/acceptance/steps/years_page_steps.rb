@@ -9,8 +9,8 @@ step '西暦追加ページを表示する' do
 end
 
 step '西暦にテスト用データを登録する' do
-  %w(1987 1988).each do |year|
-    Year.create(year:year)
+  %w(1987 1988 1990 1993).each do |year|
+    Year.create(year:year.to_i)
   end
 end
 

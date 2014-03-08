@@ -12,6 +12,13 @@ en:
       title: "Add a title"
     edit:
       title: "Edit the title"
+  songs:
+    index:
+      title: "List of songs"
+    new:
+      title: "Add a song"
+    edit:
+      title: "Edit the song"
   people:
     index:
       title: "List of people"

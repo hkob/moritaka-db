@@ -1,9 +1,10 @@
 %ul.nav.nav-tabs
   %li{active_from_class(TopController)}=link_to t('link.home'), root_path
-  %li{active_from_class(TitlesController)}=link_to t('link.titles'), titles_path
+  %li{active_from_class(SongsController)}=link_to t('link.songs'), songs_path
   %li{active_from_class(PeopleController)}=link_to t('link.people'), people_path
   %li{active_from_class(InstrumentalsController)}=link_to t('link.instrumentals'), instrumentals_path
   %li{active_from_class(YearsController)}=link_to t('link.years'), years_path
+  %li{active_from_class(TitlesController)}=link_to t('link.titles'), titles_path
   %li
     -if @is_ja
       =link_to :English, recursive_path(locale: :en)
