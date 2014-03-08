@@ -25,4 +25,8 @@ HAML
   def active_from_class(selected_class)
     controller.class == selected_class ? { class: :active } : {}
   end
+
+  def mgdnw(date)
+    I18n.l date, format: :long if date
+  end
 end

@@ -5,7 +5,7 @@
 %h2=t '.summary'
 -total = 0
 %ul.list-group
-  -[ [ Title, 'link.titles' ], [ Instrumental, 'link.instrumentals' ] ].each do |(model, title)|
+  -@tables.each do |(model, title)|
     %li.list-group-item
       -c = model.count
       -total += c
