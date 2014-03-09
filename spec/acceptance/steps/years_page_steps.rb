@@ -4,7 +4,7 @@ step '西暦一覧を表示する' do
   visit years_path(locate: :ja)
 end
 
-step '西暦追加ページを表示する' do
+step '西暦の追加ページを表示する' do
   visit new_year_path(locate: :ja)
 end
 

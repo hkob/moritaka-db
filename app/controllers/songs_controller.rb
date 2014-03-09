@@ -3,13 +3,14 @@ class SongsController < ApplicationController
   before_action :reject_production, except:[ :index, :show ]
   before_action :get_song, only:[ :edit, :update, :destroy, :show ]
   def index
-    @head, @heads, @lhead_hash, @head_str, @ids = get_heads(params[:head], @is_ja)
+    @head, @heads, @lhead_hash, @subtitle, @ids = get_heads(params[:head], @is_ja)
     @songs = Song.head_value_is(@head).order_yomi
   end
 
   def new
     @title, @ids = get_objects_and_ids [ Title], false
     @song = Song.new(title_id:@title.id)
+    @subtitle = @title.name(@is_ja)
   end
 
   def create
@@ -26,6 +27,7 @@ class SongsController < ApplicationController
     @head, @heads, @lhead_hash, @head_str, @ids = get_heads(params[:head], @is_ja)
     @songs = Song.head_value_is(@head).order_yomi
     @ids[:song_id] = @song.id
+    @subtitle = @song.name(@is_ja)
   end
 
   def update
@@ -38,6 +40,10 @@ class SongsController < ApplicationController
     @haed1 = @song.head1
     @song.destroy
     redirect_to songs_path(head:@head1)
+  end
+
+  def show
+    @subtitle = @song.name(@is_ja)
   end
 
   def get_song

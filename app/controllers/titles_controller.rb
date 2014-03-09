@@ -8,7 +8,7 @@ class TitlesController < ApplicationController
     @titles = Title.head_value_is(@head).order_yomi
     @heads = @is_ja ? JHeads : EHeads
     @lhead_hash = @heads.flatten.zip(LHeads).to_h
-    @head_str = @lhead_hash.invert[@head]
+    @subtitle = @lhead_hash.invert[@head]
     @ids = { head:@head }
   end
 
@@ -26,6 +26,7 @@ class TitlesController < ApplicationController
   end
 
   def edit
+    @subtitle = @title.name(@is_ja)
   end
 
   def update

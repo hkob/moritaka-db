@@ -3,7 +3,7 @@ class PeopleController < ApplicationController
   before_action :reject_production, except:[ :index, :show ]
   before_action :get_person, only:[ :edit, :update, :destroy, :show ]
   def index
-    @head, @heads, @lhead_hash, @head_str, @ids = get_heads(params[:head], @is_ja)
+    @head, @heads, @lhead_hash, @subtitle, @ids = get_heads(params[:head], @is_ja)
     @people = Person.head_value_is(@head).order_yomi
   end
 
@@ -18,6 +18,7 @@ class PeopleController < ApplicationController
     @head, @heads, @lhead_hash, @head_str, @ids = get_heads(params[:head], @is_ja)
     @people = Person.head_value_is(@head).order_yomi
     @ids[:person_id] = @person.id
+    @subtitle = @person.name(@is_ja)
   end
 
   def update

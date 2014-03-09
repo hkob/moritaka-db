@@ -2,7 +2,7 @@
 %html
   %head
     -str = t "#{controller.class.name.sub('Controller', '').underscore}.#{controller.action_name}.title"
-    %title MoritakaDb #{str}
+    %title MoritakaDb: #{str} #{@subtitle ? "(#{@subtitle})" : ""}
     = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
     = stylesheet_link_tag "http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css", media:"screen"
     = javascript_include_tag "application", "data-turbolinks-track" => true

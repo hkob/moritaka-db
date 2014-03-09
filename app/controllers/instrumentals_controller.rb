@@ -13,6 +13,7 @@ class InstrumentalsController < ApplicationController
   end
 
   def edit
+    @subtitle = @instrumental.name(@is_ja)
   end
 
   def update

@@ -16,29 +16,35 @@ ja:
     index:
       title: "曲一覧"
     new:
-      title: "曲追加"
+      title: "曲の追加"
     edit:
-      title: "曲編集"
+      title: "曲の編集"
+    show:
+      title: "曲表示"
   people:
     index:
       title: "人一覧"
     new:
-      title: "人追加"
+      title: "人の追加"
     edit:
       title: "主データの追加"
+    show:
+      title: "人表示"
   instrumentals:
     index:
       title: "楽器一覧"
       sort_order: "並び順"
     new:
-      title: "楽器追加"
+      title: "楽器の追加"
     edit:
-      title: "楽器編集"
+      title: "楽器の編集"
+    show:
+      title: "楽器表示"
   years:
     index:
       title: "西暦一覧"
     new:
-      title: "西暦追加"
+      title: "西暦の追加"
   link:
     home: 'ホーム'
     songs: '曲'

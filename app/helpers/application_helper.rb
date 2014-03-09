@@ -29,4 +29,8 @@ HAML
   def mgdnw(date)
     I18n.l date, format: :long if date
   end
+
+  def show_title
+    "#{t '.title'}#{@subtitle ? "(#{@subtitle})" : ""}"
+  end
 end
