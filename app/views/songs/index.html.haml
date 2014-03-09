@@ -12,8 +12,7 @@
     %tr
       -%w(link.songs head.another_name activerecord.attributes.song.date).each do |k|
         %th=t k
-      -if @is_dev
-        %th=t 'head.control'
+      %th=t 'head.control'
   %tbody
     -@songs.each do |song|
       -next if song.parent
@@ -29,8 +28,9 @@
               .btn-group.btn-group-xs
                 =link_to t('link.delete_link'), song_path(p, song:{ parent_id:nil }), method: :put, class:"btn btn-default"
         %td=mgdnw(song.date)
-        -if @is_dev
-          %td.btn-group.btn-group-xs
+        %td.btn-group.btn-group-xs
+          =link_to t('songs.show.title'), song, class:"btn btn-default"
+          -if @is_dev
             -unless has_children
               =link_to t('link.edit'), edit_song_path(song), class:"btn btn-default"
               =link_to t('link.destroy'), song_path(song), class:"btn btn-default", method: :delete, data:{ confirm:t('confirm.destroy') } if song.can_delete?

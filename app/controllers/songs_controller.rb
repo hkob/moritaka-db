@@ -43,7 +43,7 @@ class SongsController < ApplicationController
   end
 
   def show
-    @subtitle = @song.name(@is_ja)
+    @subtitle = @song.names(@is_ja)
   end
 
   def get_song

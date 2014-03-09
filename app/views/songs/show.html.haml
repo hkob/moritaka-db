@@ -1,1 +1,10 @@
 %h1=show_title
+
+%table.table-bordered
+  %thead
+    %tr
+      -%w(activerecord.attributes.song.date).each do |k|
+        %th=t k
+  %tbody
+    %tr{id: :information}
+      %td=mgdnw(@song.date)

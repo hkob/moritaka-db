@@ -31,6 +31,10 @@ class InstrumentalsController < ApplicationController
     redirect_to instrumentals_path
   end
 
+  def show
+    @subtitle = @instrumental.name(@is_ja)
+  end
+
   def get_instrumental
     @instrumental, @ids = get_objects_and_ids [ Instrumental ]
   end

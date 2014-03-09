@@ -33,6 +33,10 @@ class PeopleController < ApplicationController
     redirect_to people_path(head:@head1)
   end
 
+  def show
+    @subtitle = @person.names(@is_ja)
+  end
+
   def get_person
     @person, @ids = get_objects_and_ids [ Person ]
   end
