@@ -21,6 +21,11 @@ ja:
       title: "曲の編集"
     show:
       title: "曲表示"
+  lyrics:
+    new:
+      title: "作詞の追加"
+    edit:
+      title: "作詞の編集"
   people:
     index:
       title: "人一覧"
@@ -47,6 +52,8 @@ ja:
       title: "西暦の追加"
   link:
     home: 'ホーム'
+    lyrics: '作詞'
+    musics: '作曲'
     songs: '曲'
     people: '人'
     titles: 'タイトル'
@@ -59,8 +66,13 @@ ja:
     set_to_main: '主データに設定'
     delete_link: 'リンク解除'
   head:
+    item: '項目'
+    sort_order: '並び順'
+    content: '内容'
     control: '制御'
     first_letter: '頭文字'
     another_name: '別名'
+    base_information: '基本情報'
+    lyric_and_music: '作詞・作曲'
   confirm:
     destroy: '本当に削除してもよろしいですか?'

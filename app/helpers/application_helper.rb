@@ -1,4 +1,6 @@
 module ApplicationHelper
+  ButtonLinkClass = { :class => "btn btn-default" }
+
   #再帰パスを作成
   def recursive_path(options = {})
     request.symbolized_path_parameters.merge(@ids || {}).merge(options)
@@ -32,5 +34,9 @@ HAML
 
   def show_title
     "#{t '.title'}#{@subtitle ? "(#{@subtitle})" : ""}"
+  end
+
+  def btn_link_class(add_class = nil)
+    add_class ? add_class.merge(ButtonLinkClass) : ButtonLinkClass
   end
 end

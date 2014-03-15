@@ -30,7 +30,7 @@ describe Instrumental do
   end
 
   it "name(flag) にてタイトルが取得できること" do
-    expect(instrumental.name(true)).to eq('日本語　英語')
+    expect(instrumental.name(true)).to match('日本語　英語_\d')
     expect(instrumental.name(false)).to eq('English Japanese')
   end
 end

@@ -19,6 +19,11 @@ en:
       title: "Add a song"
     edit:
       title: "Edit the song"
+  lyrics:
+    new:
+      title: "Add a lyric"
+    edit:
+      title: "Edit the lyric"
   people:
     index:
       title: "List of people"
@@ -40,6 +45,8 @@ en:
       title: "Add a year"
   link:
     home: 'Home'
+    lyrics: 'Lyrics'
+    musics: 'Musics'
     people: 'People'
     titles: 'Titles'
     instrumentals: 'Instrumentals'
@@ -51,9 +58,14 @@ en:
     set_to_main: 'Set to main data'
     delete_link: 'Delete link'
   head:
+    item: 'Item'
+    sort_order: 'Sort order'
+    content: 'Content'
     control: 'Control'
     first_letter: 'First letter'
     another_name: 'Another name'
+    base_information: 'Base information'
+    lyric_and_music: 'Lyric and Music'
   confirm:
     destroy: 'Are you sure to delete it?'
 

@@ -15,4 +15,6 @@ en:
         year: Year
       song:
         date: Release date
+      lyric:
+        sort_order: Sort order
 

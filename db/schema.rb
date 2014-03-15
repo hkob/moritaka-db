@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140306205844) do
+ActiveRecord::Schema.define(version: 20140309024340) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,30 @@ ActiveRecord::Schema.define(version: 20140306205844) do
   end
 
   add_index "instrumentals", ["sort_order"], name: "index_instrumentals_on_sort_order", using: :btree
+
+  create_table "lyrics", force: true do |t|
+    t.integer  "song_id"
+    t.integer  "person_id"
+    t.integer  "sort_order"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "lyrics", ["person_id"], name: "index_lyrics_on_person_id", using: :btree
+  add_index "lyrics", ["song_id", "person_id"], name: "index_lyrics_on_song_id_and_person_id", using: :btree
+  add_index "lyrics", ["song_id", "sort_order"], name: "index_lyrics_on_song_id_and_sort_order", using: :btree
+
+  create_table "musics", force: true do |t|
+    t.integer  "song_id"
+    t.integer  "person_id"
+    t.integer  "sort_order"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "musics", ["person_id"], name: "index_musics_on_person_id", using: :btree
+  add_index "musics", ["song_id", "person_id"], name: "index_musics_on_song_id_and_person_id", using: :btree
+  add_index "musics", ["song_id", "sort_order"], name: "index_musics_on_song_id_and_sort_order", using: :btree
 
   create_table "people", force: true do |t|
     t.integer  "title_id",   null: false

@@ -15,3 +15,5 @@ ja:
         year: 西暦
       song:
         date: 発表日
+      lyric:
+        sort_order: 並び順

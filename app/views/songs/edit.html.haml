@@ -1,7 +1,22 @@
 %h1=show_title
 
+%h2=t 'head.base_information'
 =render partial:'form'
 
+%hr
+%h2=t 'head.lyric_and_music'
+%table.table-bordered
+  %thead
+    %tr
+      %th=t 'head.item'
+      %th=t 'head.content'
+      %th=t 'head.control'
+  %tbody
+    %tr
+      %th=t 'link.lyrics'
+      %td
+      %td.btn-group.btn-group-xs=link_to t('lyrics.new.title'), new_lyric_path(song_id:@song.id), ApplicationHelper::ButtonLinkClass
+%hr
 %ul.nav.nav-tabs
   -@heads.each do |array|
     -first = array.first

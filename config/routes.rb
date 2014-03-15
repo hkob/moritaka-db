@@ -60,4 +60,6 @@ MoritakaDb::Application.routes.draw do
   resources :years
   resources :people
   resources :songs
+  resources :lyrics
+  resources :musics
 end

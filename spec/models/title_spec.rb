@@ -35,7 +35,7 @@ describe Title do
   end
 
   it "name(flag) にて対応する言語の文字列が得られること" do
-    expect(title.name(true)).to eq('日本語　英語')
+    expect(title.name(true)).to match('日本語　英語_\d')
     expect(title.name(false)).to eq('English Japanese')
   end
 
