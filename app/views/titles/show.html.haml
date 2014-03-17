@@ -1,0 +1,9 @@
+%ul.breadcrumb
+  %li=link_to_lh @title.navi_index_str(@title.head1_str(@is_ja)), titles_path(head:@title.head1)
+  %li.active=show_title
+%h1=show_title
+
+-developer_only do
+  .panel.panel-default
+    .panel-footer
+      =link_to_lh t('titles.edit.title'), edit_title_path(@title)

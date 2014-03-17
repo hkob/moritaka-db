@@ -33,4 +33,8 @@ describe Instrumental do
     expect(instrumental.name(true)).to match('日本語　英語_\d')
     expect(instrumental.name(false)).to eq('English Japanese')
   end
+
+  it "navi_index_str にてタイトル文字列が取得できること" do
+    expect(instrumental.navi_index_str).to eq(I18n.t 'instrumentals.index.title')
+  end
 end

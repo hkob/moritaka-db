@@ -1,6 +1,6 @@
 =form_for @song do |f|
   =display_error(@song)
-  %table.table-bordered.table-striped
+  %table.table.table-bordered.table-striped
     -[ :date ].each do |key|
       %tr
         %th=f.label key

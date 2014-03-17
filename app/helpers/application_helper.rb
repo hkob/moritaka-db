@@ -6,9 +6,21 @@ module ApplicationHelper
     request.symbolized_path_parameters.merge(@ids || {}).merge(options)
   end
 
+  def developer_only
+    if @is_dev
+      @developer_mode = true
+      yield
+      @developer_mode = false
+    end
+  end
+
+  def link_to_lh(str, *array)
+    link_to lh(str), *array
+  end
+
   # link 文字列の作成
   def lh(v)
-    "[#{v}]"
+    @developer_mode ? "【#{v}】" : v
   end
 
   # model エラー表示
@@ -39,4 +51,5 @@ HAML
   def btn_link_class(add_class = nil)
     add_class ? add_class.merge(ButtonLinkClass) : ButtonLinkClass
   end
+
 end

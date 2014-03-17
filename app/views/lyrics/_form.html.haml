@@ -1,6 +1,6 @@
 =form_for @lyric do |f|
   =display_error(@lyric)
-  %table.table-bordered.table-striped
+  %table.table.table-bordered.table-striped
     -[ :sort_order ].each do |key|
       %tr
         %th=f.label key

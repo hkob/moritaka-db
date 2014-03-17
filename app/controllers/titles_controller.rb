@@ -43,6 +43,10 @@ class TitlesController < ApplicationController
     redirect_to titles_path(head:head)
   end
 
+  def show
+    @subtitle = @title.name(@is_ja)
+  end
+
   def get_title
     @title, @ids = get_objects_and_ids [ Title ]
   end

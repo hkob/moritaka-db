@@ -12,6 +12,8 @@ ja:
       title: "タイトル追加"
     edit:
       title: "タイトル編集"
+    show:
+      title: "タイトル情報"
   songs:
     index:
       title: "曲一覧"
@@ -34,7 +36,7 @@ ja:
     edit:
       title: "主データの追加"
     show:
-      title: "人表示"
+      title: "個人情報"
   instrumentals:
     index:
       title: "楽器一覧"
@@ -44,12 +46,14 @@ ja:
     edit:
       title: "楽器の編集"
     show:
-      title: "楽器表示"
+      title: "楽器情報"
   years:
     index:
       title: "西暦一覧"
     new:
       title: "西暦の追加"
+    show:
+      title: "西暦情報"
   link:
     home: 'ホーム'
     lyrics: '作詞'

@@ -12,6 +12,8 @@ en:
       title: "Add a title"
     edit:
       title: "Edit the title"
+    show:
+      title: "Title information"
   songs:
     index:
       title: "List of songs"
@@ -19,6 +21,8 @@ en:
       title: "Add a song"
     edit:
       title: "Edit the song"
+    show:
+      title: "Song information"
   lyrics:
     new:
       title: "Add a lyric"
@@ -31,6 +35,8 @@ en:
       title: "Add a person"
     edit:
       title: "Add a main data"
+    show:
+      title: "Person information"
   instrumentals:
     index:
       title: "List of instrumentals"
@@ -38,11 +44,15 @@ en:
       title: "Add an instrumental"
     edit:
       title: "Edit the instrumental"
+    show:
+      title: "Instrumental information"
   years:
     index:
       title: "List of years"
     new:
       title: "Add a year"
+    show:
+      title: "Year information"
   link:
     home: 'Home'
     lyrics: 'Lyrics'

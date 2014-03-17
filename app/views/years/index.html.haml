@@ -1,20 +1,24 @@
+%ul.breadcrumb
+  %li.active=show_title
 %h1=show_title
 
-%table.table-bordered.table-striped.table-hover
-  %thead
-    %tr
-      -%w(link.years link.songs head.control).each do |k|
-        %th=t k
-  %tbody
-    -@years.each do |year|
-      %tr{id:year.year}
-        %td=year.name(@is_ja)
-        %td=year.songs.count
-        %td
-          .btn-group.btn-group-xs
-            =link_to t('link.destroy'), year_path(year), class:"btn btn-default", method: :delete, data:{ confirm:t('confirm.destroy') } if year.can_delete?
+.panel.panel-default
+  .panel-body
+    %table.table.table-bordered.table-striped.table-hover
+      %thead
+        %tr
+          -%w(link.years link.songs head.control).each do |k|
+            %th=t k
+      %tbody
+        -@years.each do |year|
+          %tr{id:year.year}
+            %td=year.name(@is_ja)
+            %td.text-right=year.songs.count
+            %td
+              =link_to_lh t('years.show.title'), year
+              -developer_only do
+                =link_to_lh t('link.destroy'), year_path(year), method: :delete, data:{ confirm:t('confirm.destroy') } if year.can_delete?
 
--if @is_dev
-  %hr
-  .btn-group.btn-group-justified
-    =link_to t('years.new.title'), new_year_path, class:"btn btn-default"
+  -developer_only do
+    .panel-footer
+      =link_to_lh t('years.new.title'), new_year_path

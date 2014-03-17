@@ -1,6 +1,7 @@
 class Song < ActiveRecord::Base
   include Name
   include Renumber
+  include Navi
   validates :title_id, presence:true
   before_validation do
     if self.date
@@ -28,4 +29,13 @@ class Song < ActiveRecord::Base
   def renumber_lyrics
     Renumber.renumber_array(self.lyrics.order_sort_order)
   end
+
+  def lyric_people
+    self.lyrics.order_sort_order.map { |lyric| lyric.person }
+  end
+
+  def lyrics_str(flag)
+    self.lyrics.order_sort_order.map { |lyric| lyric.person.name(flag) }.join(', ')
+  end
+
 end

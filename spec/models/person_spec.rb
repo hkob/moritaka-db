@@ -29,4 +29,9 @@ describe Person do
     expect { title.destroy }.not_to change(Title, :count)
   end
 
+  it "navi_index_str にてタイトル文字列が取得できること" do
+    expect(person.navi_index_str("ABC")).to eq(I18n.t('people.index.title') + '(ABC)')
+    expect(person.navi_index_str).to eq(I18n.t('people.index.title'))
+  end
+
 end

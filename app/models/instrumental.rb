@@ -1,6 +1,7 @@
 class Instrumental < ActiveRecord::Base
   include Name
   include Renumber
+  include Navi
   validates :sort_order, :title_id, presence:true
   belongs_to :title
   scope :order_sort_order, -> { order self.arel_table[:sort_order] }

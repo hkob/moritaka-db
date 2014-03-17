@@ -1,43 +1,56 @@
+%ul.breadcrumb
+  %li=link_to_lh @song.navi_index_str(@song.head1_str(@is_ja)), songs_path(head:@song.head1)
+  %li=link_to_lh @song.navi_show_str(@is_ja), @song
+  %li.active=show_title
 %h1=show_title
 
 %h2=t 'head.base_information'
-=render partial:'form'
+.panel.panel-default
+  .panel-body
+    =render partial:'form'
 
 %hr
 %h2=t 'head.lyric_and_music'
-%table.table-bordered
-  %thead
-    %tr
-      %th=t 'head.item'
-      %th=t 'head.content'
-      %th=t 'head.control'
-  %tbody
-    %tr
-      %th=t 'link.lyrics'
-      %td
-      %td.btn-group.btn-group-xs=link_to t('lyrics.new.title'), new_lyric_path(song_id:@song.id), ApplicationHelper::ButtonLinkClass
+.panel.panel-default
+  .panel-body
+    %table.table.table-bordered
+      %thead
+        %tr
+          %th=t 'head.item'
+          %th=t 'head.content'
+          %th=t 'head.control'
+      %tbody
+        %tr
+          %th=t 'link.lyrics'
+          %td=@song.lyrics_str(@is_ja)
+          %td
+            -developer_only do
+              =link_to_lh t('lyrics.new.title'), new_lyric_path(song_id:@song.id)
 %hr
-%ul.nav.nav-tabs
-  -@heads.each do |array|
-    -first = array.first
-    -last = array.last
-    -head=@lhead_hash[first]
-    %li{class:(head == @head) ? "active disable" : nil}=link_to "#{first} - #{last}", edit_song_path(@song, head:head)
-%table.table-bordered.table-striped.table-hover
-  %thead
-    %tr
-      -%w(link.songs).each do |k|
-        %th=t k
-      -if @is_dev
-        %th=t 'head.control'
-  %tbody
-    -@songs.each do |song|
-      -next if song.parent || song == @song
-      -name = song.name(@is_ja)
-      %tr{id:name}
-        %td=name
-        -if @is_dev
-          %td.btn-group.btn-group-xs
-            =link_to t('link.add_main'), song_path(@song, song:{ parent_id:song.id }), method: :put, class:"btn btn-default"
+%h2=t 'link.add_main'
+.panel.panel-default
+  .panel-heading
+    %ul.nav.nav-tabs
+      -@heads.each do |array|
+        -first = array.first
+        -last = array.last
+        -head=@lhead_hash[first]
+        %li{class:(head == @head) ? "active disable" : nil}=link_to_lh "#{first} - #{last}", edit_song_path(@song, head:head)
+  .panel-body
+    %table.table.table-bordered.table-striped.table-hover
+      %thead
+        %tr
+          -%w(link.songs).each do |k|
+            %th=t k
+          -developer_only do
+            %th=t 'head.control'
+      %tbody
+        -@songs.each do |song|
+          -next if song.parent || song == @song
+          -name = song.name(@is_ja)
+          %tr{id:name}
+            %td=name
+            -developer_only do
+              %td=link_to_lh t('link.add_main'), song_path(@song, song:{ parent_id:song.id }), method: :put
 
 

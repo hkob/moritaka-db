@@ -10,6 +10,8 @@ class ApplicationController < ActionController::Base
   LHeads = %w(00 01 02 03 04 10 11 12 13 14 20 21 22 23 24 30 31 32 33 34 40 41 42 43 44 50 51 52 53 54 60 61 62 63 64 70 72 74 80 81 82 83 84 90 94)
   LHeads2 = %w(00 10 20 30 40 50 60 70 80 90)
 
+  attr_accessor :developer_mode
+
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
     @is_ja = I18n.locale == :ja

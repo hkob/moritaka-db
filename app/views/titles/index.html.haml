@@ -1,58 +1,55 @@
+%ul.breadcrumb
+  %li.active=show_title
 %h1=show_title
 
-.btn-group
-  -@heads.each do |array|
-    -first = array.first
-    -last = array.last
-    .btn-group
-      =button_tag class:"btn btn-default dropdown-toggle", "data-toggle" => "dropdown" do
-        ="#{first} - #{last}"
-      %ul.dropdown-menu
-        -array.each do |fl|
-          %li=link_to fl, titles_path(head:@lhead_hash[fl]) if fl
-%hr
+.panel.panel-default
+  .panel-heading.btn-group
+    -@heads.each do |array|
+      -first = array.first
+      -last = array.last
+      .btn-group
+        =button_tag class:"btn btn-default dropdown-toggle", "data-toggle" => "dropdown" do
+          ="#{first} - #{last}"
+        %ul.dropdown-menu
+          -array.each do |fl|
+            %li=link_to_lh fl, titles_path(head:@lhead_hash[fl]) if fl
+  .panel-body
+    %table.table.table-bordered.table-striped.table-hover
+      %thead
+        %tr
+          -%w(link.titles link.songs link.people link.instrumentals).each do |k|
+            %th=t k
+          %th=t 'head.control'
+      %tbody  
+        -@titles.each do |title|
+          -name = title.name(@is_ja)
+          %tr{id:name}
+            %td=name
+            %td
+              -if song = title.song
+                =link_to_lh t('songs.show.title'), song
+              -else
+                -developer_only do
+                  =link_to_lh t('songs.new.title'), new_song_path(title_id:title.id)
+            %td
+              -if person = title.person
+                =link_to_lh t('people.show.title'), person
+              -else
+                -developer_only do
+                  =link_to_lh t('people.new.title'), people_path(person:{title_id:title.id}), method: :post
+            %td
+              -if instrumental = title.instrumental
+                =link_to_lh t('instrumentals.show.title'), instrumental
+              -else
+                -developer_only do
+                  -max = Instrumental.maximum(:sort_order) || 0
+                  =link_to_lh t('instrumentals.new.title'), instrumentals_path(instrumental:{title_id:title.id, sort_order:max+10}), method: :post
+            %td
+              =link_to_lh t('titles.show.title'), title
+              -developer_only do
+                =link_to_lh t('link.edit'), edit_title_path(title)
+                =link_to_lh t('link.destroy'), title_path(title), method: :delete, data:{ confirm:t('confirm.destroy') } if title.can_delete?
 
-%table.table-bordered.table-striped.table-hover
-  %thead
-    %tr
-      -%w(link.titles link.songs link.people link.instrumentals).each do |k|
-        %th=t k
-      -if @is_dev
-        %th=t 'head.control'
-  %tbody  
-    -@titles.each do |title|
-      -name = title.name(@is_ja)
-      %tr{id:name}
-        %td=name
-        %td
-          -if song = title.song
-            .btn-group.btn-group-xs
-              =link_to t('songs.show.title'), song, class:'btn btn-default'
-          -elsif @is_dev
-            .btn-group.btn-group-xs
-              =link_to t('songs.new.title'), new_song_path(title_id:title.id), class:'btn btn-default'
-        %td
-          -if person = title.person
-            .btn-group.btn-group-xs
-              =link_to t('people.show.title'), person, class:'btn btn-default'
-          -elsif @is_dev
-            .btn-group.btn-group-xs
-              =link_to t('people.new.title'), people_path(person:{title_id:title.id}), method: :post, class:'btn btn-default'
-        %td
-          -if instrumental = title.instrumental
-            .btn-group.btn-group-xs
-              =link_to t('instrumentals.show.title'), instrumental, class:'btn btn-default'
-          -elsif @is_dev
-            .btn-group.btn-group-xs
-              -max = Instrumental.maximum(:sort_order) || 0
-              =link_to t('instrumentals.new.title'), instrumentals_path(instrumental:{title_id:title.id, sort_order:max+10}), method: :post, class:'btn btn-default'
-        -if @is_dev
-          %td
-            .btn-group.btn-group-xs
-              =link_to t('link.edit'), edit_title_path(title), class:"btn btn-default"
-              =link_to t('link.destroy'), title_path(title), class:"btn btn-default", method: :delete, data:{ confirm:t('confirm.destroy') } if title.can_delete?
-
--if @is_dev
-  %hr
-  .btn-group.btn-group-justified
-    =link_to t('titles.new.title'), new_title_path, class:"btn btn-default"
+  -developer_only do
+    .panel-footer
+      =link_to_lh t('titles.new.title'), new_title_path

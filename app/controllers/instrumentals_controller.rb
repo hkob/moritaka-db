@@ -7,8 +7,8 @@ class InstrumentalsController < ApplicationController
 
   def create
     @instrumental = Instrumental.new(instrumental_params)
-    @title = @instrumental.title
     @instrumental.save
+    @title = @instrumental.title
     redirect_to instrumentals_path
   end
 

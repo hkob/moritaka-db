@@ -1,4 +1,5 @@
 class Year < ActiveRecord::Base
+  include Navi
   validates :year, presence:true
   scope :year_value_is, -> v { where self.arel_table[:year].eq(v) }
   scope :order_year, -> { order self.arel_table[:year] }
@@ -12,7 +13,7 @@ class Year < ActiveRecord::Base
   end
 
   def can_delete?
-    true
+    songs.count == 0
   end
 
   def self.get_or_create(y)

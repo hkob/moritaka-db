@@ -20,4 +20,9 @@ describe Year do
     expect(year.name(false)).to eq('in 1987')
   end
 
+  it "navi_index_str にてタイトル文字列が取得できること" do
+    expect(year.navi_index_str("ABC")).to eq(I18n.t('years.index.title') + '(ABC)')
+    expect(year.navi_index_str).to eq(I18n.t('years.index.title'))
+  end
+
 end

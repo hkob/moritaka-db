@@ -1,10 +1,23 @@
+%ul.breadcrumb
+  %li=link_to_lh @song.navi_index_str(@song.head1_str(@is_ja)), songs_path(head:@song.head1)
+  %li.active=show_title
 %h1=show_title
 
-%table.table-bordered
-  %thead
-    %tr
-      -%w(activerecord.attributes.song.date).each do |k|
-        %th=t k
-  %tbody
-    %tr{id: :information}
-      %td=mgdnw(@song.date)
+.panel.panel-default
+  .panel-body
+    %table.table.table-bordered
+      %thead
+        %tr
+          -%w(activerecord.attributes.song.date link.lyrics).each do |k|
+            %th=t k
+      %tbody
+        %tr{id: :information}
+          %td
+            =mgdnw(@song.date)
+            -developer_only do
+              =link_to_lh t('link.edit'), edit_song_path(@song)
+          %td
+            =@song.lyrics_str(@is_ja)
+            -developer_only do
+              =link_to_lh t('lyrics.new.title'), new_lyric_path(song_id:@song.id)
+

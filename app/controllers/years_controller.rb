@@ -24,6 +24,10 @@ class YearsController < ApplicationController
     redirect_to years_path
   end
 
+  def show
+    @subtitle = @year.name(@is_ja)
+  end
+
   def get_year
     @year, @ids = get_objects_and_ids [ Year ]
   end

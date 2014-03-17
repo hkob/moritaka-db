@@ -5,6 +5,7 @@ class TopController < ApplicationController
       [ Instrumental, 'link.instrumentals' ],
       [ Person, 'link.people' ],
       [ Song, 'link.songs' ],
+      [ Lyric, 'link.lyrics' ],
     ]
   end
 end

@@ -1,39 +1,48 @@
+%ul.breadcrumb
+  %li.active=show_title
 %h1=show_title
 
-%ul.nav.nav-tabs
-  -@heads.each do |array|
-    -first = array.first
-    -last = array.last
-    -head=@lhead_hash[first]
-    %li{class:(head == @head) ? "active disable" : nil}=link_to "#{first} - #{last}", songs_path(head:head)
+.panel.panel-default
+  .panel-heading
+    %ul.nav.nav-tabs
+      -@heads.each do |array|
+        -first = array.first
+        -last = array.last
+        -head=@lhead_hash[first]
+        %li{class:(head == @head) ? "active disable" : nil}=link_to_lh "#{first} - #{last}", songs_path(head:head)
 
-%table.table-bordered.table-striped.table-hover
-  %thead
-    %tr
-      -%w(link.songs head.another_name activerecord.attributes.song.date).each do |k|
-        %th=t k
-      %th=t 'head.control'
-  %tbody
-    -@songs.each do |song|
-      -next if song.parent
-      -name = song.name(@is_ja)
-      -has_children = false
-      %tr{id:name}
-        %td=name
-        %td
-          -song.children.each do |p|
-            -has_children = true
-            =p.name(@is_ja)
-            -if @is_dev
-              .btn-group.btn-group-xs
-                =link_to t('link.delete_link'), song_path(p, song:{ parent_id:nil }), method: :put, class:"btn btn-default"
-        %td=mgdnw(song.date)
-        %td.btn-group.btn-group-xs
-          =link_to t('songs.show.title'), song, class:"btn btn-default"
-          -if @is_dev
-            -unless has_children
-              =link_to t('link.edit'), edit_song_path(song), class:"btn btn-default"
-              =link_to t('link.destroy'), song_path(song), class:"btn btn-default", method: :delete, data:{ confirm:t('confirm.destroy') } if song.can_delete?
+  .panel-body
+    %table.table.table-bordered.table-striped.table-hover
+      %thead
+        %tr
+          -%w(link.songs head.another_name activerecord.attributes.song.date link.lyrics link.musics).each do |k|
+            %th=t k
+          %th=t 'head.control'
+      %tbody
+        -@songs.each do |song|
+          -next if song.parent
+          -name = song.name(@is_ja)
+          -has_children = false
+          %tr{id:name}
+            %td=name
+            %td
+              -song.children.each do |p|
+                -has_children = true
+                =p.name(@is_ja)
+                -developer_only do
+                  =link_to_lh t('link.delete_link'), song_path(p, song:{ parent_id:nil }), method: :put
+            %td=link_to_lh mgdnw(song.date), song.year
+            %td
+              -song.lyric_people.each_with_index do |p, i|
+                !=i == 0 ? "" : ", "
+                =link_to_lh p.name(@is_ja), p
+            %td
+            %td
+              =link_to_lh t('songs.show.title'), song
+              -developer_only do
+                -unless has_children
+                  =link_to_lh t('link.edit'), edit_song_path(song)
+                  =link_to_lh t('link.destroy'), song_path(song), method: :delete, data:{ confirm:t('confirm.destroy') } if song.can_delete?
 
 
 

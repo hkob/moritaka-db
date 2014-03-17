@@ -1,20 +1,24 @@
+%ul.breadcrumb
+  %li.active=show_title
 %h1=show_title
 
-%table.table-bordered.table-striped.table-hover
-  %thead
-    %tr
-      -%w(.sort_order link.instrumentals).each do |k|
-        %th=t k
-      %th=t 'head.control'
-  %tbody
-    -@instrumentals.each do |instrumental|
-      -name = instrumental.name(@is_ja)
-      %tr{id:name}
-        %td=instrumental.sort_order
-        %td=name
-        %td
-          -if @is_dev
-            .btn-group.btn-group-xs
-              =link_to t('link.edit'), edit_instrumental_path(instrumental), class:"btn btn-default"
-              =link_to t('link.destroy'), instrumental_path(instrumental), class:"btn btn-default", method: :delete, data:{ confirm:t('confirm.destroy') } if instrumental.can_delete?
+.panel.panel-default
+  .panel-body
+    %table.table.table-bordered.table-striped.table-hover
+      %thead
+        %tr
+          -%w(.sort_order link.instrumentals).each do |k|
+            %th=t k
+          %th=t 'head.control'
+      %tbody
+        -@instrumentals.each do |instrumental|
+          -name = instrumental.name(@is_ja)
+          %tr{id:name}
+            %td=instrumental.sort_order
+            %td=name
+            %td
+              =link_to_lh t('link.show'), instrumental
+              -developer_only do
+                =link_to_lh t('link.edit'), edit_instrumental_path(instrumental)
+                =link_to_lh t('link.destroy'), instrumental_path(instrumental), method: :delete, data:{ confirm:t('confirm.destroy') } if instrumental.can_delete?
 

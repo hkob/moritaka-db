@@ -39,4 +39,12 @@ describe Title do
     expect(title.name(false)).to eq('English Japanese')
   end
 
+  it "navi_index_str にてタイトル文字列が取得できること" do
+    expect(title.navi_index_str("ABC")).to eq(I18n.t('titles.index.title') + '(ABC)')
+    expect(title.navi_index_str).to eq(I18n.t('titles.index.title'))
+  end
+
+  it "navi_show_str にてタイトル文字列が取得できること" do
+    expect(title.navi_show_str(true)).to match(I18n.t('titles.show.title') + '\(日本語　英語_\d+\)')
+  end
 end

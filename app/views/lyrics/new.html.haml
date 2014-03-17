@@ -1,44 +1,62 @@
+%ul.breadcrumb
+  %li=link_to_lh @song.navi_index_str(@song.head1_str(@is_ja)), songs_path(head:@song.head1)
+  %li=link_to_lh @song.navi_show_str(@is_ja), @song
+  %li=link_to_lh @song.navi_edit_str(@is_ja), edit_song_path(@song)
+  %li.active=show_title
 %h1=show_title
 
-%h2=t 'head.lyric_and_music'
-%table.table-bordered
-  %thead
-    %tr
-      %th=t 'head.sort_order'
-      %th=t 'link.people'
-      %th=t 'head.control'
-  %tbody
-    -@song.lyrics.order_sort_order.each do |lyric|
-      -person = lyric.person
-      -pname = person.name(@is_ja)
-      %tr{id:"lyric:#{lyric.sort_order}"}
-        %td=lyric.sort_order
-        %td=pname
-        %td.btn-group.btn-group-xs
-          =link_to t('link.edit'), edit_lyric_path(lyric), btn_link_class
-          =link_to t('link.delete_link'), lyric, btn_link_class(method: :delete, date:{ confirm:'confirm.destroy' })
+%h2=t 'link.lyrics'
+.panel.panel-default
+  .panel-body
+    %table.table.table-bordered
+      %thead
+        %tr
+          %th=t 'head.sort_order'
+          %th=t 'link.people'
+          %th=t 'head.control'
+      %tbody
+        -@song.lyrics.order_sort_order.each do |lyric|
+          -person = lyric.person
+          -pname = person.name(@is_ja)
+          %tr{id:"lyric:#{lyric.sort_order}"}
+            %td=lyric.sort_order
+            %td=pname
+            %td
+              -developer_only do
+                =link_to_lh t('link.edit'), edit_lyric_path(lyric)
+                =link_to_lh t('link.delete_link'), lyric, method: :delete, date:{ confirm:'confirm.destroy' }
+%h2=t 'link.musics'
+.panel.panel-default
+  .panel-body
+    %table.table.table-bordered
+      %thead
+
 %hr
-%ul.nav.nav-tabs
-  -@heads.each do |array|
-    -first = array.first
-    -last = array.last
-    -head=@lhead_hash[first]
-    %li{class:(head == @head) ? "active disable" : nil}=link_to "#{first} - #{last}", new_lyric_path(song_id:@song.id, head:head)
-%table.table-bordered.table-striped.table-hover
-  %thead
-    %tr
-      -%w(link.people).each do |k|
-        %th=t k
-      -if @is_dev
-        %th=t 'head.control'
-  %tbody
-    -@people.each do |person|
-      -name = person.name(@is_ja)
-      %tr{id:name}
-        %td=name
-        -if @is_dev
-          %td.btn-group.btn-group-xs
-            -lyric = @exist_hash[person]
-            -unless lyric
-              =link_to t('lyrics.new.title'), lyrics_path(lyric:{ song_id:@song.id, person_id:person.id, sort_order:@sort_order }), btn_link_class(method: :post)
+.panel.panel-default
+  .panel-heading
+    %ul.nav.nav-tabs
+      -@heads.each do |array|
+        -first = array.first
+        -last = array.last
+        -head=@lhead_hash[first]
+        %li{class:(head == @head) ? "active disable" : nil}=link_to_lh "#{first} - #{last}", new_lyric_path(song_id:@song.id, head:head)
+.panel.panel-default
+  .panel-body
+    %table.table.table-bordered.table-striped.table-hover
+      %thead
+        %tr
+          -%w(link.people).each do |k|
+            %th=t k
+          -developer_only do
+            %th=t 'head.control'
+      %tbody
+        -@people.each do |person|
+          -name = person.name(@is_ja)
+          %tr{id:name}
+            %td=name
+            -developer_only do
+              %td
+                -lyric = @exist_hash[person]
+                -unless lyric
+                  =link_to_lh t('lyrics.new.title'), lyrics_path(lyric:{ song_id:@song.id, person_id:person.id, sort_order:@sort_order }), method: :post
 

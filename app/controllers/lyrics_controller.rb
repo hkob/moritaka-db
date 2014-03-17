@@ -19,6 +19,7 @@ class LyricsController < ApplicationController
 
   def edit
     @subtitle = @lyric.name(@is_ja)
+    @song = @lyric.song
   end
 
   def update

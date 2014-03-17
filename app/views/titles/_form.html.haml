@@ -1,10 +1,10 @@
 =form_for @title do |f|
   =display_error(@title)
-  %table.table-bordered.table-striped
+  %table.table.table-bordered.table-striped
     -[ :japanese, :english, :yomi ].each do |key|
       %tr
         %th=f.label key
-        %td=f.text_field key
+        %td=f.text_field key, size:60
     %tr
       %td.text-center{colspan:2}=f.submit nil, class:"btn btn-default"
         

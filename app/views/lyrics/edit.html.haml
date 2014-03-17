@@ -1,5 +1,12 @@
+%ul.breadcrumb
+  %li=link_to_lh @song.navi_index_str(@song.head1_str(@is_ja)), songs_path(head:@song.head1)
+  %li=link_to_lh @song.navi_show_str(@is_ja), @song
+  %li=link_to_lh @song.navi_edit_str(@is_ja), edit_song_path(@song)
+  %li.active=show_title
 %h1=show_title
 
-=render partial:'form'
+.panel.panel-default
+  .panel-body
+    =render partial:'form'
 
 

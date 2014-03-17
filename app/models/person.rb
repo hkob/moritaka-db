@@ -1,5 +1,6 @@
 class Person < ActiveRecord::Base
   include Name
+  include Navi
   validates :title_id, presence:true
   before_destroy do
     self.lyrics.count == 0 && self.musics.count == 0
