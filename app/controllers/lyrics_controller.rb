@@ -14,7 +14,7 @@ class LyricsController < ApplicationController
 
   def create
     @lyric = Lyric.create(lyric_params)
-    redirect_to new_lyric_path(song_id:@lyric.song.id, head:@lyric.person.head1)
+    redirect_to edit_song_path(@lyric.song, head:@lyric.person.head1)
   end
 
   def edit
@@ -26,7 +26,7 @@ class LyricsController < ApplicationController
     if @lyric.update(lyric_params)
       @song = @lyric.song
       @song.renumber_lyrics
-      redirect_to new_lyric_path(song_id:@song.id, head:@lyric.person.head1)
+      redirect_to edit_song_path(@song.id, head:@lyric.person.head1)
     else
       render action: :edit
     end
@@ -37,7 +37,7 @@ class LyricsController < ApplicationController
     @person = @lyric.person
     @lyric.destroy
     @song.renumber_lyrics
-    redirect_to new_lyric_path(song_id:@song.id, head:@person.head1)
+    redirect_to edit_song_path(@song, head:@person.head1)
   end
 
   def get_lyric

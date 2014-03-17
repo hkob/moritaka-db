@@ -14,7 +14,7 @@
           -array.each do |fl|
             %li=link_to_lh fl, titles_path(head:@lhead_hash[fl]) if fl
   .panel-body
-    %table.table.table-bordered.table-striped.table-hover
+    %table.table.table-bordered.table-striped.table-hover.table-responsive
       %thead
         %tr
           -%w(link.titles link.songs link.people link.instrumentals).each do |k|

@@ -30,12 +30,25 @@ class Song < ActiveRecord::Base
     Renumber.renumber_array(self.lyrics.order_sort_order)
   end
 
+  def renumber_musics
+    Renumber.renumber_array(self.musics.order_sort_order)
+  end
+
   def lyric_people
     self.lyrics.order_sort_order.map { |lyric| lyric.person }
   end
 
   def lyrics_str(flag)
-    self.lyrics.order_sort_order.map { |lyric| lyric.person.name(flag) }.join(', ')
+    lyric_people.map { |person| person.name(flag) }.join(', ')
   end
+
+  def music_people
+    self.musics.order_sort_order.map { |music| music.person }
+  end
+
+  def musics_str(flag)
+    music_people.map { |person| person.name(flag) }.join(', ')
+  end
+
 
 end

@@ -20,12 +20,18 @@
           %th=t 'head.content'
           %th=t 'head.control'
       %tbody
-        %tr
+        %tr#lyric
           %th=t 'link.lyrics'
           %td=@song.lyrics_str(@is_ja)
           %td
             -developer_only do
-              =link_to_lh t('lyrics.new.title'), new_lyric_path(song_id:@song.id)
+              =link_to_lh t('lyrics.edit.title'), new_lyric_path(song_id:@song.id, head:@head)
+        %tr#music
+          %th=t 'link.musics'
+          %td=@song.musics_str(@is_ja)
+          %td
+            -developer_only do
+              =link_to_lh t('musics.edit.title'), new_music_path(song_id:@song.id)
 %hr
 %h2=t 'link.add_main'
 .panel.panel-default

@@ -8,7 +8,7 @@
     %table.table.table-bordered
       %thead
         %tr
-          -%w(activerecord.attributes.song.date link.lyrics).each do |k|
+          -%w(activerecord.attributes.song.date link.lyrics link.musics).each do |k|
             %th=t k
       %tbody
         %tr{id: :information}
@@ -19,5 +19,9 @@
           %td
             =@song.lyrics_str(@is_ja)
             -developer_only do
-              =link_to_lh t('lyrics.new.title'), new_lyric_path(song_id:@song.id)
+              =link_to_lh t('lyrics.edit.title'), new_lyric_path(song_id:@song.id)
+          %td
+            =@song.musics_str(@is_ja)
+            -developer_only do
+              =link_to_lh t('musics.edit.title'), new_music_path(song_id:@song.id)
 

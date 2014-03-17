@@ -28,6 +28,11 @@ ja:
       title: "作詞の追加"
     edit:
       title: "作詞の編集"
+  musics:
+    new:
+      title: "作曲の追加"
+    edit:
+      title: "作曲の編集"
   people:
     index:
       title: "人一覧"

@@ -25,9 +25,14 @@ en:
       title: "Song information"
   lyrics:
     new:
-      title: "Add a lyric"
+      title: "Add or edit a lyric"
     edit:
-      title: "Edit the lyric"
+      title: "Edit the order of lyrics"
+  musics:
+    new:
+      title: "Add or edit a music"
+    edit:
+      title: "Edit the order of musics"
   people:
     index:
       title: "List of people"

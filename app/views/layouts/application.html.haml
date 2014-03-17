@@ -8,6 +8,7 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = javascript_include_tag "http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"
     = csrf_meta_tags
+    %meta{name:"viewport", content:"width=device-width"}
   %body
     =render partial:'shared/top_link_bar', locals:{ navi:@navi }
     -if alert

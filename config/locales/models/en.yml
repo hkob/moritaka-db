@@ -17,4 +17,6 @@ en:
         date: Release date
       lyric:
         sort_order: Sort order
+      music:
+        sort_order: Sort order
 

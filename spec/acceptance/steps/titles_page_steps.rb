@@ -20,6 +20,7 @@ step 'タイトルにテスト用データを登録する' do
       [ "森高千里", "Chisato Moritaka", "もりたか　ちさと" ],
       [ "伊秩弘将", "Hiromasa Ijichi", "いぢち　ひろまさ" ],
       [ "HIRO", "HIRO", "ひろ" ],
+      [ "斉藤英夫", "Hideo Saito", "さいとう　ひでお" ],
       [ "渡良瀬橋", "{WATARASEBASHI}", "わたらせばし" ],
       [ "雨", "{AME}", "あめ" ],
       [ "Rain", "Rain", "れいん" ],
