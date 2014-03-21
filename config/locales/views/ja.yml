@@ -83,5 +83,7 @@ ja:
     another_name: '別名'
     base_information: '基本情報'
     lyric_and_music: '作詞・作曲'
+    neighbors_by_name: '隣接(名前)'
+    neighbors_by_date: '隣接(日付)'
   confirm:
     destroy: '本当に削除してもよろしいですか?'

@@ -13,7 +13,7 @@
       %tbody
         %tr{id: :information}
           %td
-            =mgdnw(@song.date)
+            =link_to_lh mgdnw(@song.date), @song.year
             -developer_only do
               =link_to_lh t('link.edit'), edit_song_path(@song)
           %td
@@ -24,4 +24,10 @@
             =@song.musics_str(@is_ja)
             -developer_only do
               =link_to_lh t('musics.edit.title'), new_music_path(song_id:@song.id)
-
+  .panel-footer
+    %table.table.table-bordered
+      =render partial:'/shared/neighbors', locals: { title:'head.neighbors_by_name', before:@song.objects_before_yomi.only_main.limit(Neighbors), center:@song.name(@is_ja), after:@song.objects_after_yomi.only_main.limit(Neighbors) }
+      -same_date_count = @song.objects_same_date.only_main.count
+      -add_info = same_date_count > 1 ? " + #{same_date_count - 1}" : ""
+      =render partial:'/shared/neighbors', locals: { title:'head.neighbors_by_date', before:@song.objects_before_date.order_yomi_desc.only_main.limit(Neighbors), center:"#{@song.name(@is_ja)}#{add_info}", after:@song.objects_after_date.order_yomi.only_main.limit(Neighbors) }
+      

@@ -23,4 +23,23 @@ module Name
     lhead_hash.invert[title.head]
   end
 
+  def objects_before_yomi
+    self.class.joins(:title).merge(Title.before_yomi(self.title.yomi_suuji)).order_yomi_desc
+  end
+
+  def objects_after_yomi
+    self.class.joins(:title).merge(Title.after_yomi(self.title.yomi_suuji)).order_yomi
+  end
+
+  def objects_before_date
+    self.class.before_date(self.date).order_date_desc
+  end
+
+  def objects_after_date
+    self.class.after_date(self.date).order_date
+  end
+
+  def objects_same_date
+    self.class.date_value_is(self.date)
+  end
 end

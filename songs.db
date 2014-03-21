@@ -1,0 +1,2905 @@
+###		 songs.db (曲データベース)				###
+#							発売日付順
+#☆ タグの説明
+# FNAME: html ファイル名 = (w*.html)
+# HTITLE: html header title = (English Name: [Album-NO] English title)
+# JTITLE: 曲の日本語タイトル
+# ETITLE: 曲の英語タイトル
+#	英語のみのタイトルの場合は，JTITLE にそれを書き，ETITLE は書かない．
+# LYRIC: 作詞家の html ファイル名 = (i*.html)
+#	`森高千里' はそのまま書く．
+# MUSIC: 作曲家の html ファイル名 = (i*.html)
+#	`森高千里' はそのまま書く．
+# DATE: 初版の発売日付 = (19\d\d/\d+/\d+)
+# YOMI: タイトルの読み (ひらがなで)
+# JCOMMENT, ECOMMENT: コメント
+# MODIFY: 上記データの最終更新日
+#
+#☆ 更新条件
+# 1. MODIFY が baseDate より新しければ，
+#	a. update(FNAME, MODIFY);
+#	b. LYRIC が`^i' に match すれば
+#		update(LYRIC, MODIFY);
+#	c. MUSIC が`^i' に match すれば
+#		update(MUSIC, MODIFY);
+#	d. dupdate('songs.db', FNAME, MODIFY);
+#	e. sDATE が MODIFY より新しければ sDATE = MODIFY
+# 2. 最後に sDATE が baseDate より新しければ
+#	a. update(songsByName.html, sDATE);
+#	b. update(songsByYear.html, sDATE);
+#	c. update(songsByTieUp.html, sDATE);
+
+FNAME: wNewSeason.html
+HTITLE: Chisato Moritaka:[Song] "NEW SEASON"
+JTITLE: NEW SEASON
+LYRIC: iHiromasaIjichi.html_2
+MUSIC: iHideoSaito.html
+DATE: 1987/5/25
+YOMI: にゅー・しーずん
+TYPE: SAVCK
+MODIFY: 1996/1/1
+
+FNAME: wPeriod.html
+HTITLE: Chisato Moritaka:[Song] "Period"
+JTITLE: ピリオド
+ETITLE: Period
+LYRIC: iHiromasaIjichi.html_2
+MUSIC: iHideoSaito.html
+DATE: 1987/5/25
+YOMI: ぴりおど
+TYPE: SAVC
+MODIFY: 1996/1/1
+
+FNAME: wNamidaGoodBye.html
+HTITLE: Chisato Moritaka:[Song] "NAMIDA Good-bye"
+JTITLE: 涙 Good-bye
+ETITLE: {NAMIDA Good-bye}
+ATITLE: Good bye tears
+LYRIC: iShingoKanno.html
+MUSIC: iTakumiYamamoto.html
+DATE: 1987/7/25
+YOMI: なみだぐっぱい
+TYPE: AVC
+MODIFY: 1996/1/1
+
+FNAME: wYumenoOwari.html
+HTITLE: Chisato Moritaka:[Song] "YUME-NO OWARI"
+JTITLE: 夢の終り
+ETITLE: {YUME-NO OWARI}
+ATITLE: End of the dream
+LYRIC: iShingoKanno.html
+MUSIC: iHideoSaito.html
+DATE: 1987/7/25
+YOMI: ゆめのおわり
+TYPE: AVCK
+MODIFY: 1996/1/1
+
+FNAME: wRingoshunoRule.html
+HTITLE: Chisato Moritaka:[Song] "RINGOSHU-NO rule"
+JTITLE: 林檎酒のルール
+ETITLE: {RINGOSHU-NO rule}
+SFNAME: wRingoshunoRule.html
+HTITLE: Chisato Moritaka:[Song] "RINGOSHU-NO rule"
+LYRIC: iKoiTakayanagi.html
+MUSIC: iKenShima.html
+DATE: 1987/7/25
+YOMI: りんごしゅのるーる
+TYPE: AVC
+MODIFY: 1996/1/1
+
+FNAME: wOtisReddingniKanpai.html
+HTITLE: Chisato Moritaka:[Song] "OtisRedding-NI KANPAI"
+JTITLE: オーティスレディングに乾杯
+ETITLE: {OtisRedding-NI KANPAI}
+ATITLE: Cheers OtisRedding
+LYRIC: iKoiTakayanagi.html
+MUSIC: iHiromichiTsugaki.html
+DATE: 1987/7/25
+YOMI: おーてぃすれでぃんぐにかんぱい
+TYPE: AC
+MODIFY: 1996/1/1
+
+FNAME: wWays.html
+HTITLE: Chisato Moritaka:[Song] "WAYS"
+JTITLE: WAYS
+LYRIC: iHiromiFukunaga.html
+MUSIC: iHiromichiTsugaki.html
+DATE: 1987/7/25
+YOMI: うえいず
+TYPE: A
+MODIFY: 1996/1/1
+
+FNAME: wAnohinoPhotograph.html
+HTITLE: Chisato Moritaka:[Song] "ANOHI-NO photograph"
+JTITLE: あの日のフォトグラフ
+ETITLE: {ANOHI-NO photograph}
+ATITLE: Photographs taken at that day
+LYRIC: iHiromasaIjichi.html
+MUSIC: iKenShima.html
+DATE: 1987/7/25
+YOMI: あのひのふぉとぐらふ
+TYPE: AVC
+MODIFY: 1996/1/1
+
+FNAME: wMissLady.html
+HTITLE: Chisato Moritaka:[Song] "Miss Lady"
+JTITLE: Miss Lady
+LYRIC: iHiromasaIjichi.html
+MUSIC: iHiromasaIjichi.html
+DATE: 1987/7/25
+YOMI: みす・れいでぃ
+TYPE: AC
+MODIFY: 1996/1/1
+
+FNAME: wOverHeatNight.html
+HTITLE: Chisato Moritaka:[Song] "OVERHEAT. NIGHT"
+JTITLE: オーバーヒート・ナイト
+ETITLE: OVERHEAT. NIGHT
+JTITLE2: OVERHEAT. NIGHT
+ETITLE2: OVERHEAT. NIGHT
+LYRIC: iHiromasaIjichi.html
+MUSIC: iHideoSaito.html
+DATE: 1987/10/25
+YOMI: おーばーひーと・ないと
+TYPE: SAVCK
+MODIFY: 1996/1/1
+
+FNAME: wWeekEndBlue.html
+HTITLE: Chisato Moritaka:[Song] "WEEKEND BLUE"
+JTITLE: WEEKEND BLUE
+LYRIC: iHiromasaIjichi.html
+MUSIC: iHideoSaito.html
+DATE: 1987/10/25
+YOMI: うぃーく・えんど・ぶるー
+TYPE: SAVCK
+MODIFY: 1996/1/1
+
+FNAME: wGetSmile.html
+HTITLE: Chisato Moritaka:[Song] "GET SMILE"
+JTITLE: GET SMILE
+LYRIC: iHiromasaIjichi.html
+MUSIC: iKenShima.html
+DATE: 1988/2/25
+YOMI: げっと・すまいる
+TYPE: SAVCK
+MODIFY: 1996/1/1
+
+FNAME: wGoodByeSeason.html
+HTITLE: Chisato Moritaka:[Song] "GOOD-BYE SEASON"
+JTITLE: GOOD-BYE SEASON
+LYRIC: iKanonKuwa.html
+MUSIC: iTakumiYamamoto.html
+DATE: 1988/2/25
+YOMI: ぐっばい・しーずん
+TYPE: SAVCK
+MODIFY: 1996/1/1
+
+FNAME: wYokohamaOneNight.html
+HTITLE: Chisato Moritaka:[Song] "YOKOHAMA ONE NIGHT"
+JTITLE: YOKOHAMA ONE NIGHT
+LYRIC: iHiromasaIjichi.html
+MUSIC: iHideoSaito.html
+DATE: 1988/3/25
+YOMI: よこはま・わん・ないと
+TYPE: AVCK
+MODIFY: 1996/1/1
+
+FNAME: wCantSayGoodBye.html
+HTITLE: Chisato Moritaka:[Song] "CAN'T SAY GOOD-BYE"
+JTITLE: CAN'T SAY GOOD-BYE
+LYRIC: iHiromasaIjichi.html
+MUSIC: iHideoSaito.html
+DATE: 1988/3/25
+YOMI: きゃんと・せい・ぐっばい
+TYPE: ACK
+MODIFY: 1996/1/1
+
+FNAME: wPI-A-NO.html
+HTITLE: Chisato Moritaka:[Song] "PI-A-NO"
+JTITLE: PI-A-NO
+LYRIC: iKanonKuwa.html
+MUSIC: iKenShima.html
+DATE: 1988/3/25
+YOMI: ぴあの
+TYPE: AC
+MODIFY: 1996/1/1
+
+FNAME: w47HardNights.html
+HTITLE: Chisato Moritaka:[Song] "47 HARD NIGHTS"
+JTITLE: 47 HARD NIGHTS
+LYRIC: iHiromasaIjichi.html
+MUSIC: iHideoSaito.html
+DATE: 1988/3/25
+YOMI: ふぉーてぃせぶん・はーど・ないつ
+TYPE: AVC
+MODIFY: 1996/1/1
+
+FNAME: wKissTheNight.html
+HTITLE: Chisato Moritaka:[Song] "KISS THE NIGHT"
+JTITLE: KISS THE NIGHT
+LYRIC: iHiromasaIjichi.html
+MUSIC: iTakumiYamamoto.html
+DATE: 1988/3/25
+YOMI: きす・ざ・ないと
+TYPE: ACK
+MODIFY: 1996/1/1
+
+FNAME: wMi-HA-.html
+HTITLE: Chisato Moritaka:[Song] "Mi-HA-"
+JTITLE: ミーハー
+ETITLE: Mi-HA-
+JTITLE2: ザ・ミーハー
+ETITLE2: The Mi-Ha-
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1988/3/25
+YOMI: みーはー
+TIEUP: CM
+TLINK: mcPIONEER.html#TF-A5
+JTIEUP: パイオニア「<留守番テレフォン TF-A5>」CMソング
+ETIEUP: CM song for <telephone system with answering service TF-A5> (PIONEER)
+TYPE: SAVCK
+MODIFY: 1997/7/19
+
+FNAME: wDoYouKnowTheWayToSanJose.html
+HTITLE: Chisato Moritaka:[Song] "Do you know the way to San Jose"
+JTITLE: サンホセへの道 Do you know the way to San Jose
+ETITLE: Do you know the way to San Jose
+LYRIC: iHDavid.html
+LYRIC: iBBacharach.html
+MUSIC: iHDavid.html
+MUSIC: iBBacharach.html
+DATE: 1988/7/10
+YOMI: さんほせへのみち
+TYPE: AC
+MODIFY: 1996/1/1
+
+FNAME: wRomantic.html
+HTITLE: Chisato Moritaka:[Song] "Romantic"
+JTITLE: Romantic
+LYRIC: 森高千里
+MUSIC: iKenShima.html
+DATE: 1988/7/10
+YOMI: ろまんちっく
+TYPE: AC
+MODIFY: 1996/1/1
+
+FNAME: wKaigan.html
+HTITLE: Chisato Moritaka:[Song] "KAIGAN"
+JTITLE: 海岸
+ETITLE: {KAIGAN}
+ATITLE: Beach
+LYRIC: iMakotoOishi.html
+MUSIC: iTakumiYamamoto.html
+DATE: 1988/7/10
+YOMI: かいがん
+TYPE: AC
+MODIFY: 1996/1/1
+
+FNAME: wShizukanaNatsu.html
+HTITLE: Chisato Moritaka:[Song] "SHIZUKA-NA NATU"
+JTITLE: 静かな夏
+ETITLE: {SHIZUKA-NA NATU}
+ATITLE: Tranquil summer
+LYRIC: iKanonKuwa.html
+MUSIC: iTakumiYamamoto.html
+DATE: 1988/7/10
+YOMI: しずかななつ
+TYPE: AC
+MODIFY: 1996/1/1
+
+FNAME: wAlone.html
+HTITLE: Chisato Moritaka:[Song] "ALONE"
+JTITLE: ALONE
+LYRIC: 森高千里
+MUSIC: iShinjiYasuda.html
+DATE: 1988/11/17
+YOMI: あろーん
+TYPE: SAVCK
+MODIFY: 1996/1/1
+
+FNAME: wChase.html
+HTITLE: Chisato Moritaka:[Song] "CHASE"
+JTITLE: CHASE
+LYRIC: iKanonKuwa.html
+MUSIC: iTakumiYamamoto.html
+DATE: 1988/10/25
+YOMI: ちぇいす
+TYPE: SK
+MODIFY: 1996/1/1
+
+FNAME: wOmoshiroi.html
+HTITLE: Chisato Moritaka:[Song] "OMOSHIROI" [Moritaka Connection]
+JTITLE: おもしろい [森高コネクション]
+ETITLE: {OMOSHIROI} [Moritaka Connection]
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1988/11/17
+YOMI: おもしろい
+TYPE: AC
+MODIFY: 1996/1/1
+
+FNAME: wWakaretaOnna.html
+HTITLE: Chisato Moritaka:[Song] "WAKARETA ONNA"
+JTITLE: 別れた女
+ETITLE: {WAKARETA ONNA}
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1988/11/17
+YOMI: わかれたおんな
+TYPE: AVCK
+MODIFY: 1996/1/1
+
+FNAME: w0WatashigaHen.html
+HTITLE: Chisato Moritaka:[Song] "WATASHI-GA HEN?"
+JTITLE: 私が変?
+ETITLE: {WATASHI-GA HEN?}
+LYRIC: iEkisuSuzuki.html
+MUSIC: iTakumiYamamoto.html
+DATE: 1988/11/17
+YOMI: わたしがへん
+TYPE: AVCK
+MODIFY: 1996/1/1
+
+FNAME: wStress.html
+HTITLE: Chisato Moritaka:[Song] "Stress"
+JTITLE: ストレス
+ETITLE: Stress
+JTITLE2: ザ・ストレス
+ETITLE2: The stress
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1988/11/17
+YOMI: すとれす
+TYPE: SAVCK
+MODIFY: 1996/5/22
+
+FNAME: wDetagari.html
+HTITLE: Chisato Moritaka:[Song] "DETAGARI"
+JTITLE: 出たがり
+ETITLE: {DETAGARI}
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1988/11/17
+YOMI: でたがり
+TYPE: ACK
+MODIFY: 1996/1/1
+
+FNAME: wModorenaiNatsu.html
+HTITLE: Chisato Moritaka:[Song] "MODORENAI NATSU"
+JTITLE: 戻れない夏
+ETITLE: {MODORENAI NATSU}
+LYRIC: iKanonKuwa.html
+MUSIC: iKenShima.html
+DATE: 1988/11/17
+YOMI: もどれないなつ
+TYPE: AVCK
+MODIFY: 1996/1/1
+
+FNAME: wMite.html
+HTITLE: Chisato Moritaka:[Song] "MITE"
+JTITLE: 見て
+ETITLE: {MITE}
+ATITLE: Look!!
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1988/11/17
+YOMI: みて
+TYPE: AVCK
+MODIFY: 1996/1/1
+
+FNAME: wLetMeGo.html
+HTITLE: Chisato Moritaka:[Song] "LET ME GO"
+JTITLE: LET ME GO
+LYRIC: iHiromasaIjichi.html
+LYRIC: 森高千里
+MUSIC: iShinjiYasuda.html
+DATE: 1988/11/17
+YOMI: れっと・みい・ごー
+TYPE: AVCK
+MODIFY: 1996/1/1
+
+FNAME: wYurusenai.html
+HTITLE: Chisato Moritaka:[Song] "YURUSENAI"
+JTITLE: ユルセナイ
+ETITLE: {YURUSENAI}
+ATITLE: I can't permit you
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1989/2/25
+YOMI: ゆるせない
+TYPE: SVC
+MODIFY: 1996/1/1
+
+FNAME: w17sai.html
+HTITLE: Chisato Moritaka:[Song] "JUNANA-SAI"
+JTITLE: 17才
+ETITLE: {JUNANA-SAI}
+ATITLE: Seventeen
+LYRIC: iMiekoArima.html
+MUSIC: iKyoheiTsutsumi.html
+DATE: 1989/4/15
+YOMI: じゅうななさい
+TYPE: SAVCK
+MODIFY: 1996/1/1
+
+FNAME: wTheLocoMotion.html
+HTITLE: Chisato Moritaka:[Song] "THE LOCO-MOTION"
+JTITLE: THE LOCO-MOTION
+LYRIC: iGerryGoffin.html
+MUSIC: iCaroleKing.html
+DATE: 1989/4/15
+YOMI: ざ・ろこ・もーしょん
+TYPE: VC
+MODIFY: 1996/1/4
+
+FNAME: wHatachi.html
+HTITLE: Chisato Moritaka:[Song] "HATACHI"
+JTITLE: 20才
+ETITLE: {HATACHI}
+ATITLE: Twenty
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1989/5/25
+YOMI: はたち
+TYPE: SVCK
+MODIFY: 1996/1/1
+
+FNAME: wKorekkiriByeBye.html
+HTITLE: Chisato Moritaka:[Song] "KOREKKIRI ByeBye"
+JTITLE: これっきりバイバイ
+ETITLE: {KOREKKIRI ByeBye}
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1989/7/25
+YOMI: これっきりばいばい
+TYPE: AVCK
+MODIFY: 1996/1/1
+
+FNAME: wDaite.html
+HTITLE: Chisato Moritaka:[Song] "DAITE"
+JTITLE: だいて
+ETITLE: {DAITE}
+ATITLE: Hold me
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1989/7/25
+YOMI: だいて
+TYPE: SAVCK
+MODIFY: 1996/1/1
+
+FNAME: wHijitsuryokuhaSengen.html
+HTITLE: Chisato Moritaka:[Song] "HI-JITSURYOKUHA SENGEN"
+JTITLE: 非実力派宣言
+ETITLE: {HI-JITSURYOKUHA SENGEN}
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1989/7/25
+YOMI: ひじつりょくはせんげん
+TYPE: AVCK
+MODIFY: 1996/1/1
+
+FNAME: wKondoWatashiDokoka.html
+HTITLE: Chisato Moritaka:[Song] "KONDO WATASHI DOKOKA TSURETE-ITTE...
+JTITLE: 今度私どこか連れていって下さいよ
+ETITLE: {KONDO WATASHI DOKOKA TSURETE-ITTE KUDASAI-YO}
+ATITLE: Please take me somewhere another time, wouldn't you?
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1989/7/25
+YOMI: こんどわたしどこかつれていってくださいよ
+TYPE: SAVCK
+MODIFY: 1996/1/1
+
+FNAME: w0HadakaniwaNaranai.html
+HTITLE: Chisato Moritaka:[Song] "HADAKA-NIHA NARANAI"
+JTITLE: はだかにはならない
+ETITLE: {HADAKA-NIHA NARANAI}
+LYRIC: 森高千里
+MUSIC: iMasataroNaoe.html
+DATE: 1989/7/25
+YOMI: はだかにはならない
+TYPE: AC
+MODIFY: 1996/1/1
+
+FNAME: w1WatashiwaOnchi.html
+HTITLE: Chisato Moritaka:[Song] "WATASHI-HA ONCHI"
+JTITLE: 私はおんち
+ETITLE: {WATASHI-HA ONCHI}
+ATITLE: I'm tone-deaf
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1989/7/25
+YOMI: わたしはおんち
+TYPE: AVCK
+MODIFY: 1996/1/1
+
+FNAME: wShiritagari.html
+HTITLE: Chisato Moritaka:[Song] "SHIRITAGARI"
+JTITLE: しりたがり
+ETITLE: {SHIRITAGARI}
+LYRIC: 森高千里
+MUSIC: 森高千里
+DATE: 1989/7/25
+YOMI: しりたがり
+TYPE: AVC
+MODIFY: 1996/1/1
+
+FNAME: wWakasugitaKoi.html
+HTITLE: Chisato Moritaka:[Song] "WAKASUGITA-KOI"
+JTITLE: 若すぎた恋
+ETITLE: {WAKASUGITA-KOI}
+ATITLE: My salad day's love
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1989/7/25
+YOMI: わかすぎたこい
+TYPE: SAK
+MODIFY: 1996/1/1
+
+FNAME: wAkunnoHigeki.html
+HTITLE: Chisato Moritaka:[Song] "A-KUN NO HIGEKI"
+JTITLE: A君の悲劇
+ETITLE: {A-KUN NO HIGEKI}
+ATITLE: Tragedy of A boy
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1989/7/25
+YOMI: えーくんのひげき
+TYPE: ACK
+MODIFY: 1996/1/1
+
+FNAME: wYorunoEntotsu.html
+HTITLE: Chisato Moritaka:[Song] "YORU-NO ENTOTSU"
+JTITLE: 夜の煙突
+ETITLE: {YORU-NO ENTOTSU}
+LYRIC: iMasataroNaoe.html
+MUSIC: iMasataroNaoe.html
+DATE: 1989/7/25
+YOMI: よるのえんとつ
+TYPE: AVCK
+MODIFY: 1996/1/1
+
+FNAME: wSonogonoWatashi.html
+HTITLE: Chisato Moritaka:[Song] "SONOGONO WATASHI" [Moritaka Connection]
+JTITLE: その後の私 [森高コネクション]
+ETITLE: {SONOGONO WATASHI} [Moritaka Connection]
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1989/7/25
+YOMI: そのごのわたし
+TYPE: AVCK
+MODIFY: 1996/1/1
+
+FNAME: wYumenoNakanoKiss.html
+HTITLE: Chisato Moritaka:[Song] "YUME-NO NAKA-NO Kiss"
+JTITLE: 夢の中のキス
+ETITLE: {YUME-NO NAKA-NO Kiss}
+ATITLE: Kiss in my dream
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1989/7/25
+YOMI: ゆめのなかのきす
+TYPE: ACK
+MODIFY: 1996/1/1
+
+FNAME: wUwasa.html
+HTITLE: Chisato Moritaka:[Song] "UWASA"
+JTITLE: うわさ
+ETITLE: {UWASA}
+ATITLE: Rumor
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1989/12/10
+YOMI: うわさ
+TYPE: ACK
+MODIFY: 1996/1/1
+
+FNAME: wMichi.html
+HTITLE: Chisato Moritaka:[Song] "MICHI"
+JTITLE: 道
+ETITLE: {MICHI}
+ATITLE: A road
+LYRIC: 森高千里
+MUSIC: iShinjiYasuda.html
+DATE: 1989/12/10
+YOMI: みち
+TIEUP: CM
+TLINK: mcEzakiGuriko.html#PockeyMichi
+JTIEUP: 江崎グリコ「<アーモンド・クラッシュ・ポッキー>」CMソング
+ETIEUP: CM song for <Almond crush pockey> (Ezaki Guriko)
+TYPE: SAVCK
+MODIFY: 1997/7/19
+
+FNAME: wPepperInspector.html
+HTITLE: Chisato Moritaka:[Song] "Pepper Inspector"
+JTITLE: ペッパー警部
+ETITLE: Pepper Inspector
+LYRIC: iYuAku.html
+MUSIC: iShunichiTokura.html
+DATE: 1990/1/12
+YOMI: ぺっぱーけいぶ
+TYPE: C
+MODIFY: 1998/3/21
+
+FNAME: wSOS.html
+HTITLE: Chisato Moritaka:[Song] "SOS"
+JTITLE: SOS
+LYRIC: iYuAku.html
+MUSIC: iShunichiTokura.html
+DATE: 1990/1/12
+YOMI: えすおーえす
+TYPE: C
+MODIFY: 1998/3/21
+
+FNAME: wNagisaNoSindbad.html
+HTITLE: Chisato Moritaka:[Song] "NAGISA-NO Sindbad"
+JTITLE: 渚のシンドバット
+ETITLE: {NAGASA-NO Sindbad}
+ATITLE: Sindbad on a beach
+LYRIC: iYuAku.html
+MUSIC: iShunichiTokura.html
+DATE: 1990/1/12
+YOMI: なぎさのしんどばっと
+TYPE: C
+MODIFY: 1998/3/21
+
+FNAME: wSouthpaw.html
+HTITLE: Chisato Moritaka:[Song] "Southpaw"
+JTITLE: サウスポー
+ETITLE: Southpaw
+LYRIC: iYuAku.html
+MUSIC: iShunichiTokura.html
+DATE: 1990/1/12
+YOMI: さうすぽー
+TYPE: C
+MODIFY: 1998/3/21
+
+FNAME: wUFO.html
+HTITLE: Chisato Moritaka:[Song] "UFO"
+JTITLE: UFO
+LYRIC: iYuAku.html
+MUSIC: iShunichiTokura.html
+DATE: 1990/1/12
+YOMI: ゆーふぉー
+TYPE: C
+MODIFY: 1998/3/21
+
+FNAME: wSeishun.html
+HTITLE: Chisato Moritaka:[Song] "SEISHUN"
+JTITLE: 青春
+ETITLE: {SEISHUN}
+ATITLE: Youth
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1990/1/25
+YOMI: せいしゅん
+TIEUP: TVDRAMA
+TLINK: mt1990.html#0
+JTIEUP: 日本テレビ系土曜グランド劇場「<いけない女子高物語>」主題歌
+ETIEUP: Theme song for a TV drama "<{IKENAI JOSHIKO MONOGATARI}>" (NTV)
+TYPE: SAVCK
+MODIFY: 1998/7/16
+
+FNAME: wKusaimononiwaFutaosiro.html
+HTITLE: Chisato Moritaka:[Song] "KUSAIMONO-NIWA FUTAWOSIRO!!"
+JTITLE: 臭いものにはフタをしろ!!
+ETITLE: {KUSAIMONO-NIHA FUTA-O SHIRO!!}
+ATITLE: Kick away a detest thing!
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1990/5/25
+YOMI: くさいものにはふたをしろ
+TIEUP: CM
+TLINK: mcPIONEER.html#TF-X5_0
+JTIEUP: パイオニア「<留守番できるコードレス TF-X5>」CMソング
+ETIEUP: CM song for <codeless telephone system with answering service TF-X5> (PIONEER)
+TYPE: SAVCK
+MODIFY: 1997/7/19
+
+FNAME: wNozokanaide.html
+HTITLE: Chisato Moritaka:[Song] "NOZOKANAIDE"
+JTITLE: のぞかないで
+ETITLE: {NOZOKANAIDE}
+ATITLE: Don't peep!!
+JTITLE2: ザ・のぞかないで
+ETITLE2: The {NOZOKANAIDE}
+ATITLE2: Don't peep!!
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1990/5/25
+YOMI: のぞかないで
+TYPE: SCK
+MODIFY: 1996/5/22
+
+FNAME: wAme.html
+HTITLE: Chisato Moritaka:[Song] "AME"
+JTITLE: 雨
+ETITLE: {AME}
+ATITLE: Rain
+JTITLE2: Rain
+JTITLE3: 雨 [1999]
+ETITLE3: Rain [1999]
+LYRIC: 森高千里
+MUSIC: iSeijiMatsuura.html
+DATE: 1990/9/23
+YOMI: あめ
+TYPE: SAVCK
+MODIFY: 1990/9/23
+
+FNAME: wCupMyudol.html
+HTITLE: Chisato Moritaka:[Song] "Cup MYUDOL"
+JTITLE: カップ・ミュードル
+ETITLE: {Cup MYUDOL}
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1990/9/10
+YOMI: かっぷ・みゅーどる
+TYPE: S
+MODIFY: 1996/1/1
+
+FNAME: wOnitaiji.html
+HTITLE: Chisato Moritaka:[Song] "ONI-TAIJI"
+JTITLE: 鬼たいじ
+ETITLE: {ONI-TAIJI}
+ATITLE: Orge Destruction
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1990/10/17
+YOMI: おにたいじ
+TYPE: AVCK
+MODIFY: 1996/1/1
+
+FNAME: wTheBustersBlues.html
+HTITLE: Chisato Moritaka:[Song] "The Buster's Blues"
+JTITLE: ザ・バスターズ・ブルース
+ETITLE: The Buster's Blues
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1990/10/17
+YOMI: ざ・ばすたーず・ぶるーす
+TYPE: AVCK
+MODIFY: 1996/1/1
+
+FNAME: wAruOLnoSeishun.html
+HTITLE: Chisato Moritaka:[Song] "ARU OL-NO SEISUN" (Moritaka Connection)
+JTITLE: あるOLの青春 〜A子の場合〜 (森高コネクション)
+ETITLE: {ARU OL-NO SEISHUN &#126;A-KO-NO BAAI&#126;} (Moritaka Connection)
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1990/10/17
+YOMI: あるおおえるのせいしゅん
+TYPE: AVCK
+MODIFY: 1996/1/1
+
+FNAME: wOyeComoVa.html
+HTITLE: Chisato Moritaka:[Song] "OYE COMO VA"
+JTITLE: OYE COMO VA
+LYRIC: iTitoPuente.html
+MUSIC: iTitoPuente.html
+DATE: 1990/10/17
+YOMI: おえこもぶぁ
+TYPE: AC
+MODIFY: 1996/1/1
+
+FNAME: wDaibouken.html
+HTITLE: Chisato Moritaka:[Song] "DAIBOUKEN"
+JTITLE: 大冒険
+ETITLE: {DAIBOUKEN}
+ATITLE: Great adventures
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1990/10/17
+YOMI: だいぼうけん
+TYPE: AK
+MODIFY: 1996/1/1
+
+FNAME: wHongKong.html
+HTITLE: Chisato Moritaka:[Song] "Hong Kong"
+JTITLE: 香港
+ETITLE: Hong Kong
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1990/10/17
+YOMI: ほんこん
+TYPE: AVCK
+MODIFY: 1996/1/1
+
+FNAME: wHare.html
+HTITLE: Chisato Moritaka:[Song] "HARE"
+JTITLE: 晴れ
+ETITLE: {HARE}
+ATITLE: It's fine
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1990/10/17
+YOMI: はれ
+TYPE: ACK
+MODIFY: 1996/1/1
+
+FNAME: wMisaki.html
+HTITLE: Chisato Moritaka:[Song] "MISAKI"
+JTITLE: 岬
+ETITLE: {MISAKI}
+ATITLE: A cape
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1990/10/17
+YOMI: みさき
+TYPE: ACK
+MODIFY: 1996/1/1
+
+FNAME: wFunkeyMonkeyBaby.html
+HTITLE: Chisato Moritaka:[Song] "Funkey Monkey Baby"
+JTITLE: ファンキー・モンキー・ベイビー
+ETITLE: Funkey Monkey Baby
+LYRIC: iYoichiOkura.html
+MUSIC: iEikichiYazawa.html
+DATE: 1990/10/17
+YOMI: ふぁんきー・もんきー・べいびー
+TYPE: AVC
+MODIFY: 1996/1/1
+
+FNAME: wTsukiyonoKoukai.html
+HTITLE: Chisato Moritaka:[Song] "TSUKIYO-NO KOKAI"
+JTITLE: 月夜の航海
+ETITLE: {TSUKIYO-NO KOKAI}
+ATITLE: A cruise under the moon light
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1990/10/17
+YOMI: つきよのこうかい
+TYPE: AVCK
+MODIFY: 1996/1/1
+
+FNAME: w0Tomodachi.html
+HTITLE: Chisato Moritaka:[Song] "TOMODACHI"
+JTITLE: 友達
+ETITLE: {TOMODACHI}
+ATITLE: A friend
+LYRIC: 森高千里
+MUSIC: iShinjiYasuda.html
+DATE: 1990/10/17
+YOMI: ともだち
+TYPE: A
+MODIFY: 1996/1/1
+
+FNAME: wKonomachi.html
+HTITLE: Chisato Moritaka:[Song] "KONOMACHI"
+JTITLE: この街
+ETITLE: {KONOMACHI}
+ATITLE: Hometown
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1990/10/17
+YOMI: このまち
+TYPE: SAVCK
+MODIFY: 1996/1/1
+
+FNAME: wTeriyakiBurger.html
+HTITLE: Chisato Moritaka:[Song] "TERIYAKI burger"
+JTITLE: テリヤキ・バーガー
+ETITLE: {TERIYAKI burger}
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1990/10/17
+YOMI: てりやき・ばーがー
+TYPE: AVCK
+MODIFY: 1996/1/1
+
+FNAME: wUchiniKagitteSonnaKotowa.html
+HTITLE: Chisato Moritaka:[Song] "UCHINI KAGITTE SONNA KOTOWA NAIHAZU"
+JTITLE: うちにかぎってそんなことはないはず
+ETITLE: {UCHINI KAGITTE SONNA KOTOHA NAIHAZU}
+LYRIC: 森高千里
+MUSIC: iMasataroNaoe.html
+DATE: 1990/10/17
+YOMI: うちにかぎってそんなことはないはず
+TYPE: ACK
+MODIFY: 1996/1/1
+
+FNAME: wKoiwaNorikonasenaimono.html
+HTITLE: Yuichi Takahashi:[Song] "KOI-WA NORIKONASENAIMONO"
+JTITLE: 恋は乗りこなせないもの
+ETITLE: {KOI-HA NORIKONASENAIMONO}
+LYRIC: i0YuichiTakahashi.html
+MUSIC: i0YuichiTakahashi.html
+DATE: 1990/10/25
+YOMI: こいはのりこなせないもの
+TYPE: A
+MODIFY: 1996/1/1
+
+FNAME: wKumorizora.html
+HTITLE: Yuichi Takahashi:[Song] "KUMORIZORA"
+JTITLE: くもり空
+ETITLE: {KUMORIZORA}
+ATITLE: A cloudy sky
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1990/10/25
+YOMI: くもりそら
+TYPE: A
+MODIFY: 1996/1/1
+
+FNAME: w1RocknRollWidow.html
+HTITLE: Chisato Moritaka:[Song] "Rock'n Roll Widow"
+JTITLE: ロックンロール・ウィドウ
+ETITLE: Rock'n Roll Widow
+LYRIC: ?
+MUSIC: ?
+DATE: 1990/12/15
+YOMI: ろっくんろーるうぃどう
+TYPE: VC
+MODIFY: 1996/5/22
+
+FNAME: wBenkyonoUta.html
+HTITLE: Chisato Moritaka:[Song] "BENKYO-NO UTA"
+JTITLE: 勉強の歌
+ETITLE: {BENKYO-NO UTA}
+ATITLE: Study song
+JTITLE2: ザ・勉強の歌
+ETITLE2: The {BENKYO-NO UTA}
+ATITLE2: The study song
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1991/2/10
+YOMI: べんきょうのうた
+TIEUP: TVANIME
+TLINK: mt1991.html#0
+JTIEUP: 日本テレビ系アニメ「<おちゃめなふたご クレア学院物語>」
+JTIEUP: オープニングテーマ
+ETIEUP: Opening thema for an animation program
+ETIEUP: <{OCHAME-NA FUTAGO}> (NTV)
+TYPE: SAVCK
+MODIFY: 1998/7/16
+
+FNAME: w1HadakaniwaSasenai.html
+HTITLE: Chisato Moritaka:[Song] "HADAKA-NIWA SASENAI"
+JTITLE: はだかにはさせない
+ETITLE: {HADAKA-NIHA SASENAI}
+LYRIC: 森高千里
+LYRIC: iMasataroNaoe.html
+MUSIC: iMasataroNaoe.html
+DATE: 1991/5/??
+YOMI: はだかにはさせない
+TYPE: A
+MODIFY: 1996/1/1
+
+FNAME: wMoretsunaHitoMoretsunaKoi.html
+HTITLE: CARNATION:[Song] "MORETSUNA HITO MORETSUNA KOI"
+JTITLE: モーレツな人モーレツな恋
+ETITLE: {MORETSUNA HITO MORETSUNA KOI}
+LYRIC: 森高千里
+LYRIC: iMasataroNaoe.html
+MUSIC: iMasataroNaoe.html
+DATE: 1991/5/??
+YOMI: もーれつなひともーれつなこい
+TYPE: A
+MODIFY: 1996/1/1
+
+FNAME: wHachigatsunoKoi.html
+HTITLE: Chisato Moritaka:[Song] "HACHIGATSU-NO KOI"
+JTITLE: 八月の恋
+ETITLE: {HACHIGATSU-NO KOI}
+ATITLE: I fell in love in this August
+LYRIC: 森高千里
+MUSIC: iKyoheiTsutsumi.html
+DATE: 1991/6/25
+YOMI: はちがつのこい
+TIEUP: TVETC
+TLINK: mt1991.html#0
+JTIEUP: テレビ朝日系全国ネット「<ビデオ あなたが主役>」テーマ曲
+ETIEUP: Thema song for a program "<{Video ANATAGA SHUYAKU}>" (TV Asashi)
+TYPE: SAVCK
+MODIFY: 1996/4/3
+
+FNAME: wItsumademo.html
+HTITLE: Chisato Moritaka:[Song] "ITSUMADEMO"
+JTITLE: いつまでも
+ETITLE: {ITSUMADEMO}
+ATITLE: Forever
+LYRIC: 森高千里
+MUSIC: iShinjiYasuda.html
+DATE: 1991/6/25
+YOMI: いつまでも
+TIEUP: TVANIME
+TLINK: mt1991.html#0
+JTIEUP: 日本テレビ系アニメ「<おちゃめなふたご クレア学院物語>」
+JTIEUP: エンディングテーマ
+ETIEUP: Ending thema for an animation program
+ETIEUP: "<{OCHAME-NA FUTAGO}>" (NTV)
+TYPE: SK
+MODIFY: 1998/7/16
+
+FNAME: wMijikaiNatsu.html
+HTITLE: Chisato Moritaka:[Song] "MIJIKAI NATSU"
+JTITLE: 短い夏
+ETITLE: {MIJIKAI NATSU}
+ATITLE: Short summer
+LYRIC: 森高千里
+MUSIC: iKyoheiTsutsumi.html
+DATE: 1991/7/10
+YOMI: みじかいなつ
+TYPE: ACK
+MODIFY: 1996/1/1
+
+FNAME: wKanojo.html
+HTITLE: Chisato Moritaka:[Song] "KANOJO"
+JTITLE: 彼女
+ETITLE: {KANOJO}
+ATITLE: The Girl
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1991/7/10
+YOMI: かのじょ
+TYPE: ACK
+MODIFY: 1996/1/1
+
+FNAME: wFight.html
+HTITLE: Chisato Moritaka:[Song] "Fight!!"
+JTITLE: ファイト!!
+ETITLE: Fight!!
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1991/10/25
+YOMI: ふぁいと
+TIEUP: TVETC
+TLINK: mt1991.html#0
+JTIEUP: フジテレビ系 「<バレーボールワールドカップ'91>」 イメージソング
+ETIEUP: Image song for "<Volleyball world cup '91>" (FUJI-TV)
+TYPE: SAVCK
+MODIFY: 1998/7/16
+
+FNAME: wHitorigurashi.html
+HTITLE: Chisato Moritaka:[Song] "HITORIGURASHI"
+JTITLE: ひとり暮らし
+ETITLE: {HITORIGURASHI}
+ATITLE: Living alone
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1991/10/25
+YOMI: ひとりぐらし
+TYPE: SCK
+MODIFY: 1996/1/1
+
+FNAME: wConcertnoYoru.html
+HTITLE: Chisato Moritaka:[Song] "Concert-NO YORU"
+JTITLE: コンサートの夜
+ETITLE: {Concert-NO YORU}
+ATITLE: The night we went to the concert
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1992/2/25
+YOMI: こんさーとのよる
+TYPE: SAVCK
+MODIFY: 1996/1/1
+
+FNAME: wZokuAruOLnoSeishun.html
+HTITLE: Chisato Moritaka:[Song] "ZOKU ARU OL-NO SEISUN"
+JTITLE: 続・あるOLの青春 〜A子の場合〜 [森高コネクション]
+ETITLE: {ZOKU ARU OL-NO SEISHUN &#126;A-KO-NO BAAI&#126; (Moritaka Connection)
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1992/2/25
+YOMI: ぞく・あるおおえるのせいしゅん
+TYPE: SK
+MODIFY: 1996/1/1
+
+FNAME: wYacchimaina.html
+HTITLE: Chisato Moritaka:[Song] "YACCHIMAINA"
+JTITLE: やっちまいな
+ETITLE: {YACCHIMAINA}
+LYRIC: 森高千里
+MUSIC: iYasuakiMaejima.html
+DATE: 1992/3/25
+YOMI: やっちまいな
+TYPE: AVCK
+MODIFY: 1996/1/1
+
+FNAME: w2WatashigaObasanniNattemo.html
+HTITLE: Chisato Moritaka:[Song] "WATASHI-GA OBASAN-NI NATTEMO"
+JTITLE: 私がオバさんになっても
+ETITLE: {WATASHI-GA OBASAN-NI NATTEMO}
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1992/3/25
+YOMI: わたしがおばさんになっても
+TIEUP: TVDRAMA
+TLINK: mt1992.html#0
+JTIEUP: 日本テレビ系ドラマ「<まったナシ!>」主題歌
+ETIEUP: Thema song for TV drama "<{MATTANASHI!}>" (NTV)
+TYPE: SAVCK
+MODIFY: 1998/7/16
+
+FNAME: wObasan.html
+HTITLE: Chisato Moritaka:[Song] "OBASAN"
+JTITLE: 叔母さん
+ETITLE: {OBASAN}
+ATITLE: My Aunt
+LYRIC: 森高千里
+MUSIC: iHiromasaIjichi.html
+DATE: 1992/3/25
+YOMI: おばさん
+TYPE: AK
+MODIFY: 1996/1/1
+
+FNAME: wGuitar.html
+HTITLE: Chisato Moritaka:[Song] "Guitar"
+JTITLE: ギター
+ETITLE: Guitar
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1992/3/25
+YOMI: ぎたー
+TYPE: AVCK
+MODIFY: 1996/1/1
+
+FNAME: wTheBlueBlues.html
+HTITLE: Chisato Moritaka:[Song] "THE BLUE BLUES"
+JTITLE: THE BLUE BLUES
+LYRIC: 森高千里
+MUSIC: iShinKohno.html
+DATE: 1992/3/25
+YOMI: ざ・ぶるー・ぶるーす
+MODFIY: 1996/1/1
+
+FNAME: wFurusatonoSora.html
+HTITLE: Chisato Moritaka:[Song] "FURUSATO-NO SORA"
+JTITLE: ふるさとの空
+ETITLE: {FURUSATO-NO SORA}
+ATITLE: The sky in my country
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1992/3/25
+YOMI: ふるさとのそら
+TYPE: AK
+MODIFY: 1996/1/1
+
+FNAME: wRockAlive.html
+HTITLE: Chisato Moritaka:[Song] "ROCK ALIVE"
+JTITLE: ROCK ALIVE
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1992/3/25
+YOMI: ろっく・あらいゔ
+TYPE: AVCK
+MODIFY: 1996/1/1
+
+FNAME: wYowaseteyoKonyadake.html
+HTITLE: Chisato Moritaka:[Song] "YOWASETEYO KONYA-DAKE"
+JTITLE: 酔わせてよ今夜だけ
+ETITLE: {YOWASETEYO KONYA-DAKE}
+LYRIC: 森高千里
+MUSIC: 森高千里
+DATE: 1992/3/25
+YOMI: よわせてよこんやだけ
+TYPE: SAVCK
+MODIFY: 1996/1/1
+
+FNAME: wMitsuketaSaifu.html
+HTITLE: Chisato Moritaka:[Song] "MITSUKETA SAIFU"
+JTITLE: 見つけたサイフ
+ETITLE: {MITSUKETA SAIFU}
+ATITLE: A purse we found
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1992/3/25
+YOMI: みつけたさいふ
+TYPE: AVCK
+MODIFY: 1996/1/1
+
+FNAME: wRhythmToBass.html
+HTITLE: Chisato Moritaka:[Song] "RHYTHM-TO BASS"
+JTITLE: RHYTHMとBASS
+ETITLE: {RHYTHM-TO BASS}
+ATITLE: Rhythm and Bass
+LYRIC: 森高千里
+MUSIC: iHiroyoshiMatsuo.html
+DATE: 1992/3/25
+YOMI: りずむとぺーす
+TYPE: AVCK
+MODIFY: 1996/1/1
+
+FNAME: wWakarimashita.html
+HTITLE: Chisato Moritaka:[Song] "WAKARIMASHITA"
+JTITLE: わかりました
+ETITLE: {WAKARIMASHITA}
+ATITLE: I see
+LYRIC: 森高千里
+MUSIC: iMasafumiYokoyama.html
+DATE: 1992/3/25
+YOMI: わかりました
+TYPE: AVCK
+MODIFY: 1996/1/1
+
+FNAME: wBossaMarina.html
+HTITLE: Chisato Moritaka:[Song] "BOSSA MARINA"
+JTITLE: BOSSA MARINA
+LYRIC: 森高千里
+MUSIC: i0TakayukiHattori.html
+DATE: 1992/3/25
+YOMI: ぼさ・まりーな
+TYPE: A
+MODIFY: 1996/1/1
+
+FNAME: w0NatsunoUmi.html
+HTITLE: Chisato Moritaka:[Song] "NATSU-NO UMI"
+JTITLE: 夏の海
+ETITLE: {NATSU-NO UMI}
+ATITLE: Summer beach
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1992/3/25
+YOMI: なつのうみ
+TYPE: AVCK
+MODIFY: 1996/1/1
+
+FNAME: wAmenochiHare.html
+HTITLE: Chisato Moritaka:[Song] "AME-NOCHI HARE"
+JTITLE: 雨のち晴れ
+ETITLE: {AME-NOCHI HARE}
+ATITLE: Fine after rain
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1992/3/25
+YOMI: あめのちはれ
+TYPE: AVC
+MODIFY: 1996/1/1
+
+FNAME: wJitenshaTsugaku.html
+HTITLE: Chisato Moritaka:[Song] "JITENSHA TSUGAKU"
+JTITLE: 自転車通学
+ETITLE: {JITENSHA TSUGAKU}
+ATITLE: Attending school by bicycle
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1992/6/25
+YOMI: じてんしゃつうがく
+TYPE: SK
+MODIFY: 1996/1/1
+
+FNAME: wHikisakanaideFutario.html
+HTITLE: Noriko Kato:[Song] "HIKISAKANAIDE FUTARI-WO"
+JTITLE: 引き裂かないで二人を
+ETITLE: {HIKISAKANAIDE FUTARI-WO}
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1992/7/25
+YOMI: ひきさかないでふたりを
+TYPE: SA
+MODIFY: 1996/1/1
+
+FNAME: wPepperland.html
+HTITLE: Chisato Moritaka:[Song] "Pepperland"
+JTITLE: ペパーランド (PEPPERLAND)
+ETITLE: Pepperland
+LYRIC: 森高千里
+MUSIC: iShinKohno.html
+DATE: 1992/11/18
+YOMI: ぺぱーらんど
+TYPE: AK
+MODIFY: 1996/1/1
+
+FNAME: wDocchimoDocchi.html
+HTITLE: Chisato Moritaka:[Song] "DOCHI-MO DOCHI"
+JTITLE: どっちもどっち
+ETITLE: {DOCHI-MO DOCHI}
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1992/11/18
+YOMI: どっちもどっち
+TIEUP: TVETC
+TLINK: mt1992.html#0
+JTIEUP: テレビ朝日系「<クイズ! 純粋男女交遊>」エンディングテーマ
+ETIEUP: Ending Thema for a TV program "<Quiz! {JUNSUI DANJO KOUYU}>" (TV Asahi)
+TYPE: AK
+MODIFY: 1998/7/16
+
+FNAME: wAtamagaItai.html
+HTITLE: Chisato Moritaka:[Song] "ATAMA-GA ITAI"
+JTITLE: 頭が痛い
+ETITLE: {ATAMA-GA ITAI}
+ATITLE: Headache
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1992/11/18
+YOMI: あたまがいたい
+TYPE: A
+MODIFY: 1996/1/1
+
+FNAME: wSunrise.html
+HTITLE: Chisato Moritaka:[Song] "Sunrise"
+JTITLE: サンライズ
+ETITLE: Sunrise
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1992/11/18
+YOMI: さんらいず
+TYPE: A
+MODIFY: 1996/1/1
+
+FNAME: w0RocknRollKenchoShozaichi.html
+HTITLE: Chisato Moritaka:[Song] "Rock'n Roll KENCHO-SHOZAICHI"
+JTITLE: ロックンロール県庁所在地
+ETITLE: Rock'n Roll {KENCHO-SHOZAICHI}
+JTITLE2: ロックンロール県庁所在地 '95
+ETITLE2: Rock'n Roll {KENCHO-SHOZAICHI} '95
+LYRIC: 森高千里
+MUSIC: 森高千里
+DATE: 1992/11/18
+YOMI: ろっくんろーるけんちょうしょざいち
+TYPE: SAVCK
+MODIFY: 1996/5/22
+
+FNAME: wAmenoAsa.html
+HTITLE: Chisato Moritaka:[Song] "AME-NO ASA"
+JTITLE: 雨の朝
+ETITLE: {AME-NO ASA}
+ATITLE: Rain morning
+LYRIC: 森高千里
+MUSIC: iYasuakiMaejima.html
+DATE: 1992/11/18
+YOMI: あめのあさ
+TYPE: AK
+MODIFY: 1996/1/1
+
+FNAME: wTokonatsunoParadise.html
+HTITLE: Chisato Moritaka:[Song] "TOKONATSU-NO Paradise"
+JTITLE: 常夏のパラダイス
+ETITLE: {TOKONATSU-NO Paradise}
+ATITLE: A paradise of everlasting summer
+LYRIC: 森高千里
+MUSIC: iToshiakiMatsumoto.html
+DATE: 1992/11/18
+YOMI: とこなつのぱらだいす
+TYPE: AK
+MODIFY: 1996/1/1
+
+FNAME: wUturnWagaya.html
+HTITLE: Chisato Moritaka:[Song] "U turn" (WAGAYA)"
+JTITLE: Uターン (我が家)
+ETITLE: U turn ({WAGAYA})
+ATITLE: U turn (My home)
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1992/11/18
+YOMI: ゆーたーん (わがや)
+TYPE: A
+MODIFY: 1996/1/1
+
+FNAME: wGokigennaAsa.html
+HTITLE: Chisato Moritaka:[Song] "GOKIGEN-NA ASA"
+JTITLE: ごきげんな朝
+ETITLE: {GOKIGEN-NA ASA}
+ATITLE: Special day's morning
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1992/11/18
+YOMI: ごきげんなあさ
+TYPE: A
+MODIFY: 1996/1/1
+
+FNAME: wRockAlarmClock.html
+HTITLE: Chisato Moritaka:[Song] "ROCK ALARM CLOCK"
+JTITLE: ROCK ALARM CLOCK
+LYRIC: 森高千里
+MUSIC: iMasataroNaoe.html
+DATE: 1992/11/18
+YOMI: ろっく・あらーむ・くろっく
+TYPE: A
+MODIFY: 1996/1/1
+
+FNAME: wAoiUmi.html
+HTITLE: Chisato Moritaka:[Song] "AOI UMI"
+JTITLE: 青い海
+ETITLE: {AOI UMI}
+ATITLE: Blue sea
+LYRIC: 森高千里
+MUSIC: iHiroyoshiMatsuo.html
+DATE: 1992/11/18
+YOMI: あおいうみ
+TYPE: A
+MODIFY: 1996/1/1
+
+FNAME: wWatarasebashi.html
+HTITLE: Chisato Moritaka:[Song] "WATARASE BASHI"
+JTITLE: 渡良瀬橋
+ETITLE: {WATARASE BASHI}
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1993/1/25
+YOMI: わたらせばし
+TIEUP: TVETC
+TLINK: mt1993.html#0
+JTIEUP: テレビ東京系「<いい旅・夢気分>」エンディング・テーマ
+ETIEUP: Ending thema for a TV program "<{II-TABI YUME-KIBUN}>"
+TYPE: SAVCK
+MODIFY: 1998/7/16
+
+FNAME: wWriterShibo.html
+HTITLE: Chisato Moritaka:[Song] "Writer SHIBO"
+JTITLE: ライター志望
+ETITLE: {Writer SHIBO}
+ATITLE: A would-be writer
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1993/1/25
+YOMI: らいたーしぼう
+TIEUP: TVETC
+TLINK: mt1993.html#0
+JTIEUP: テレビ朝日系「<クイズ! 純粋男女交遊>」 ニュー・エンディングテーマ
+ETIEUP: New Ending Thema for a TV program
+ETIEUP: "<Quiz! {JUNSUI DANJO KOUYU}>" (TV Asahi)
+TYPE: SVCK
+MODIFY: 1998/7/16
+
+FNAME: w3WatashinoNatsu.html
+HTITLE: Chisato Moritaka:[Song] "WATASHI-NO NATSU"
+JTITLE: 私の夏
+ETITLE: {WATASHI-NO NATSU}
+ATITLE: My summer
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1993/4/10
+YOMI: わたしのなつ
+TIEUP: CM
+TLINK: mcANA.html#SummerOkinawa
+JTIEUP: 全日空(ANA) 「<ANA'S SUMMER 沖縄>」CMソング
+ETIEUP: CM song for <ANA'S SUMMER Okinawa> (All Nihon Airline) 
+TYPE: SAVCK
+MODIFY: 1997/7/19
+
+FNAME: wLucky7Blues.html
+HTITLE: Chisato Moritaka:[Song] "LUCKY 7 BLUES"
+JTITLE: LUCKY 7 BLUES
+MUSIC: iYasuakiMaejima.html
+DATE: 1993/5/7
+YOMI: らっきー・せぶん・ぶるーす
+TYPE: VC
+MODIFY: 1996/1/4
+
+FNAME: wTeoTatako.html
+HTITLE: Chisato Moritaka:[Song] "TE-O TATAKO"
+JTITLE: 手をたたこう
+ETITLE: {TE-O TATAKO}
+ATITLE: Clap Clap
+JTITLE2: 手をたたこう 2
+ETITLE2: {TE-O TATAKO} 2
+ATITLE2: Clap Clap 2
+LYRIC: 森高千里
+MUSIC: 森高千里
+DATE: 1993/5/10
+YOMI: てをたたこう
+TYPE: SAVCK
+MODIFY: 1996/1/1
+
+FNAME: wTankiwaSonki.html
+HTITLE: Chisato Moritaka:[Song] "TANKI-WA SONKI"
+JTITLE: 短気は損気
+ETITLE: {TANKI-WA SONKI}
+ATITLE: Out of temper, out of money
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1993/5/10
+YOMI: たんきはそんき
+TYPE: AK
+MODIFY: 1996/1/1
+
+FNAME: wHaretaNichiyobi.html
+HTITLE: Chisato Moritaka:[Song] "HARETA NICHIYOUBI"
+JTITLE: 晴れた日曜日
+ETITLE: {HARETA NICHIYOUBI}
+ATITLE: Fine Sunday
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1993/5/10
+YOMI: はれたにちようび
+TYPE: AK
+MODIFY: 1996/1/1
+
+FNAME: wJiminaOnna.html
+HTITLE: Chisato Moritaka:[Song] "JIMI-NA ONNA"
+JTITLE: 地味な女
+ETITLE: {JIMI-NA ONNA}
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1993/5/10
+YOMI: じみなおんな
+TYPE: AVCK
+MODIFY: 1996/1/1
+
+FNAME: wToiMukashi.html
+HTITLE: Chisato Moritaka:[Song] "TOI MUKASHI"
+JTITLE: 遠い昔
+ETITLE: {TOI MUKASHI}
+ATITLE: Long long ago
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1993/5/10
+YOMI: とおいむかし
+TYPE: AK
+MODIFY: 1996/1/1
+
+FNAME: wBassariYatteyo.html
+HTITLE: Chisato Moritaka:[Song] "BASSARI YATTEYO"
+JTITLE: ばっさりやってよ
+ETITLE: {BASSARI YATTEYO}
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1993/5/10
+YOMI: ばっさりやってよ
+TYPE: AK
+MODIFY: 1996/1/1
+
+FNAME: wILoveYou.html
+HTITLE: Chisato Moritaka:[Song] "I Love You"
+JTITLE: I LOVE YOU
+LYRIC: 森高千里
+MUSIC: iHiromasaIjichi.html
+DATE: 1993/5/10
+YOMI: あい・らゔ・ゆう
+TYPE: AVCK
+MODIFY: 1996/1/1
+
+FNAME: wHaeotoko.html
+HTITLE: Chisato Moritaka:[Song] "HAEOTOKO"
+JTITLE: ハエ男
+ETITLE: {HAEOTOKO}
+ATITLE: The disgusting man
+LYRIC: 森高千里
+MUSIC: 森高千里
+DATE: 1993/5/10
+YOMI: はえおとこ
+TIEUP: TVETC
+TLINK: mt1993.html#0
+JTIEUP: フジテレビ系「<ウッチャンナンチャンのやるならやらねば!>」
+JTIEUP: ハエ男コーナー挿入歌
+ETIEUP: Thema song for "{HAEOTOKO}" corner in a TV program "<{UCCHAN 
+ETIEUP: NANCHAN-NO YARUNARA YARANEBA!}>" (FUJI-TV)
+TYPE: SAVCK
+MODIFY: 1996/4/3
+
+FNAME: wSayonaraWatashinoKoi.html
+HTITLE: Chisato Moritaka:[Song] "SAYONARA WATASHI-NO KOI"
+JTITLE: さよなら私の恋
+ETITLE: {SAYONARA WATASHI-NO KOI}
+ATITLE: Good bye to love
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1993/5/10
+YOMI: さよならわたしのこい
+TYPE: AVCK
+MODIFY: 1996/1/1
+
+FNAME: w1TomodachinoKare.html
+HTITLE: Chisato Moritaka:[Song] "TOMODACHI-NO KARE"
+JTITLE: 友達の彼
+ETITLE: {TOMODACHI-NO KARE}
+ATITLE: He is my friend's lover
+LYRIC: 森高千里
+MUSIC: iHiromasaIjichi.html
+DATE: 1993/5/10
+YOMI: ともだちのかれ
+TYPE: AVCK
+MODIFY: 1996/1/1
+
+FNAME: wOtokonoRoman.html
+HTITLE: Chisato Moritaka:[Song] "OTOKO-NO ROMAN"
+JTITLE: 男のロマン
+ETITLE: {OTOKO-NO ROMAN}
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1993/5/10
+YOMI: おとこのろまん
+TYPE: AK
+MODIFY: 1996/1/1
+
+FNAME: wMemories.html
+HTITLE: Chisato Moritaka:[Song] "Memories"
+JTITLE: Memories
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1993/5/10
+YOMI: めもりーず
+TIEUP: TVETC
+TLINK: mt1993.html#0
+JTIEUP: フジテレビ系「<ウッチャンナンチャンのやるならやらねば!>」
+JTIEUP: エンディングテーマ
+ETIEUP: Ending thema song for a TV program "<{UCCHAN NANCHAN-NO
+ETIEUP: YARUNARA YARANEBA!}>" (FUJI-TV)
+TYPE: SAVCK
+MODIFY: 1998/7/16
+
+FNAME: wKazeniFukarete.html
+HTITLE: Chisato Moritaka:[Song] "KAZE-NI FUKARETE"
+JTITLE: 風に吹かれて
+ETITLE: {KAZE-NI FUKARETE}
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1993/10/11
+YOMI: かぜにふかれて
+TIEUP: CM
+TLINK: mcANA.html#LaKyushu
+JTIEUP: 全日空 「<ANA's ラ・九州>」CMソング
+ETIEUP: CM song for <ANA's La. Kyusyu> (All Nihon airline)
+TYPE: SAVCK
+MODIFY: 1997/7/19
+
+FNAME: wKyushuSodachi.html
+HTITLE: Chisato Moritaka:[Song] "KYUSHU SODACHI"
+JTITLE: 九州育ち
+ETITLE: {KYUSHU SODACHI}
+ATITLE: Kyushu-reared
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1993/10/11
+YOMI: きゅうしゅうそだち
+TYPE: SK
+MODIFY: 1996/1/1
+
+FNAME: wRocknOmelette.html
+HTITLE: Chisato Moritaka:[Song] "Rock'n Omelette"
+JTITLE: ロックン・オムレツ
+ETITLE: Rock'n Omelette
+LYRIC: 森高千里
+MUSIC: iHiromasaIjichi.html
+DATE: 1994/1/25
+YOMI: ろっくん・おむれつ
+TIEUP: TVETC
+TLINK: mt1994.html#0
+JTIEUP: フジテレビ系「<ポンキッキーズ>」挿入歌
+ETIEUP: Thema song for a TV program "<Ponkickies>" (FUJI-TV)
+TYPE: SAVCK
+MODIFY: 1998/7/16
+
+FNAME: wKibunSokai.html
+HTITLE: Chisato Moritaka:[Song] "KIBUN-SOKAI"
+JTITLE: 気分爽快
+ETITLE: {KIBUN-SOKAI}
+ATITLE: Fine feeling
+LYRIC: 森高千里
+MUSIC: i0KenichiKurosawa.html
+DATE: 1994/1/31
+YOMI: きぶんそうかい
+TIEUP: CM
+TLINK: mcAsahiBeer.html#AsahiZNatsu
+JTIEUP: アサヒビール「<アサヒ生ビールＺ>」CMソング
+ETIEUP: CM song for <Asahi draft beer Z, Spring &amp; Summer version> (Asahi beer)
+TYPE: SAVCK
+MODIFY: 1997/7/19
+
+FNAME: w1Natsunohi.html
+HTITLE: Chisato Moritaka:[Song] "NATSU-NO HI"
+JTITLE: 夏の日
+ETITLE: {NATSU-NO HI}
+ATITLE: Summer day
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1994/5/10
+YOMI: なつのひ
+TIEUP: TVETC
+TLINK: mt1994.html#0
+JTIEUP: テレビ東京系「<浅草橋ヤング洋品店>」エンディング・テーマ
+ETIEUP: Ending thema for a TV program "<{ASAKUSA-BASHI Young YOHINTEN}>"
+TYPE: SAVCK
+MODIFY: 1998/7/16
+
+FNAME: wKowaiYume.html
+HTITLE: Chisato Moritaka:[Song] "KOWAI YUME"
+JTITLE: こわい夢
+ETITLE: {KOWAI YUME}
+ATITLE: Dreadful dreams
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1994/5/10
+YOMI: こわいゆめ
+TYPE: S
+MODIFY: 1996/1/1
+
+FNAME: wKimioKowashitai.html
+HTITLE: Haruhiko Ando:[Song] "KIMI-O KOWASHITAI"
+JTITLE: 君を壊したい
+ETITLE: {KIMI-WO KOWASHITAI}
+LYRIC: iHaruhikoAndo.html
+MUSIC: iHaruhikoAndo.html
+DATE: 1994/5/25
+YOMI: きみをこわしたい
+TYPE: S
+MODIFY: 1996/1/1
+
+FNAME: wKiss.html
+HTITLE: Haruhiko Ando:[Song] "Kiss"
+JTITLE: Kiss
+LYRIC: iHaruhikoAndo.html
+MUSIC: iHaruhikoAndo.html
+DATE: 1994/5/25
+YOMI: きす
+TYPE: S
+MODIFY: 1996/1/1
+
+FNAME: wWakasanoHiketsu.html
+HTITLE: Chisato Moritaka:[Song] "WAKASA-NO HIKETSU"
+JTITLE: 若さの秘訣
+ETITLE: {WAKASA-NO HIKETSU}
+ATITLE: The secret for youth
+LYRIC: 森高千里
+MUSIC: 森高千里
+DATE: 1994/7/25
+YOMI: わかさのひけつ
+TYPE: SAK
+MODIFY: 1996/1/1
+
+FNAME: wZuruyasumi.html
+HTITLE: Chisato Moritaka:[Song] "ZURUYASUMI"
+JTITLE: ずる休み
+ETITLE: {ZURUYASUMI}
+ATITLE: Truancy
+LYRIC: 森高千里
+MUSIC: iHiromasaIjichi.html
+DATE: 1994/7/25
+YOMI: ずるやすみ
+TYPE: AK
+MODIFY: 1996/1/1
+
+FNAME: wOtokonara.html
+HTITLE: Chisato Moritaka:[Song] "OTOKO-NARA"
+JTITLE: 男なら
+ETITLE: {OTOKO-NARA}
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1994/7/25
+YOMI: おとこなら
+TYPE: AK
+MODIFY: 1996/1/1
+
+FNAME: wEverybodysGotSomething.html
+HTITLE: Chisato Moritaka:[Song] "Everybody's Got Something To Hide...
+JTITLE: Everybody's Got Something To Hide Except Me And My Monkey
+LYRIC: iLennonMcCartney.html
+MUSIC: iLennonMcCartney.html
+DATE: 1994/7/25
+YOMI: えぶりぃばでぃ・ごっと・さむしんぐ・とぅ・はいど・えくすせぷと・みい・あんど・まい・もんきー
+TYPE: AK
+MODIFY: 1996/1/1
+
+FNAME: wTorikago.html
+HTITLE: Chisato Moritaka:[Song] "TORIKAGO"
+JTITLE: 鳥かご
+ETITLE: {TORIKAGO}
+ATITLE: Birdcage
+LYRIC: 森高千里
+MUSIC: iYasuakiMaejima.html
+DATE: 1994/7/25
+YOMI: とりかご
+TYPE: AK
+MODIFY: 1996/1/1
+
+FNAME: wHoshinoOjisama.html
+HTITLE: Chisato Moritaka:[Song] "HOSHI-NO OJI-SAMA"
+JTITLE: 星の王子様
+ETITLE: {HOSHI-NO OJI-SAMA}
+ATITLE: A prince of the star
+LYRIC: 森高千里
+MUSIC: iYasuakiMaejima.html
+DATE: 1994/7/25
+YOMI: ほしのおうじさま
+TYPE: AK
+MODIFY: 1996/1/1
+
+FNAME: w4WatashinoDaijinaHito.html
+HTITLE: Chisato Moritaka:[Song] "WATASHI-NO DAIJI-NA HITO"
+JTITLE: 私の大事な人
+ETITLE: {WATASHI-NO DAIJI-NA HITO}
+ATITLE: He is my dear
+LYRIC: 森高千里
+MUSIC: 森高千里
+DATE: 1994/7/25
+YOMI: わたしのだいじなひと
+TYPE: SAVK
+MODIFY: 1996/1/1
+
+FNAME: wIchidoAsobiniKiteyo.html
+HTITLE: Chisato Moritaka:[Song] "ICHIDO ASOBI-NI KITEYO"
+JTITLE: 一度遊びに来てよ
+ETITLE: {ICHIDO ASOBI-NI KITEYO}
+ATITLE: Please come and see me once some day
+JTITLE2: 一度遊びに来てよ'99
+ETITLE2: {ICHIDO ASOBI-NI KITEYO}'99
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1994/7/25
+YOMI: いちどあそびにきてよ
+TYPE: SAK
+MODIFY: 1996/1/1
+
+FNAME: wOfficeGainoKoi.html
+HTITLE: Chisato Moritaka:[Song] "Office GAI-NO KOI"
+JTITLE: オフィス街の恋
+ETITLE: {Office GAI-NO KOI}
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1994/7/25
+YOMI: おふぃすがいのこい
+TYPE: AK
+MODIFY: 1996/1/1
+
+FNAME: wTaifu.html
+HTITLE: Chisato Moritaka:[Song] "Typhoon"
+JTITLE: 台風
+ETITLE: {TAIFU}
+LYRIC: 森高千里
+ATITLE: Typhoon
+MUSIC: iHiromasaIjichi.html
+DATE: 1994/7/25
+YOMI: たいふう
+TYPE: AK
+MODIFY: 1996/1/1
+
+FNAME: wStepByStepKarenoJinsei.html
+HTITLE: Chisato Moritaka:[Song] "STEP BY STEP -- KARE-NO JINSEI --"
+JTITLE: STEP BY STEP 〜彼の人生〜
+ETITLE: STEP BY STEP &#126;{KARE-NO JINSEI}&#126;
+ATITLE: STEP BY STEP &#126; A man's life &#126;
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1994/7/25
+YOMI: すてっぷ・ばい・すてっぷ 〜かれのじんせい〜
+TYPE: AK
+MODIFY: 1996/1/1
+
+FNAME: wSutekinaTanjobi.html
+HTITLE: Chisato Moritaka:[Song] "SUTEKI-NA TANJOBI"
+JTITLE: 素敵な誕生日
+ETITLE: {SUTEKI-NA TANJOBI}
+ATITLE: The wonderful birthday
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1994/10/10
+YOMI: すてきなたんじょうび
+TIEUP: CM
+TLINK: mcAsahiBeer.html#AsahiZFuyu
+JTIEUP: アサヒビール「<アサヒ生ビールＺ>」CMソング
+ETIEUP: CM song for <Asahi draft beer Z, Fall &amp; Winter version> (Asahi beer)
+TYPE: SAVCK
+MODIFY: 1997/7/19
+
+FNAME: w13gatsunoAme.html
+HTITLE: Nafuna, etc:[Song] "13GATSU-NO AME -- SEMETE AME-GA YAMUMADE --
+JTITLE: １３月の雨 〜せめて雨が止むまで〜
+ETITLE: {13GATSU-NO AME -- SEMETE AME-GA YAMUMADE --}
+LYRIC: i1EijiTakino.html
+MUSIC: 森高千里
+DATE: 1994/11/23
+YOMI: じゅうさんがつのあめ
+TIEUP: TVETC
+TLINK: mt1994.html#0
+JTIEUP: テレビ東京系「<いい旅・夢気分>」エンディング・テーマ
+ETIEUP: Ending thema for a TV program "<{II-TABI YUME-KIBUN}>"
+TYPE: SK
+MODIFY: 1998/7/16
+
+FNAME: wFutariwaKoibito.html
+HTITLE: Chisato Moritaka:[Song] "FUTARIWA-KOIBITO"
+JTITLE: 二人は恋人
+ETITLE: {FUTARI-KOIBITO}
+ATITLE: We are a pair of lovers
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1995/2/10
+YOMI: ふたりはこいびと
+TIEUP: TVDRAMA
+TLINK: mt1995.html#0
+JTIEUP: 日本テレビ系ドラマ「<恋も二度目なら>」主題歌
+ETIEUP: Thema song for a TV drama "<{KOI-MO NIDOME-NARA}>" (NTV)
+TYPE: SAVCK
+MODIFY: 1998/7/16
+
+FNAME: wDiamonds.html
+HTITLE: Chisato Moritaka:[Song] "Diamonds"
+JTITLE: DIAMONDS
+DATE: 1995/3/7
+LYRIC: iKanakoNakayama.html
+MUSIC: iKaoriOkui.html
+YOMI: だいあもんず
+TYPE: C
+MODIFY: 1996/8/28
+
+FNAME: wKyokara.html
+HTITLE: Chisato Moritaka:[Song] "KYOKARA"
+JTITLE: 今日から
+ETITLE: {KYOKARA}
+ATITLE: From today
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1995/3/25
+YOMI: きょうから
+TYPE: AVCK
+MODIFY: 1996/1/1
+
+FNAME: w0GinGinGin.html
+HTITLE: Chisato Moritaka:[Song] "GIN GIN GIN"
+JTITLE: GIN GIN GIN
+LYRIC: 森高千里
+MUSIC: 森高千里
+DATE: 1995/4/14
+YOMI: じん じん じん
+TIEUP: CM
+TLINK: mcSuntory.html#GINGINGIN
+JTIEUP: サントリー 「<アイス・ジン>」CMソング
+ETIEUP: CM song for <ICE GIN> (Suntory)
+TYPE: AVC
+MODIFY: 1998/2/13
+
+FNAME: wShiawaseniNarimasu.html
+HTITLE: Sanae Jonouchi:[Song] "SHIAWASE-NI NARIMASU"
+JTITLE: 幸せになります
+ETITLE: {SHIAWASE-NI NARIMASU}
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1995/4/26
+YOMI: しあわせになります
+TIEUP: TVETC
+TLINK: mt1995.html#0
+JTIEUP: テレビ東京系「<いい旅・夢気分>」エンディング・テーマ
+ETIEUP: Ending thema for a TV program "<{II-TABI YUME-KIBUN}>"
+TYPE: SAK
+MODIFY: 1998/7/16
+
+FNAME: wHeyVodka.html
+HTITLE: Chisato Moritaka:[Song] "Hey, VODKA!"
+JTITLE: Hey, VODKA!
+LYRIC: iDosiUotsuka.html
+MUSIC: 森高千里
+DATE: 1995/7/20
+YOMI: へい・うおっか
+TIEUP: CM
+TLINK: mcSuntory.html#VODKA
+JTIEUP: サントリー 「<アイス・ウオツカ>」CMソング
+ETIEUP: CM song for <ICE VODKA> (Suntory)
+TYPE: AC
+MODIFY: 1997/7/19
+
+FNAME: wTrueLove.html
+HTITLE: Shigeru Izumiya &amp; Chisato Moritaka:[Song] "True Love"
+JTITLE: トゥルーラブ
+ETITLE: True Love
+LYRIC: iShigeruIzumiya.html
+MUSIC: iKenYoshida.html
+DATE: 1995/7/21
+YOMI: とぅるーらぶ
+TYPE: AC
+MODIFY: 1996/1/1
+
+FNAME: w2RocknRollNyaKaneKakaru.html
+HTITLE: Chisato Moritaka:[Songs] "Rock'n Roll-{NYA KANE KAKARU}"
+JTITLE: ロックンロールにゃ金かかる
+ETITLE: Rock'n Roll-{NYA KANE KAKARU}
+LYRIC: ?
+MUSIC: ?
+DATE: 1995/8/12
+YOMI: ろっくんろーるにゃかねかかる
+TYPE: C
+MODIFY: 1996/8/28
+
+FNAME: wSaaBoukenda.html
+HTITLE: Akiko Wada:[Song] "SAA BOUKEN-DA"
+JTITLE: さあ冒険だ
+ETITLE: {SAA BOUKEN-DA}
+LYRIC: 森高千里
+LYRIC: iSItoi.html
+MUSIC: iCarlSmokyIshii.html
+DATE: 1995/9/1
+YOMI: さあぼうけんだ
+TIEUP: TVETC
+JTIEUP: フジテレビ系「ポンキッキーズ」挿入歌
+ETIEUP: Thema song for a TV program "Ponkickies" (FUJI-TV)
+TYPE: SA
+MODIFY: 1996/9/16
+
+FNAME: wYasuminoGogo.html
+HTITLE: Chisato Moritaka:[Song] "YASUMI-NO GOGO"
+JTITLE: 休みの午後
+ETITLE: {YASUMI-NO GOGO}
+ATITLE: Horiday afternoon
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1995/10/10
+YOMI: やすみのごご
+TIEUP: TVETC
+JTIEUP: テレビ東京系「いい旅・夢気分」エンディング・テーマ
+ETIEUP: Ending thema for a TV program "{II-TABI YUME-KIBUN}"
+TYPE: SAVCK
+MODIFY: 1996/7/12
+
+FNAME: wWasuremono.html
+HTITLE: Chisato Moritaka:[Song] "WASUREMONO"
+JTITLE: 忘れ物
+ETITLE: {WASUREMONO}
+ATITLE: A thing left behind
+LYRIC: 森高千里
+MUSIC: iHideoSaito.html
+DATE: 1995/10/10
+YOMI: わすれもの
+TYPE: S
+MODIFY: 1996/1/1
+
+FNAME: wJinJinJinglebell.html
+HTITLE: Chisato Moritaka:[Song] "JIN JIN JINGLEBELL"
+JTITLE: ジン ジン ジングルベル
+ETITLE: JIN JIN JINGLEBELL
+LYRIC: 森高千里
+MUSIC: 森高千里
+DATE: 1995/12/1
+YOMI: じん じん じんぐるべる
+TYPE: SVCK
+MODIFY: 1996/1/1
+
+FNAME: w1GinGinGinglebell.html
+HTITLE: Chisato Moritaka:[Song] "GIN GIN GINGLEBELL"
+JTITLE: GIN GIN ジングルベル
+ETITLE: GIN GIN GINGLEBELL
+LYRIC: 森高千里
+MUSIC: 森高千里
+DATE: 1995/12/1
+YOMI: じん じん じんぐるべる
+TIEUP: CM
+LINK: mcSuntory.html#GINGLEBELL
+JTIEUP: サントリー 「<アイス・ジン>」CMソング
+ETIEUP: CM song for <ICE GIN> (Suntory)
+TYPE: SC
+MODIFY: 1997/7/19
+
+FNAME: wIchigatsuIchijitsu.html
+HTITLE: Chisato Moritaka:[Song] "ICHIGATSU ICHIJITSU"
+JTITLE: 一月一日
+ETITLE: ICHIGATSU ICHIJITSU
+LYRIC: iTakatomiSenge.html
+MUSIC: i1MasayukiUe.html
+DATE: 1995/12/1
+YOMI: いちがついちじつ
+TYPE: S
+MODIFY: 1996/1/1
+
+FNAME: wSoBlue.html
+HTITLE: Chisato Moritaka:[Song] "So Blue"
+JTITLE: So Blue
+LYRIC: 森高千里
+MUSIC: iHiromasaIjichi.html
+DATE: 1996/2/19
+YOMI: そおぶるう
+TIEUP: TVETC
+JTIEUP: TBS系「Count Down TV」オープニング・テーマ
+ETIEUP: Opening thema for a TV program "Count Down TV (TBS)"
+TYPE: SAVCK
+MODIFY: 1996/7/12
+
+FNAME: wChisatoSamba.html
+HTITLE: Chisato Moritaka:[Song] "Chisato Samba"
+JTITLE: 千里サンバ
+ETITLE: Chisato Samba
+LYRIC: 森高千里
+MUSIC: 森高千里
+DATE: 1996/2/19
+YOMI: ちさとさんば
+TYPE: S
+MODIFY: 1996/2/19
+
+FNAME: wLaLaSunshine.html
+HTITLE: Chisato Moritaka:[Song] "La La Sunshine"
+JTITLE: ララ サンシャイン
+ETITLE: La La Sunshine
+LYRIC: 森高千里
+MUSIC: iHiromasaIjichi.html
+DATE: 1996/6/10
+YOMI: ららさんしゃいん
+TYPE: SAVCK
+TIEUP: TVETC
+TLINK: http://www2b.meshnet.or.jp/~hamaten/MezamashiTV/index.html
+JTIEUP: フジテレビ系「<めざましテレビ>」 テーマソング
+ETIEUP: Thema song for a TV program "<{MEZAMASHI TV}> (FUJI-TV)
+MODIFY: 1998/9/23
+
+FNAME: wMukashinoHitowa.html
+HTITLE: Chisato Moritaka:[Song] "MUKASHI-NO HITO-WA"
+JTITLE: むかしの人は…
+ETITLE: {MUKASHI-NO HITO-HA}
+LYRIC: 森高千里
+MUSIC: 森高千里
+DATE: 1996/6/10
+YOMI: むかしのひとはてんてんてん
+TYPE: S
+MODIFY: 1996/6/27
+
+FNAME: wNatsuwaPararaylon.html
+HTITLE: Chisato Moritaka:[Song] "NATSU-WA Pararaylon"
+JTITLE: 夏はパラレイロン (ララ サンシャインPart2)
+ETITLE: {NATSU-HA Pararaylon} (La La SunShine Part 2)
+ATITLE: Summer is Pararaylon (La La SunShine Part 2)
+LYRIC: 森高千里
+MUSIC: iHiromasaIjichi.html
+DATE: 1996/7/15
+YOMI: なつはぱられいろんららさんしゃいんぱーとつう
+TYPE: AVC
+MODIFY: 1996/7/12
+
+FNAME: wDekirudesho.html
+HTITLE: Chisato Moritaka:[Song] "DEKIRUDESHO!!"
+JTITLE: 出来るでしょ!!
+ETITLE: {DEKIRUDESHO!!}
+LYRIC: 森高千里
+MUSIC: iHiromasaIjichi.html
+DATE: 1996/7/15
+YOMI: できるでしょ
+TYPE: A
+MODIFY: 1996/7/12
+
+FNAME: wAkinoSora.html
+HTITLE: Chisato Moritaka:[Song] "AKI-NO SORA"
+JTITLE: 秋の空
+ETITLE: {AKI-NO SORA}
+ATITLE: Autumn Sky
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1996/7/15
+YOMI: あきのそら
+TYPE: A
+MODIFY: 1996/7/12
+
+FNAME: wChonantoInakamon.html
+HTITLE: Chisato Moritaka:[Song] "CHONAN-TO INAKAMON"
+JTITLE: 長男と田舎もん
+ETITLE: {CHONAN-TO INAKAMON}
+ATITLE: an eldest son and a bumpkin
+LYRIC: 森高千里
+MUSIC: iHiromasaIjichi.html
+DATE: 1996/7/15
+YOMI: ちょうなんといなかもん
+TYPE: A
+MODIFY: 1996/7/12
+
+FNAME: wTaiyotoAoiTsuki.html
+HTITLE: Chisato Moritaka:[Song] "TAIYO-TO AOI TSUKI"
+JTITLE: 太陽と青い月
+ETITLE: {TAIYO-TO AOI TSUKI}
+ATITLE: Sun and Blue Moon
+LYRIC: 森高千里
+MUSIC: 森高千里
+DATE: 1996/7/15
+YOMI: たいようとあおいつき
+TYPE: SAVC
+MODIFY: 1996/11/13
+
+FNAME: wTogaTatsu.html
+HTITLE: Chisato Moritaka:[Song] "TO-GA TATSU"
+JTITLE: 薹が立つ
+ETITLE: {TO-GA TATSU}
+ATITLE: Run to seed
+LYRIC: 森高千里
+MUSIC: iHiromasaIjichi.html
+DATE: 1996/7/15
+YOMI: とうがたつ
+TYPE: AVC
+MODIFY: 1996/7/12
+
+FNAME: wYorunoUmi.html
+HTITLE: Chisato Moritaka:[Song] "YORU-NO UMI"
+JTITLE: 夜の海
+ETITLE: {YORU-NO UMI}
+ATITLE: Night Sea
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1996/7/15
+YOMI: よるのうみ
+TYPE: A
+MODIFY: 1996/7/12
+
+FNAME: wTereya.html
+HTITLE: Chisato Moritaka:[Song] "TEREYA"
+JTITLE: 照れ屋
+ETITLE: {TEREYA}
+LYRIC: 森高千里
+MUSIC: iKaoruSanada.html
+DATE: 1996/7/15
+YOMI: てれや
+TYPE: AVC
+MODIFY: 1996/7/12
+
+FNAME: wBottoShitemiyo.html
+HTITLE: Chisato Moritaka:[Song] "BOTTO SHITE MIYO"
+JTITLE: ボーッとしてみよう
+ETITLE: {BOTTO SHITE MIYO}
+LYRIC: 森高千里
+MUSIC: 森高千里
+DATE: 1996/7/15
+YOMI: ぼーっとしてみよう
+TYPE: SA
+MODIFY: 1996/7/12
+
+FNAME: wHereComesTheSun.html
+HTITLE: Chisato Moritaka:[Song] "Here Comes The Sun"
+JTITLE: Here Comes The Sun
+LYRIC: iGeorgeHarisson.html
+MUSIC: iGeorgeHarisson.html
+DATE: 1996/7/15
+YOMI: ひやーかむずざさん
+TYPE: A
+MODIFY: 1996/7/12
+
+FNAME: wMilkChoko.html
+HTITLE: Chisato Moritaka:[Song] "Thema of Milk Chokolate"
+JTITLE: ミルクチョコレートのテーマ
+ETITLE: Thema of Milk Chokolate
+DATE: 1996/9/3
+YOMI: みるくちょこれーとのてーま
+TYPE: M
+TIEUP: CM
+TLINK: mcMeijiSeika.html#MILCHI0
+JTIEUP: 明治製菓「<ミルクチョコレート>」CMソング
+ETIEUP: CM song for <Milk Chocolate> (Meiji-Seika)
+MODIFY: 1998/3/5
+
+FNAME: wGinironoYume.html
+HTITLE: Chisato Moritaka:[Song] "GIN'IRO-NO YUME"
+JTITLE: 銀色の夢
+ETITLE: {GIN'IRO-NO YUME}
+ATITLE: The Silver Colored Dream
+LYRIC: 森高千里
+MUSIC: iHiromasaIjichi.html
+DATE: 1996/11/11
+YOMI: ぎんいろのゆめ
+TYPE: SAVC
+TIEUP: CM
+TLINK: mcMeijiSeika.html#MELTYKISS0
+JTIEUP: 明治製菓「<Melty Kiss>」CMソング
+ETIEUP: CM song for <Melty Kiss> (Meiji-Seika)
+MODIFY: 1997/7/19
+
+FNAME: wWhite.html
+HTITLE: Sharam Q:[Song] "White"
+JTITLE: ホワイト
+ETITLE: White
+LYRIC: iTsunku.html
+MUSIC: iTsunku.html
+DATE: 1996/12/18
+YOMI: ほわいと
+TYPE: A
+JCOMMENT: ゲストドラム
+ECOMMENT: Guest Drums
+MODIFY: 1997/1/17
+
+FNAME: wSonnaKibunjaNai.html
+HTITLE: L&lt;-^gt;R:[Song] "SONNA KIBUN-JA NAI"
+JTITLE: そんな気分じゃない
+ETITLE: {SONNA KIBUN-JA NAI}
+LYRIC: iHidekiKurosawa.html
+MUSIC: iHidekiKurosawa.html
+DATE: 1997/2/19
+YOMI: そんなきぶんじゃない
+TYPE: S
+JCOMMENT: ゲストドラム
+ECOMMENT: Guest Drums
+MODIFY: 1997/2/25
+
+FNAME: wLetsGo.html
+HTITLE: Chisato Moritaka:[Song] "Let's Go!"
+JTITLE: Let's Go!
+JTITLE2: Let's Go! (II)
+LYRIC: 森高千里
+MUSIC: iHiromasaIjichi.html
+DATE: 1997/2/25
+YOMI: れっつごお
+TYPE: SAVC
+TIEUP: CM
+TLINK: mcLAWSON.html#LAWSON_Intro
+JTIEUP: ローソン「<ローソンへ行かなくちゃ>」テーマソング
+ETIEUP: Thema song for <I've got to go to LAWSON> (LAWSON)
+MODIFY: 1998/2/13
+
+FNAME: wTamilano.html
+HTITLE: Chisato Moritaka:[Song] "Tamilano"
+JTITLE: Tamilano
+LYRIC: iTowaTei.html
+MUSIC: iTowaTei.html
+DATE: 1997/5/25
+YOMI: たみらの
+TYPE: A
+MODIFY: 1997/6/17
+
+FNAME: wSweetCandy.html
+HTITLE: Chisato Moritaka:[Song] "SWEET CANDY"
+JTITLE: SWEET CANDY
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1997/6/11
+YOMI: すいーときゃんでぃ
+TYPE: SAVC
+TIEUP: CM
+TLINK: mcLAWSON.html#LAWSON_FreshFlutes
+JTIEUP: ローソン「<ローソンへ行かなくちゃ>」テーマソング
+ETIEUP: Thema song for <I've got to go to LAWSON> (LAWSON)
+MODIFY: 1998/2/13
+
+FNAME: wMirai.html
+HTITLE: Chisato Moritaka:[Song] "MIRAI"
+JTITLE: 未来
+ETITLE: MIRAI
+ATITLE: Future
+LYRIC: 森高千里
+MUSIC: 森高千里
+DATE: 1997/6/11
+YOMI: みらい
+TYPE: S
+JTIEUP: 「熊本未来国体」イメージソング
+ETIEUP: Thema song for "KUMAMOTO MIRAI KOKUTAI"
+MODIFY: 1997/6/17
+
+FNAME: wNemurasete.html
+HTITLE: Gen Takayama:[Song] "NEMURASETE"
+JTITLE: 眠らせて
+ETITLE: {NEMURASETE}
+LYRIC: iShingoKanno.html
+MUSIC: iTakumiYamamoto.html
+YOMI: ねむらせて
+TYPE: A
+MODIFY: 1996/1/1
+
+FNAME: wMyAnniversary.html
+HTITLE: Chisato Moritaka:[Song] "My Anniversary"
+JTITLE: マイ・アニバーサリー
+ETITLE: My Anniversary
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1997/7/16
+YOMI: まいあにばーさりー
+TYPE: AVC
+TLINK: mcNihonSeimei.html#MyAnniversary
+JTIEUP: 日本生命「<マイ・アニバーサリー>」CMソング
+ETIEUP: CM song for <My Anniversary> (Nihon-Seimei)
+MODIFY: 1998/2/13
+
+FNAME: wOshareFu.html
+HTITLE: Chisato Moritaka:[Song] "Oshare-Fu"
+JTITLE: おしゃれ風
+ETITLE: {OSHARE-FU}
+LYRIC: 森高千里
+MUSIC: 森高千里
+DATE: 1997/7/16
+YOMI: おしゃれふう
+TYPE: A
+MODIFY: 1997/7/19
+
+FNAME: wShintoMekkyaku.html
+HTITLE: Chisato Moritaka:[Song] "SHINTO-MEKKYAKU SUREBA HI-MO MATA ..."
+JTITLE: 心頭滅却すれば火もまた涼し
+ETITLE: {SHINTO-MEKKYAKU SUREBA HI-MO MATA SUZUSHI}
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1997/7/16
+YOMI: しんとうめっきゃくすればひもまたすずし
+TYPE: AVC
+MODIFY: 1998/2/13
+
+FNAME: wAnatawaNinkimono.html
+HTITLE: Chisato Moritaka:[Song] "ANATA-WA NINKIMONO"
+JTITLE: あなたは人気者
+ETITLE: {ANATA-HA NINKIMONO}
+LYRIC: 森高千里
+MUSIC: iShinKohno.html
+DATE: 1997/7/16
+YOMI: あなたはにんきもの
+TYPE: AVC
+MODIFY: 1998/2/13
+
+FNAME: wFutsunoShiawase.html
+HTITLE: Chisato Moritaka:[Song] "FUTSU-NO SHIAWASE"
+JTITLE: 普通の幸せ
+ETITLE: {FUTU-NO SHIAWASE}
+LYRIC: 森高千里
+MUSIC: iChihiroImai.html
+DATE: 1997/7/16
+YOMI: ふつうのしあわせ
+TYPE: A
+MODIFY: 1997/7/19
+
+FNAME: wMitatoriyoWatashi.html
+HTITLE: Chisato Moritaka:[Song] "MITATORI-YO WATASHI"
+JTITLE: 見たとおりよ私
+ETITLE: {MITATORI-YO WATASHI}
+LYRIC: 森高千里
+MUSIC: 森高千里
+DATE: 1997/7/16
+YOMI: みたとおりよわたし
+TYPE: A
+MODIFY: 1997/7/19
+
+FNAME: wHoshiniNegaio.html
+HTITLE: Chisato Moritaka:[Song] "HOSHI-NI NEGAI-O"
+JTITLE: 星に願いを
+ETITLE: {HOSHI-NI NEGAI-O}
+LYRIC: 森高千里
+MUSIC: iHiromasaIjichi.html
+DATE: 1997/7/16
+YOMI: ほしにねがいを
+TYPE: AVC
+MODIFY: 1998/2/13
+
+FNAME: wKataomoi.html
+HTITLE: Chisato Moritaka:[Song] "KATAOMOI"
+JTITLE: 片思い
+ETITLE: {KATAOMOI}
+LYRIC: 森高千里
+MUSIC: iShinKohno.html
+DATE: 1997/7/16
+YOMI: かたおもい
+TYPE: A
+MODIFY: 1997/7/19
+
+FNAME: wTonySlavin.html
+HTITLE: Chisato Moritaka:[Song] "Tony Slavin"
+JTITLE: Tony Slavin
+LYRIC: 森高千里
+MUSIC: 森高千里
+DATE: 1997/7/16
+YOMI: とにーすれいびん
+TYPE: AVC
+MODIFY: 1998/2/13
+
+FNAME: wClarinetFantasy.html
+HTITLE: Chisato Moritaka:[Song] "Clarinet Fantasy"
+JTITLE: クラリネット幻想曲
+ETITLE: Clarinet {GENSO-KYOKU}
+ATIELE: Clarinet Fantasy
+VER: (INSTRUMENTAL)
+MUSIC: 森高千里
+DATE: 1997/7/16
+YOMI: くらりねっとげんそうきょく
+TYPE: A
+MODIFY: 1997/7/19
+
+FNAME: wShimashimanoBanbi.html
+HTITLE: Chara:[Song] "Shimashima-no Banbi"
+JTITLE: しましまのバンビ
+ETITLE: {SHIMASHIMA-NO BANBI}
+LYRIC: iChara.html
+MUSIC: iChara.html
+DATE: 1997/9/21
+YOMI: しましまのばんび
+TYPE: A
+MODIFY: 1997/10/11
+
+FNAME: wKareha.html
+HTITLE: Chisato Moritaka:[Song] "KAREHA"
+JTITLE: 枯葉
+ETITLE: Kareha
+MUSIC: ?
+DATE: 1997/10/3
+YOMI: かれは
+TYPE: C
+MODIFY: 1997/10/3
+
+FNAME: wSnowAgain.html
+HTITLE: Chisato Moritaka:[Song] "Snow Again"
+JTITLE: SNOW AGAIN
+ETITLE: SNOW AGAIN
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1997/10/3
+YOMI: すのーあげいん
+TYPE: ASVC
+TIEUP: CM
+TLINK: mcMeijiSeika.html#MELTYKISS1
+JTIEUP: 明治製菓「<Melty Kiss>」CMソング
+ETIEUP: CM song for <Melty Kiss> (Meiji-Seika)
+MODIFY: 1998/9/12
+
+FNAME: wMiracleLight.html
+HTITLE: Chisato Moritaka:[Song] "Miracle Light"
+JTITLE: ミラクルライト
+ETITLE: Miracle Light
+LYRIC: 森高千里
+MUSIC: iHaruomiHosono.html
+DATE: 1997/10/3
+YOMI: みらくるらいと
+TYPE: SVC
+TLINK: mcLAWSON.html#LAWSON_Oden
+JTIEUP: ローソン「<ローソンへ行かなくちゃ>」テーマソング
+ETIEUP: Thema song for <I've got to go to LAWSON> (LAWSON)
+MODIFY: 1998/2/13
+
+FNAME: wMiracleWoman.html
+HTITLE: Chisato Moritaka:[Song] "Miracle Woman"
+JTITLE: ミラクルウーマン
+ETITLE: Miracle Woman
+LYRIC: 森高千里
+MUSIC: iHaruomiHosono.html
+DATE: 1997/10/3
+YOMI: みらくるうーまん
+TYPE: SC
+MODIFY: 1997/10/3
+
+FNAME: wWagaYokiTomoyo.html
+HTITLE: Takuro Yoshida:[Song] "Waga Yoki Tomo-yo"
+JTITLE: 我が良き友よ
+ETITLE: {WAGA YOKI TOMO-YO}
+LYRIC: iTakuroYoshida.html
+MUSIC: iSatoshiTakebe.html
+DATE: 1997/11/1
+YOMI: わがよきともよ
+TYPE: A
+MODIFY: 1997/11/1
+
+FNAME: wLesChampsElysees.html
+HTITLE: Chisato Moritaka:[Song] "Les Champs Elysees"
+JTITLE: オー・シャンゼリゼ
+ETITLE: Les Champs-Elysees
+LYRIC: iMichaelWilshaw.html
+MUSIC: iMichaelADeighan.html
+DATE: 1997/11/17
+YOMI: おー・しゃんぜりぜ
+TYPE: VC
+MODIFY: 1998/2/13
+
+FNAME: wPaPaPaya.html
+HTITLE: Chisato Moritaka:[Song] "Pa Pa Paya"
+JTITLE: パッパッパヤ
+ETITLE: Pa Pa Paya
+MUSIC: 森高千里
+DATE: 1997/11/19
+YOMI: ぱっぱっぱや
+TYPE: S
+MODIFY: 1997/11/19
+
+FNAME: wM.html
+HTITLE: Kaori Okui &amp; Chisato Moritaka: [Song] "M"
+JTITLE: M
+LYRIC: iKyokoTomita.html
+MUSIC: iKaoriOkui.html
+DATE: 1997/12/1
+YOMI: えむ
+TYPE: C
+MODIFY: 1998/3/21
+
+FNAME: wTelephone.html
+HTITLE: Chisato Moritaka:[Song] "DENWA"
+JTITLE: 電話
+ETITLE: Telephone
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1998/3/4
+YOMI: でんわ
+TYPE: AS
+TIEUP: CM
+TLINK: mcKanebo.html#SALA
+JTIEUP: Kanebo 「<SALA>」CMソング
+ETIEUP: CM song for <SALA> (Kanebo)
+MODIFY: 1998/9/12
+
+FNAME: wDragon.html
+HTITLE: Chisato Moritaka:[Song] "DRAGON"
+JTITLE: DRAGON
+MUSIC: 森高千里
+DATE: 1998/3/4
+YOMI: どらごん
+TYPE: S
+MODIFY: 1998/5/21
+
+FNAME: wTokyoRush.html
+HTITLE: Chisato Moritaka:[Song] "Tokyo Rush"
+JTITLE: 東京ラッシュ
+ETITLE: Tokyo Rush
+LYRIC: iHaruomiHosono.html
+MUSIC: iHaruomiHosono.html
+DATE: 1998/5/21
+YOMI: とうきょうらっしゅ
+TYPE: AC
+MODIFY: 1998/11/23
+
+FNAME: wHeyDog.html
+HTITLE: Chisato Moritaka:[Song] "Hey! Dog"
+JTITLE: Hey! 犬
+ETITLE: Hey! Dog 
+LYRIC: 森高千里
+MUSIC: iHaruomiHosono.html
+DATE: 1998/5/21
+YOMI: へいいぬ
+TYPE: A
+MODIFY: 1998/5/21
+
+FNAME: wABientot.html
+HTITLE: Chisato Moritaka:[Song] "A Bientot"
+JTITLE: ア・ビアント
+ETITLE: A BIENTOT
+LYRIC: 森高千里
+MUSIC: iMiharuKoshi.html
+DATE: 1998/5/21
+YOMI: あびあんと
+TYPE: A
+MODIFY: 1998/5/21
+
+FNAME: wHooraibo.html
+HTITLE: Chisato Moritaka:[Song] "Hooraibo"
+JTITLE: 風来坊
+ETITLE: Hooraibo
+LYRIC: iHaruomiHosono.html
+MUSIC: iHaruomiHosono.html
+DATE: 1998/5/21
+YOMI: ふうらいぼう 
+TYPE: A
+MODIFY: 1998/5/21
+
+FNAME: wBeachParty.html
+HTITLE: Chisato Moritaka:[Song] "Beach Party"
+JTITLE: ビーチ・パーティー
+ETITLE: Beach Party
+MUSIC: iHaruomiHosono.html
+DATE: 1998/5/21
+YOMI: ビーチ・パーティー
+TYPE: A
+MODIFY: 1998/5/21
+
+FNAME: wCalypsonoMusume.html
+HTITLE: Chisato Moritaka:[Song] "CALYPSO-NO MUSUME"
+JTITLE: カリプソの娘
+ETITLE: Calypso{-NO MUSUME}
+LYRIC: 森高千里
+MUSIC: iHaruomiHosono.html
+DATE: 1998/5/21
+YOMI: かりぷそのむすめ
+TYPE: A
+MODIFY: 1998/5/21
+
+FNAME: wBelieveInLove.html
+HTITLE: Chisato Moritaka:[Song] "Believe In Love"
+JTITLE: BELIEVE IN LOVE
+LYRIC: ?
+MUSIC: ?
+DATE: 1998/6/1
+YOMI: びりーぶいんらぶ
+TYPE: C
+MODIFY: 1998/9/21
+
+FNAME: wGakuenTengoku.html
+HTITLE: Chisato Moritaka:[Song] "GAKUEN-TENGOKU"
+JTITLE: 学園天国
+ETITLE: {GAKUEN-TENGOKU}
+LYRIC: ?
+MUSIC: ?
+DATE: 1998/6/1
+YOMI: がくえんてんごく
+TYPE: C
+MODIFY: 1998/9/21
+
+FNAME: wUmimadeGofun.html
+HTITLE: Chisato Moritaka:[Song] "UMI-MADE GO-FUN"
+JTITLE: 海まで 5 分
+ETITLE: {UMI-MADE GO-FUN}
+LYRIC: 森高千里
+MUSIC: iToshinobuKubota.html
+DATE: 1998/7/15
+YOMI: うみまでごふん 
+TYPE: AS
+TIEUP: TVDRAMA
+TLINK: mt1998.html#6
+JTIEUP: TBS 系東芝日曜劇場「<海まで 5 分>」主題歌
+ETIEUP: Theme song for a TV drama <{UMI-MADE GO-FUN}> (TBS)
+MODIFY: 1998/9/12
+
+FNAME: wSleeplessNightBlues.html
+HTITLE: Chisato Moritaka:[Song] "Sleepless Night Blues"
+JTITLE: Sleepless Night Blues
+LYRIC: 森高千里
+MUSIC: 森高千里
+DATE: 1998/7/15
+YOMI: すりーぷれすないとぶるーす 
+TYPE: S
+MODIFY: 1998/7/15
+
+FNAME: wUtopia.html
+HTITLE: Chisato Moritaka:[Song] "Utopia"
+JTITLE: ユートピア
+ETITLE: Utopia
+LYRIC: 森高千里
+MUSIC: iShinKohno.html
+DATE: 1998/9/9
+YOMI: ゆーとぴあ
+TYPE: A
+MODIFY: 1998/9/12
+
+FNAME: wTanpoponoTane.html
+HTITLE: Chisato Moritaka:[Song] "{TANPOPO-NO TANE}"
+JTITLE: たんぽぽの種
+ETITLE: {TANPOPO-NO TANE}
+LYRIC: 森高千里
+MUSIC: iShikaoSuga.html
+DATE: 1998/9/9
+YOMI: たんぽぽのたね
+TYPE: A
+MODIFY: 1998/9/12
+
+FNAME: wItsumonoMise.html
+HTITLE: Chisato Moritaka:[Song] "ITSUMONO MISE"
+JTITLE: いつもの店
+ETITLE: {ITSUMONO MISE}
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1998/9/9
+YOMI: いつものみせ
+TYPE: A
+TIEUP: CM
+TLINK: mcLAWSON.html
+JTIEUP: ローソン「<ローソン'98>」テーマソング
+ETIEUP: Thema song for <LAWSON '98> (LAWSON)
+MODIFY: 1998/9/12
+
+FNAME: wNagasarete.html
+HTITLE: Chisato Moritaka:[Song] "{NAGASARETE}"
+JTITLE: 流されて…
+ETITLE: {NAGASARETE}
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1998/9/9
+YOMI: ながされて
+TYPE: A
+MODIFY: 1998/9/12
+
+FNAME: wTwoOfMe.html
+HTITLE: Chisato Moritaka:[Song] "Two of me"
+JTITLE: Two of me
+LYRIC: 森高千里
+MUSIC: 森高千里
+DATE: 1998/9/9
+YOMI: とぅおぶみー
+TYPE: A
+MODIFY: 1998/9/12
+
+FNAME: wWasurekaketetaYume.html
+HTITLE: Chisato Moritaka:[Song] "{WASUREKAKETETA YUME}"
+JTITLE: 忘れかけてた夢
+ETITLE: {WASUREKAKETETA YUME}
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1998/9/9
+YOMI: わすれてかけてたゆめ
+TYPE: A
+MODIFY: 1998/9/12
+
+FNAME: wZarudeMizukumuKoigokoro.html
+HTITLE: Chisato Moritaka:[Song] "{ZARU-DE MIZU-KUMU KOI-GOKORO}"
+JTITLE: ザルで水くむ恋心
+ETITLE: {ZARU-DE MIZU-KUMU KOI-GOKORO}
+LYRIC: 森高千里
+MUSIC: iCoil.html
+DATE: 1998/9/9
+YOMI: ざるでみずくむこいごころ
+TYPE: A
+MODIFY: 1998/9/12
+
+FNAME: wKikennaHodou.html
+HTITLE: Chisato Moritaka:[Song] "{KIKEN-NA HODOU}"
+JTITLE: 危険な舗道
+ETITLE: {KIKEN-NA HODOU}
+LYRIC: 森高千里
+MUSIC: 森高千里
+DATE: 1998/9/9
+YOMI: きけんなほどう
+TYPE: AS
+MODIFY: 1998/10/2
+
+FNAME: wTsumetaiTsuki.html
+HTITLE: Chisato Moritaka:[Song] "{TSUMETAI TSUKI}"
+JTITLE: 冷たい月
+ETITLE: {TSUMETAI TSUKI}
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1998/9/16
+YOMI: つめたいつき
+TYPE: SC
+MODIFY: 1998/10/2
+
+FNAME: w5WatashinoYouni.html
+HTITLE: Chisato Moritaka:[Song] "WATASHI-NO YOUNI"
+JTITLE: 私のように
+ETITLE: {WATASHI-NO YOUNI}
+LYRIC: 森高千里
+MUSIC: iShinKohno.html
+DATE: 1999/3/17
+YOMI: わたしのように
+TYPE: S
+MODIFY: 1999/3/20
+
+FNAME: wSpace.html
+HTITLE: Chisato Moritaka:[Song] "SPACE"
+JTITLE: SPACE
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1999/3/17
+YOMI: すぺーす
+TYPE: S
+MODIFY: 1999/3/20
+
+FNAME: wKurukuruFech.html
+HTITLE: COIL:[Song] "KURU KURU FECH"
+JTITLE: クルクル フェチ
+ETITLE: {KURU KURU FECH}
+LYRIC: iSadayoshiOkamoto.html
+MUSIC: iSadayoshiOkamoto.html
+DATE: 1999/5/21
+YOMI: くるくるふぇち
+TYPE: S
+MODIFY: 1999/11/26
+
+FNAME: wTanabatanoYoruKiminiAitai.html
+HTITLE: Chappie:[Song] "TANABATA-NO YORU KIMI-NI AITAI"
+JTITLE: 七夕の夜、君に逢いたい
+ETITLE: {TANABATA-NO YORU KIMI-NI AITAI}
+LYRIC: iTakashiMatsumoto.html
+MUSIC: iHaruomiHosono.html
+DATE: 1999/7/7
+YOMI: たなばたのよるきみにあいたい
+TYPE: S
+MODIFY: 1999/11/27
+
+FNAME: wFutarinoHokkaido.html
+HTITLE: Country Musume:[Song] "FUTARI-NO HOKKAIDO"
+JTITLE: 二人の北海道
+ETITLE: {FUTARI-NO HOKKAIDO}
+LYRIC: 森高千里
+MUSIC: iTsunku.html
+DATE: 1999/7/23
+YOMI: ふたりのほっかいどう
+TYPE: S
+MODIFY: 1999/11/14
+
+FNAME: wMahirunoHoshi.html
+HTITLE: Chisato Moritaka:[Song] "MAHIRU-NO HOSHI"
+JTITLE: まひるの星
+LYRIC: 森高千里
+MUSIC: iShikaoSuga.html
+DATE: 1999/3/17
+YOMI: まひるのほし
+TYPE: AS
+TIEUP: MOVIE
+JTIEUP: 映画「もういちど逢いたくて」主題歌
+ETIEUP: Thema song for a Movie "MOUICHIDO AITAKUTE"
+MODIFY: 1999/11/10
+
+FNAME: wKoinoUta.html
+HTITLE: George Tokoro:[Song] "KOI-NO UTA"
+JTITLE: 恋の唄
+LYRIC: iGeorgeTokoro.html
+MUSIC: iTakuroYoshida.html
+DATE: 1999/8/21
+YOMI: こいのうた
+TYPE: A
+MODIFY: 1999/11/26
+
+FNAME: wAnohiniKaeritai.html
+HTITLE: Chisato Moritaka:[Song] "ANOHI-NI KAERITAI"
+JTITLE: あの日に帰りたい
+LYRIC: iYumiArai.html
+MUSIC: iYumiArai.html
+DATE: 1999/9/22
+YOMI: あのひにかえりたい
+TYPE: A
+MODIFY: 1999/11/14
+
+FNAME: wEveryDay.html
+HTITLE: Chisato Moritaka:[Song] "EVERY DAY"
+JTITLE: EVERY DAY
+LYRIC: 森高千里
+MUSIC: i0YuichiTakahashi.html
+DATE: 1999/10/1
+YOMI: えぶりいでい
+TYPE: S
+MODIFY: 1999/11/10
+
+FNAME: wSalaBossaNova.html
+HTITLE: Chisato Moritaka:[Song] "SALA BOSSA NOVA"
+JTITLE: SALA BOSSA NOVA
+LYRIC: 森高千里
+MUSIC: 森高千里
+DATE: 1999/11/3
+YOMI: さらぼさのば
+TYPE: S
+MODIFY: 1999/11/27
+

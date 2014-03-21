@@ -1,0 +1,11 @@
+%tr
+  %th=t title
+  -(Neighbors - before.count).times do
+    %td="-"
+  -before.reverse.each do |object|
+    %td=link_to_lh object.name(@is_ja), object
+  %td=center
+  -after.each do |object|
+    %td=link_to_lh object.name(@is_ja), object
+  -(Neighbors - after.count).times do
+    %td="-"

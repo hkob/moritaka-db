@@ -16,4 +16,13 @@ class Person < ActiveRecord::Base
   def can_delete?
     lyrics.count == 0
   end
+
+  def write_lyric?(song)
+    song.lyrics.map { |l| l.person }.include?(self)
+  end
+
+  def write_music?(song)
+    song.musics.map { |m| m.person }.include?(self)
+  end
+
 end

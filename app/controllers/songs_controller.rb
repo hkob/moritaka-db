@@ -8,8 +8,9 @@ class SongsController < ApplicationController
   end
 
   def new
-    @title, @ids = get_objects_and_ids [ Title], false
-    @song = Song.new(title_id:@title.id)
+    @title, @ids = get_objects_and_ids [ Title ], false
+    @recent = Song.order_updated_at_desc.first
+    @song = Song.new(title_id:@title.id, date:@recent && @recent.date)
     @subtitle = @title.name(@is_ja)
   end
 
@@ -17,7 +18,7 @@ class SongsController < ApplicationController
     @song = Song.new(song_params)
     @title = @song.title
     if @song.save
-      redirect_to songs_path(head:@song.head1)
+      redirect_to edit_song_path(@song, head:@song.head1)
     else
       render action: :new
     end
