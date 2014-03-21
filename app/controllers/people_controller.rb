@@ -35,6 +35,22 @@ class PeopleController < ApplicationController
 
   def show
     @subtitle = @person.names(@is_ja)
+    @lyric_songs = @person.lyrics.order_song_date.map { |l| l.song }
+    @music_songs = @person.musics.order_song_date.map { |l| l.song }
+    @mode = params[:mode]
+    @mode ||= @lyric_songs.count > 0 ? 'lyrics' : @music_songs.count > 0 ? 'musics' : ''
+    @headers = case @mode
+               when 'lyrics', 'musics'
+                 I18n.t %w(songs lyrics musics), scope:'link'
+               else
+                   []
+               end
+    @objects = case @mode
+               when 'lyrics'
+                 @lyric_songs
+               when 'musics'
+                 @music_songs
+               end
   end
 
   def get_person
