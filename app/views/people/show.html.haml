@@ -3,3 +3,32 @@
   %li.active=show_title
 %h1=show_title
 
+.panel.panel-default
+  .panel-heading
+    %ul.nav.nav-tabs
+      -[ [ @lyric_songs.count, 'lyrics' ], [ @music_songs.count, 'musics' ] ].each do |c, s|
+        -if c > 0
+          %li{class:(@mode == s) ? "active disable" : nil}=link_to_lh t("link.#{s}"), person_path(@person, mode:s)
+  .panel-body
+    %table.table.table-bordered.table-striped.table-hover
+      %thead
+        %tr
+          -@headers.each do |str|
+            %th=str
+      %tbody
+        -case @mode
+        -when 'lyrics', 'musics'
+          -@objects.each do |s|
+            %tr
+              %td=s.name(@is_ja)
+              %td
+                -s.lyric_people.each_with_index do |p, i|
+                  =", " unless i == 0
+                  =(p == @person) ? p.name(@is_ja) : link_to(p.name(@is_ja), p)
+              %td
+                -s.music_people.each_with_index do |p, i|
+                  =", " unless i == 0
+                  =(p == @person) ? p.name(@is_ja) : link_to(p.name(@is_ja), p)
+  .panel-footer
+    %table.table.table-bordered
+      =render partial:'/shared/neighbors', locals:{ title:'head.neighbors_by_name', before:@person.objects_before_yomi.only_main.limit(Neighbors), center:@person.name(@is_ja), after:@person.objects_after_yomi.only_main.limit(Neighbors) }

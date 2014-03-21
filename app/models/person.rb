@@ -10,7 +10,9 @@ class Person < ActiveRecord::Base
   has_many :children, class_name: :Person, foreign_key: :parent_id
   has_many :lyrics
   has_many :musics
+  scope :only_main, -> { where self.arel_table[:parent_id].eq(nil) }
   scope :order_yomi, -> { joins(:title).merge(Title.order_yomi) }
+  scope :order_yomi_desc, -> { joins(:title).merge(Title.order_yomi_desc) }
   scope :head_value_is, -> v { joins(:title).merge(Title.head_value_is(v)) }
 
   def can_delete?
