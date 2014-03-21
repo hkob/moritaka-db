@@ -15,8 +15,11 @@ class Title < ActiveRecord::Base
   has_one :song
   scope :head_value_is, -> v { where self.arel_table[:yomi_suuji].matches("#{v}%") }
   scope :order_yomi, -> { order self.arel_table[:yomi_suuji] }
+  scope :order_yomi_desc, -> { order self.arel_table[:yomi_suuji].desc }
   scope :japanese_value_is, -> v { where self.arel_table[:japanese].eq(v) }
   scope :english_value_is, -> v { where self.arel_table[:english].eq(v) }
+  scope :after_yomi, -> v { where self.arel_table[:yomi_suuji].gt(v) }
+  scope :before_yomi, -> v { where self.arel_table[:yomi_suuji].lt(v) }
 
   def title
     self

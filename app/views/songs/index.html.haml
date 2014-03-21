@@ -37,11 +37,14 @@
                 !=i == 0 ? "" : ", "
                 =link_to_lh p.name(@is_ja), p
             %td
+              -song.music_people.each_with_index do |p, i|
+                !=i == 0 ? "" : ", "
+                =link_to_lh p.name(@is_ja), p
             %td
               =link_to_lh t('songs.show.title'), song
               -developer_only do
+                =link_to_lh t('link.edit'), edit_song_path(song)
                 -unless has_children
-                  =link_to_lh t('link.edit'), edit_song_path(song)
                   =link_to_lh t('link.destroy'), song_path(song), method: :delete, data:{ confirm:t('confirm.destroy') } if song.can_delete?
 
 

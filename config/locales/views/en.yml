@@ -81,6 +81,8 @@ en:
     another_name: 'Another name'
     base_information: 'Base information'
     lyric_and_music: 'Lyric and Music'
+    neighbors_by_name: 'Neighbors(name)'
+    neighbors_by_date: 'Neighbors(date)'
   confirm:
     destroy: 'Are you sure to delete it?'
 

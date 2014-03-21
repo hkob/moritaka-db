@@ -26,12 +26,19 @@
           %td
             -developer_only do
               =link_to_lh t('lyrics.edit.title'), new_lyric_path(song_id:@song.id, head:@head)
+              -Lyric.recent_people(10).each do |p|
+                -unless p.write_lyric?(@song)
+                  =link_to_lh "#{t 'lyrics.new.title'}(#{p.name(@is_ja)})", lyrics_path(lyric:{ song_id:@song.id, person_id:p.id, sort_order:(@song.lyrics.count + 1) * 10 }), method: :post
+
         %tr#music
           %th=t 'link.musics'
           %td=@song.musics_str(@is_ja)
           %td
             -developer_only do
-              =link_to_lh t('musics.edit.title'), new_music_path(song_id:@song.id)
+              =link_to_lh t('musics.edit.title'), new_music_path(song_id:@song.id, head:@head)
+              -Music.recent_people(10).each do |p|
+                -unless p.write_music?(@song)
+                  =link_to_lh "#{t 'musics.new.title'}(#{p.name(@is_ja)})", musics_path(music:{ song_id:@song.id, person_id:p.id, sort_order:(@song.musics.count + 1) * 10 }), method: :post
 %hr
 %h2=t 'link.add_main'
 .panel.panel-default

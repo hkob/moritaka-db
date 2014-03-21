@@ -20,10 +20,18 @@ class Song < ActiveRecord::Base
   has_many :lyrics
   has_many :musics
   scope :order_yomi, -> { joins(:title).merge(Title.order_yomi) }
+  scope :order_yomi_desc, -> { joins(:title).merge(Title.order_yomi_desc) }
   scope :head_value_is, -> v { joins(:title).merge(Title.head_value_is(v)) }
+  scope :only_main, -> { where self.arel_table[:parent_id].eq(nil) }
+  scope :date_value_is, -> v { where self.arel_table[:date].eq(v) }
+  scope :after_date, -> v { where arel_table[:date].gt(v) }
+  scope :before_date, -> v { where arel_table[:date].lt(v) }
+  scope :order_date, -> { order arel_table[:date] }
+  scope :order_date_desc, -> { order arel_table[:date].desc }
+  scope :order_updated_at_desc, -> { order arel_table[:updated_at].desc }
 
   def can_delete?
-    lyrics.count == 0
+    lyrics.count == 0 || musics.count == 0
   end
 
   def renumber_lyrics
@@ -49,6 +57,5 @@ class Song < ActiveRecord::Base
   def musics_str(flag)
     music_people.map { |person| person.name(flag) }.join(', ')
   end
-
 
 end
