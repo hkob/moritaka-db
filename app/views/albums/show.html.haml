@@ -8,7 +8,28 @@
     %table.table.table-bordered
       %thead
         %tr
+          -%w(head.kind activerecord.attributes.device.date head.remarks).each do |k|
+            %th=t k
+          -developer_only do
+            %th=t 'head.control'
+      %tbody
+        %tr
+          %td
+            -singer = @album.singer
+            =singer && link_to_lh(singer.name(@is_ja), singer)
+            =@album.number
+            =@album.device_types_str
+          %td=mgdnw(@album.date)
+          %td=@album.comment(@is_ja)
+          -developer_only do
+            %td
+              =link_to_lh t('albums.edit.title'), edit_album_path(@album)
 
+.panel.panel-default
+  .panel-heading
+    aaa
+  .panel-body
+    aaa
   .panel-footer
     %table.table.table-bordered
       =render partial:'/shared/neighbors', locals: { title:'head.neighbors_by_name', before:@album.objects_before_yomi.limit(Neighbors), center:@album.name(@is_ja), after:@album.objects_after_yomi.limit(Neighbors) }

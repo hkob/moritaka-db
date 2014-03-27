@@ -74,4 +74,8 @@ class Device < ActiveRecord::Base
     hash = self.class.num2str
     (I18n.t self.device_types.map { |num| "device_type.#{hash[num]}" }).join(', ')
   end
+
+  def comment(flag)
+    flag ? j_comment : e_comment
+  end
 end
