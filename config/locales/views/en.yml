@@ -5,6 +5,15 @@ en:
       message: "You can obtain information from above menus."
       summary: "Summary"
       total: "Total"
+  albums:
+    index:
+      title: "List of albums"
+    new:
+      title: "Add an album"
+    edit:
+      title: "Edit the album"
+    show:
+      title: "Album information"
   titles:
     index:
       title: "List of titles"
@@ -60,6 +69,7 @@ en:
       title: "Year information"
   link:
     home: 'Home'
+    albums: 'Albums'
     lyrics: 'Lyrics'
     musics: 'Musics'
     people: 'People'
@@ -69,6 +79,7 @@ en:
     show: 'Show'
     edit: 'Edit'
     destroy: 'Delete'
+    add: 'Add'
     add_main: 'Add main data'
     set_to_main: 'Set to main data'
     delete_link: 'Delete link'
@@ -83,6 +94,17 @@ en:
     lyric_and_music: 'Lyric and Music'
     neighbors_by_name: 'Neighbors(name)'
     neighbors_by_date: 'Neighbors(date)'
+    number: 'Number'
+    title: 'Title'
+    kind: 'Kind'
   confirm:
     destroy: 'Are you sure to delete it?'
-
+  device_type:
+    album: 'Album'
+    mini_album: "Mini album"
+    karaoke_cd: "Karaoke CD"
+    lyric_album: "Album(Lyric)"
+    music_album: "Album(Music)"
+    cover_album: "Album(Cover)"
+    part_album: "Album(Performance)"
+    compilation_album: "Compilation album"

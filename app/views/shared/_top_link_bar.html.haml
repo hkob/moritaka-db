@@ -1,5 +1,6 @@
 %ul.nav.nav-tabs
   %li{active_from_class(TopController)}=link_to t('link.home'), root_path
+  %li{active_from_class(AlbumsController)}=link_to t('link.albums'), albums_path
   %li{active_from_class(SongsController)}=link_to t('link.songs'), songs_path
   %li{active_from_class(PeopleController)}=link_to t('link.people'), people_path
   %li{active_from_class(InstrumentalsController)}=link_to t('link.instrumentals'), instrumentals_path

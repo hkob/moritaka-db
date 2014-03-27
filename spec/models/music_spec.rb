@@ -34,7 +34,7 @@ describe Music do
     expect { music.song.destroy }.not_to change(Song, :count)
   end
 
-  it "作曲が所属する曲が削除できないこと" do
+  it "作曲が所属する人が削除できないこと" do
     music.save
     expect { music.person.destroy }.not_to change(Person, :count)
   end

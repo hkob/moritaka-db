@@ -1,0 +1,34 @@
+%ul.breadcrumb
+  %li.active=show_title
+%h1=show_title
+
+.panel.panel-default
+  .panel-heading
+    %ul.nav.nav-tabs
+      -@ans.keys.each do |key|
+        -dkey = "device_type.#{@ans[key]}"
+        %li{class:(key == @device_type) ? "active disable" : nil}=link_to_lh "#{t dkey}", albums_path(device_type:key)
+  .panel-body
+    %table.table.table-bordered.table-striped.table-hover
+      %thead
+        %tr
+          -%w(head.number head.title head.kind activerecord.attributes.device.date head.control).each do |k|
+            %th=t k
+      %tbody
+        -@albums.each_with_index do |album, i|
+          -name = album.name(@is_ja)
+          %tr{id:i+1}
+            %td=i+1
+            %td=name
+            %td
+              -singer = album.singer
+              =singer && link_to_lh(singer.name(@is_ja), singer)
+              =album.number
+              =album.device_types_str
+            %td=mgdnw(album.date)
+            %td
+              =link_to_lh t('albums.show.title'), album
+              -developer_only do
+                =link_to_lh t('albums.edit.title'), edit_album_path(album)
+
+

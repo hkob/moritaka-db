@@ -62,4 +62,5 @@ MoritakaDb::Application.routes.draw do
   resources :songs
   resources :lyrics
   resources :musics
+  resources :albums
 end

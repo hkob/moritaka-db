@@ -11,7 +11,7 @@ class Song < ActiveRecord::Base
     true
   end
   before_destroy do
-    self.lyrics.count == 0 && self.musics.count == 0
+    self.can_delete?
   end
   belongs_to :title
   belongs_to :year
@@ -31,7 +31,7 @@ class Song < ActiveRecord::Base
   scope :order_updated_at_desc, -> { order arel_table[:updated_at].desc }
 
   def can_delete?
-    lyrics.count == 0 || musics.count == 0
+    lyrics.count == 0 && musics.count == 0
   end
 
   def renumber_lyrics

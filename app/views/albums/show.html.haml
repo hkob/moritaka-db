@@ -1,0 +1,19 @@
+%ul.breadcrumb
+  %li=link_to_lh @album.navi_index_str(@album.first_device_type_str), albums_path(device_type:@album.first_device_type)
+  %li.active=show_title
+%h1=show_title
+
+.panel.panel-default
+  .panel-body
+    %table.table.table-bordered
+      %thead
+        %tr
+
+  .panel-footer
+    %table.table.table-bordered
+      =render partial:'/shared/neighbors', locals: { title:'head.neighbors_by_name', before:@album.objects_before_yomi.limit(Neighbors), center:@album.name(@is_ja), after:@album.objects_after_yomi.limit(Neighbors) }
+      -same_date_count = @album.objects_same_date.count
+      -add_info = same_date_count > 1 ? " + #{same_date_count - 1}" : ""
+      =render partial:'/shared/neighbors', locals: { title:'head.neighbors_by_date', before:@album.objects_before_date.limit(Neighbors), center:"#{@album.name(@is_ja)}#{add_info}", after:@album.objects_after_date.limit(Neighbors) }
+
+

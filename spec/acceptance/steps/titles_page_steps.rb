@@ -24,6 +24,8 @@ step 'タイトルにテスト用データを登録する' do
       [ "渡良瀬橋", "{WATARASEBASHI}", "わたらせばし" ],
       [ "雨", "{AME}", "あめ" ],
       [ "Rain", "Rain", "れいん" ],
+      [ "NEW SEASON", "NEW SEASON", "にゅーしーずん" ],
+      [ "ミーハー", "Mi-HA-", "みーはー" ],
     ]
     data.each do |(japanese, english, yomi)|
       Title.create(japanese:japanese, english:english, yomi:yomi)

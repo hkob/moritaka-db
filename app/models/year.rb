@@ -1,6 +1,6 @@
 class Year < ActiveRecord::Base
   include Navi
-  validates :year, presence:true
+  validates :year, presence:true, uniqueness:true
   scope :year_value_is, -> v { where self.arel_table[:year].eq(v) }
   scope :order_year, -> { order self.arel_table[:year] }
   has_many :songs
