@@ -31,7 +31,7 @@ ja:
     edit:
       title: "曲の編集"
     show:
-      title: "曲表示"
+      title: "曲情報"
   lyrics:
     new:
       title: "作詞の追加"
@@ -99,6 +99,7 @@ ja:
     number: '通番'
     title: 'タイトル'
     kind: '種別'
+    remarks: '備考'
   confirm:
     destroy: '本当に削除してもよろしいですか?'
   device_type:

@@ -12,7 +12,7 @@
     %table.table.table-bordered.table-striped.table-hover
       %thead
         %tr
-          -%w(head.number head.title head.kind activerecord.attributes.device.date head.control).each do |k|
+          -%w(head.number head.title head.kind activerecord.attributes.device.date head.remarks head.control).each do |k|
             %th=t k
       %tbody
         -@albums.each_with_index do |album, i|
@@ -26,6 +26,7 @@
               =album.number
               =album.device_types_str
             %td=mgdnw(album.date)
+            %td=album.comment(@is_ja)
             %td
               =link_to_lh t('albums.show.title'), album
               -developer_only do

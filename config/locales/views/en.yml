@@ -97,6 +97,7 @@ en:
     number: 'Number'
     title: 'Title'
     kind: 'Kind'
+    remarks: 'Remarks'
   confirm:
     destroy: 'Are you sure to delete it?'
   device_type:
