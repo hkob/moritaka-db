@@ -30,11 +30,10 @@ describe Lyric do
   end
 
   it "作詞が所属する曲が削除できないこと" do
-    lyric.save
     expect { lyric.song.destroy }.not_to change(Song, :count)
   end
 
-  it "作詞が所属する曲が削除できないこと" do
+  it "作詞が所属する人が削除できないこと" do
     lyric.save
     expect { lyric.person.destroy }.not_to change(Person, :count)
   end

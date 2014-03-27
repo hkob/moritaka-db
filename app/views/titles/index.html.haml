@@ -17,7 +17,7 @@
     %table.table.table-bordered.table-striped.table-hover.table-responsive
       %thead
         %tr
-          -%w(link.titles link.songs link.people link.instrumentals).each do |k|
+          -%w(link.titles link.albums link.songs link.people link.instrumentals).each do |k|
             %th=t k
           %th=t 'head.control'
       %tbody  
@@ -25,6 +25,12 @@
           -name = title.name(@is_ja)
           %tr{id:name}
             %td=name
+            %td
+              -if album = title.album
+                =link_to_lh t('albums.show.title'), album
+              -else
+                -developer_only do
+                  =link_to_lh t('albums.new.title'), new_album_path(title_id:title.id)
             %td
               -if song = title.song
                 =link_to_lh t('songs.show.title'), song

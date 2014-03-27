@@ -2,6 +2,7 @@ class SongsController < ApplicationController
   include Head
   before_action :reject_production, except:[ :index, :show ]
   before_action :get_song, only:[ :edit, :update, :destroy, :show ]
+
   def index
     @head, @heads, @lhead_hash, @subtitle, @ids = get_heads(params[:head], @is_ja)
     @songs = Song.head_value_is(@head).order_yomi

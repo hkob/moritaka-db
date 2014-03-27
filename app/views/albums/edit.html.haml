@@ -1,0 +1,23 @@
+%ul.breadcrumb
+  %li=link_to_lh @album.navi_index_str(@album.first_device_type_str), albums_path(device_type:@album.first_device_type)
+  %li=link_to_lh @album.navi_show_str(@is_ja), @album
+  %li.active=show_title
+%h1=show_title
+-developer_only do
+  .panel.panel-default
+    .panel-body
+      %table.table.table-bordered
+        %tr
+          -Album.str2num.to_a.each do |(s, v)|
+            -ls = "device_type.#{s}"
+            -if @album.has_device_type?(v)
+              %td{class: :success}
+                =t ls
+                -unless @album.single_device_type?
+                  =link_to_lh t('link.destroy'), album_path(@album, album:{ device_type:@album.device_type - v }), method: :put
+            -else
+              %td
+                =t ls
+                =link_to_lh t('link.add'), album_path(@album, album:{ device_type:@album.device_type + v }), method: :put
+
+      =render partial:'form'

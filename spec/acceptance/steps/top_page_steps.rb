@@ -24,6 +24,10 @@ step ':label に :value と入力する' do |label, value|
   fill_in label, with:value
 end
 
+step ':from から :value を選択する' do |from, value|
+  select value, from:from
+end
+
 step "運用環境である" do
   Rails.stub_chain(:env, :production?).and_return(true)
   Rails.stub_chain(:env, :development?).and_return(false)

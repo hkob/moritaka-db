@@ -4,6 +4,7 @@ ja:
       title: タイトル
       instrumental: 楽器
       song: 曲
+      device: デバイス
     attributes:
       title:
         japanese: 日本語
@@ -19,3 +20,12 @@ ja:
         sort_order: 並び順
       music:
         sort_order: 並び順
+      device:
+        date: 発売日
+        number: 番号
+        minutes: 分
+        seconds: 秒
+        j_comment: 日本語コメント
+        e_comment: 英語コメント
+        device_type: デバイスタイプ
+

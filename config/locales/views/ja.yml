@@ -5,6 +5,15 @@ ja:
       message: "各種情報はメニューバーから取得できます"
       summary: "概要"
       total: "合計"
+  albums:
+    index:
+      title: "アルバム一覧"
+    new:
+      title: "アルバムの追加"
+    edit:
+      title: "アルバムの編集"
+    show:
+      title: "アルバム情報"
   titles:
     index:
       title: "タイトル一覧"
@@ -61,6 +70,7 @@ ja:
       title: "西暦情報"
   link:
     home: 'ホーム'
+    albums: 'アルバム'
     lyrics: '作詞'
     musics: '作曲'
     songs: '曲'
@@ -71,6 +81,7 @@ ja:
     show: '表示'
     edit: '編集'
     destroy: '削除'
+    add: '追加'
     add_main: '主データ追加'
     set_to_main: '主データに設定'
     delete_link: 'リンク解除'
@@ -85,5 +96,17 @@ ja:
     lyric_and_music: '作詞・作曲'
     neighbors_by_name: '隣接(名前)'
     neighbors_by_date: '隣接(日付)'
+    number: '通番'
+    title: 'タイトル'
+    kind: '種別'
   confirm:
     destroy: '本当に削除してもよろしいですか?'
+  device_type:
+    album: 'アルバム'
+    mini_album: "ミニアルバム"
+    karaoke_cd: "カラオケCD"
+    lyric_album: "アルバム(作詞)"
+    music_album: "アルバム(作曲)"
+    cover_album: "アルバム(カバー)"
+    part_album: "アルバム(演奏参加)"
+    compilation_album: "コンピレーションアルバム"

@@ -4,6 +4,7 @@ en:
       title: Title
       instrumental: Instrumental
       song: Song
+      device: Device
     attributes:
       title:
         japanese: Japanese
@@ -19,4 +20,15 @@ en:
         sort_order: Sort order
       music:
         sort_order: Sort order
+      device:
+        date: Release date
+        number: Number
+        minutes: Minutes
+        seconds: Seconds
+        j_comment: Japanese comment
+        e_comment: English comment
+        device_type: Device type
+
+        
+        
 
