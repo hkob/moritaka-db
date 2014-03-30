@@ -21,6 +21,7 @@ ja:
       music:
         sort_order: 並び順
       device:
+        singer: 歌手
         date: 発売日
         number: 番号
         minutes: 分

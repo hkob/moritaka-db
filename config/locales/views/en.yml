@@ -83,6 +83,7 @@ en:
     add_main: 'Add main data'
     set_to_main: 'Set to main data'
     delete_link: 'Delete link'
+    add_singer: 'Add a singer'
   head:
     item: 'Item'
     sort_order: 'Sort order'

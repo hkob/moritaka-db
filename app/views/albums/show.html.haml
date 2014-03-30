@@ -27,9 +27,7 @@
 
 .panel.panel-default
   .panel-heading
-    aaa
   .panel-body
-    aaa
   .panel-footer
     %table.table.table-bordered
       =render partial:'/shared/neighbors', locals: { title:'head.neighbors_by_name', before:@album.objects_before_yomi.limit(Neighbors), center:@album.name(@is_ja), after:@album.objects_after_yomi.limit(Neighbors) }

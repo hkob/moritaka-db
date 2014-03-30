@@ -29,6 +29,9 @@ class AlbumsController < ApplicationController
 
   def edit
     @subtitle = @album.name(@is_ja)
+    @head, @heads, @lhead_hash, @subtitle2, @ids2 = get_heads(params[:head], @is_ja)
+    @people = Person.head_value_is(@head).order_yomi
+    @ids.merge!(@ids2)
   end
 
   def get_album
@@ -53,7 +56,7 @@ class AlbumsController < ApplicationController
   end
 
   def album_params
-    params.require(:album).permit(:device_type, :date, :number, :title_id, :minutes, :seconds, :j_comment, :e_comment)
+    params.require(:album).permit(:device_type, :date, :number, :title_id, :minutes, :seconds, :j_comment, :e_comment, :singer_id)
   end
   private :album_params
 end

@@ -20,4 +20,37 @@
                 =t ls
                 =link_to_lh t('link.add'), album_path(@album, album:{ device_type:@album.device_type + v }), method: :put
 
+      %table.table.table-bordered
+        %tr
+          %th=t 'activerecord.attributes.device.singer'
+          %td
+            =@album.singer && @album.singer.name(@is_ja)
+            -Album.recent_singer(10).each do |p|
+              -next unless p
+              -unless @album.singer_id == p.id
+                =link_to_lh "#{t 'link.add_singer'}(#{p.name(@is_ja)})", album_path(@album, album:{ singer_id:p.id }), method: :put
       =render partial:'form'
+  .panel.panel-default
+    .panel-heading
+      %h2=t 'link.add_singer'
+      %ul.nav.nav-tabs
+        -@heads.each do |array|
+          -first = array.first
+          -last = array.last
+          -head=@lhead_hash[first]
+          %li{class:(head == @head) ? "active disable" : nil}=link_to_lh "#{first} - #{last}", edit_album_path(@album, head:head)
+      .panel-body
+    %table.table.table-bordered.table-striped.table-hover
+      %thead
+        %tr
+          -%w(link.people).each do |k|
+            %th=t k
+          %th=t 'head.control'
+      %tbody
+        -@people.each do |person|
+          -name = person.name(@is_ja)
+          %tr{id:name}
+            %td=name
+            %td=link_to_lh t('link.add_singer'), album_path(@album, album:{ singer_id:person.id }), method: :put
+
+

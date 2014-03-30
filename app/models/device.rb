@@ -26,6 +26,7 @@ class Device < ActiveRecord::Base
   scope :order_year_date, -> { order_year.order_date }
   scope :order_yomi, -> { joins(:title).merge(Title.order_yomi) }
   scope :order_yomi_desc, -> { joins(:title).merge(Title.order_yomi_desc) }
+  scope :order_updated_at_desc, -> { order self.arel_table[:updated_at].desc }
 
   def self.device_type_hash
     device_type_hash_from_table(self.num2str)
@@ -77,5 +78,9 @@ class Device < ActiveRecord::Base
 
   def comment(flag)
     flag ? j_comment : e_comment
+  end
+
+  def self.recent_singer(n)
+    self.order_updated_at_desc.limit(n).map { |l| l.singer }.uniq
   end
 end

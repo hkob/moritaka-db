@@ -21,6 +21,7 @@ en:
       music:
         sort_order: Sort order
       device:
+        singer: Singer
         date: Release date
         number: Number
         minutes: Minutes

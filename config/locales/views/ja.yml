@@ -85,6 +85,7 @@ ja:
     add_main: '主データ追加'
     set_to_main: '主データに設定'
     delete_link: 'リンク解除'
+    add_singer: '歌手の追加'
   head:
     item: '項目'
     sort_order: '並び順'
